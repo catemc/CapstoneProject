@@ -1,0 +1,1884 @@
+marker_id,paper_id,effect_name,subtype
+1,"Fan S. et al., 2009",Increased virulence in mice,H5N1
+1,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+2,"Fan S. et al., 2009",Increased virulence in mice,H5N1
+2,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+3,"Nao N. et al., 2015",Increased virulence in mice,H5N1
+3,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+3,"Nao N. et al., 2015",Increased virulence in chickens,H5N1
+3,"Suttie A. et al., 2019",Increased virulence in chickens,H5N1
+3,"Nao N. et al., 2015",Increased virulence in ducks,H5N1
+3,"Suttie A. et al., 2019",Increased virulence in ducks,H5N1
+4,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N1
+4,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N1
+4,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+4,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+8,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+8,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+8,"Cheung C. et al., 2006",Increased resistance to amantadine,H7N2
+8,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+8,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+8,"Bean W. et al., 1989",Increased resistance to amantadine,H7N2
+8,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+8,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+8,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H7N2
+8,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+4,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N1
+4,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N1
+4,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+4,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+5,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+5,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+5,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N1
+5,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N2
+5,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N1
+5,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N2
+5,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+5,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+5,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+5,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+5,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+5,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+6,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N1
+6,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N2
+6,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+6,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+6,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+6,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+6,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+6,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+6,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N1
+6,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N2
+6,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+6,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+7,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N1
+7,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N2
+7,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+7,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+7,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+7,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+7,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+7,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+7,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N1
+7,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N2
+7,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+7,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+8,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+8,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+8,"Cheung C. et al., 2006",Increased resistance to rimantadine,H7N2
+8,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+8,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+8,"Bean W. et al., 1989",Increased resistance to rimantadine,H7N2
+8,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+8,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+8,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H7N2
+5,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+5,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+5,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N1
+5,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N2
+5,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N1
+5,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N2
+5,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+5,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+5,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+5,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+5,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+5,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+6,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N1
+6,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N2
+6,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+6,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+6,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+6,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+6,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+6,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+6,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N1
+6,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N2
+6,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+6,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+7,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N1
+7,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N2
+7,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+7,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+7,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+7,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+7,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+7,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+7,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N1
+7,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N2
+7,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+7,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+8,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+8,"Suttie A. et al., 2019",Increased resistance to amantadine,H7N2
+8,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+8,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+8,"Suttie A. et al., 2019",Increased resistance to rimantadine,H7N2
+9,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+9,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+9,"Cheung C. et al., 2006",Increased resistance to amantadine,H7N2
+9,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+9,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+9,"Cheung C. et al., 2006",Increased resistance to rimantadine,H7N2
+9,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+9,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+9,"Bean W. et al., 1989",Increased resistance to amantadine,H7N2
+9,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+9,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+9,"Bean W. et al., 1989",Increased resistance to rimantadine,H7N2
+9,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+9,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+9,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H7N2
+9,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+9,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+9,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H7N2
+9,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+9,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+9,"Suttie A. et al., 2019",Increased resistance to amantadine,H7N2
+9,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+9,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+9,"Suttie A. et al., 2019",Increased resistance to rimantadine,H7N2
+10,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+10,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+10,"Cheung C. et al., 2006",Increased resistance to amantadine,H7N2
+10,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+10,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+10,"Cheung C. et al., 2006",Increased resistance to rimantadine,H7N2
+10,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+10,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+10,"Bean W. et al., 1989",Increased resistance to amantadine,H7N2
+10,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+10,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+10,"Bean W. et al., 1989",Increased resistance to rimantadine,H7N2
+10,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+10,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+10,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H7N2
+10,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+10,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+10,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H7N2
+10,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+10,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+10,"Suttie A. et al., 2019",Increased resistance to amantadine,H7N2
+10,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+10,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+10,"Suttie A. et al., 2019",Increased resistance to rimantadine,H7N2
+11,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N1
+11,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N2
+11,"Lan Y. et al., 2010",Increased resistance to amantadine,H9N2
+11,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N1
+11,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N2
+11,"Lan Y. et al., 2010",Increased resistance to rimantadine,H9N2
+11,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+11,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+11,"Cheung C. et al., 2006",Increased resistance to amantadine,H9N2
+11,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+11,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+11,"Cheung C. et al., 2006",Increased resistance to rimantadine,H9N2
+11,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+11,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+11,"Bean W. et al., 1989",Increased resistance to amantadine,H9N2
+11,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+11,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+11,"Bean W. et al., 1989",Increased resistance to rimantadine,H9N2
+11,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+11,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+11,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H9N2
+11,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+11,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+11,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H9N2
+11,"He G. et al., 2008",Increased resistance to amantadine,H5N1
+11,"He G. et al., 2008",Increased resistance to amantadine,H5N2
+11,"He G. et al., 2008",Increased resistance to amantadine,H9N2
+11,"He G. et al., 2008",Increased resistance to rimantadine,H5N1
+11,"He G. et al., 2008",Increased resistance to rimantadine,H5N2
+11,"He G. et al., 2008",Increased resistance to rimantadine,H9N2
+11,"Puthavathana P. et al., 2005",Increased resistance to amantadine,H5N1
+11,"Puthavathana P. et al., 2005",Increased resistance to amantadine,H5N2
+11,"Puthavathana P. et al., 2005",Increased resistance to amantadine,H9N2
+11,"Puthavathana P. et al., 2005",Increased resistance to rimantadine,H5N1
+11,"Puthavathana P. et al., 2005",Increased resistance to rimantadine,H5N2
+11,"Puthavathana P. et al., 2005",Increased resistance to rimantadine,H9N2
+11,"Buranathai C. et al., 2007",Increased resistance to amantadine,H5N1
+11,"Buranathai C. et al., 2007",Increased resistance to amantadine,H5N2
+11,"Buranathai C. et al., 2007",Increased resistance to amantadine,H9N2
+11,"Buranathai C. et al., 2007",Increased resistance to rimantadine,H5N1
+11,"Buranathai C. et al., 2007",Increased resistance to rimantadine,H5N2
+11,"Buranathai C. et al., 2007",Increased resistance to rimantadine,H9N2
+11,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+11,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+11,"Suttie A. et al., 2019",Increased resistance to amantadine,H9N2
+11,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+11,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+11,"Suttie A. et al., 2019",Increased resistance to rimantadine,H9N2
+12,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N1
+12,"Lan Y. et al., 2010",Increased resistance to amantadine,H5N2
+12,"Lan Y. et al., 2010",Increased resistance to amantadine,H9N2
+12,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N1
+12,"Lan Y. et al., 2010",Increased resistance to rimantadine,H5N2
+12,"Lan Y. et al., 2010",Increased resistance to rimantadine,H9N2
+12,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N1
+12,"Cheung C. et al., 2006",Increased resistance to amantadine,H5N2
+12,"Cheung C. et al., 2006",Increased resistance to amantadine,H9N2
+12,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N1
+12,"Cheung C. et al., 2006",Increased resistance to rimantadine,H5N2
+12,"Cheung C. et al., 2006",Increased resistance to rimantadine,H9N2
+12,"Bean W. et al., 1989",Increased resistance to amantadine,H5N1
+12,"Bean W. et al., 1989",Increased resistance to amantadine,H5N2
+12,"Bean W. et al., 1989",Increased resistance to amantadine,H9N2
+12,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N1
+12,"Bean W. et al., 1989",Increased resistance to rimantadine,H5N2
+12,"Bean W. et al., 1989",Increased resistance to rimantadine,H9N2
+12,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N1
+12,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H5N2
+12,"Ilyushina N. et al., 2005",Increased resistance to amantadine,H9N2
+12,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N1
+12,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H5N2
+12,"Ilyushina N. et al., 2005",Increased resistance to rimantadine,H9N2
+12,"He G. et al., 2008",Increased resistance to amantadine,H5N1
+12,"He G. et al., 2008",Increased resistance to amantadine,H5N2
+12,"He G. et al., 2008",Increased resistance to amantadine,H9N2
+12,"He G. et al., 2008",Increased resistance to rimantadine,H5N1
+12,"He G. et al., 2008",Increased resistance to rimantadine,H5N2
+12,"He G. et al., 2008",Increased resistance to rimantadine,H9N2
+12,"Puthavathana P. et al., 2005",Increased resistance to amantadine,H5N1
+12,"Puthavathana P. et al., 2005",Increased resistance to amantadine,H5N2
+12,"Puthavathana P. et al., 2005",Increased resistance to amantadine,H9N2
+12,"Puthavathana P. et al., 2005",Increased resistance to rimantadine,H5N1
+12,"Puthavathana P. et al., 2005",Increased resistance to rimantadine,H5N2
+12,"Puthavathana P. et al., 2005",Increased resistance to rimantadine,H9N2
+12,"Buranathai C. et al., 2007",Increased resistance to amantadine,H5N1
+12,"Buranathai C. et al., 2007",Increased resistance to amantadine,H5N2
+12,"Buranathai C. et al., 2007",Increased resistance to amantadine,H9N2
+12,"Buranathai C. et al., 2007",Increased resistance to rimantadine,H5N1
+12,"Buranathai C. et al., 2007",Increased resistance to rimantadine,H5N2
+12,"Buranathai C. et al., 2007",Increased resistance to rimantadine,H9N2
+12,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+12,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N2
+12,"Suttie A. et al., 2019",Increased resistance to amantadine,H9N2
+12,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+12,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N2
+12,"Suttie A. et al., 2019",Increased resistance to rimantadine,H9N2
+13,"Abed Y. et al., 2005",Increased resistance to amantadine,H5N1
+13,"Abed Y. et al., 2005",Increased resistance to rimantadine,H5N1
+13,"Suttie A. et al., 2019",Increased resistance to amantadine,H5N1
+13,"Suttie A. et al., 2019",Increased resistance to rimantadine,H5N1
+14,"Jiao P. et al., 2008",Increased virulence in mice,H5N1
+14,"Jiao P. et al., 2008",Decreased antiviral response in mice,H5N1
+14,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+14,"Suttie A. et al., 2019",Decreased antiviral response in mice,H5N1
+15,"Kanrai P. et al., 2016",Enhanced replication in mammalian cells,H7N1 backbone with H5N1 NS
+15,"Kanrai P. et al., 2016",Enhanced pathogenicity in mice,H7N1 backbone with H5N1 NS
+15,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H7N1 backbone with H5N1 NS
+15,"Suttie A. et al., 2019",Enhanced pathogenicity in mice,H7N1 backbone with H5N1 NS
+16,"Wang B. et al., 2017",Decreased replication in mammalian cells,H1N1 backbone with H5N1 NS
+16,"Wang B. et al., 2017",Enhanced interferon response,H1N1 backbone with H5N1 NS
+16,"Suttie A. et al., 2019",Decreased replication in mammalian cells,H1N1 backbone with H5N1 NS
+16,"Suttie A. et al., 2019",Enhanced interferon response,H1N1 backbone with H5N1 NS
+17,"Seo S. et al., 2002",Increased virulence in mice,H1N1 backbone with H5N1 NS
+17,"Seo S. et al., 2002",Increased virulence in swine,H1N1 backbone with H5N1 NS
+17,"Lipatov A. et al., 2005",Increased virulence in mice,H1N1 backbone with H5N1 NS
+17,"Lipatov A. et al., 2005",Increased virulence in swine,H1N1 backbone with H5N1 NS
+17,"Suttie A. et al., 2019",Increased virulence in mice,H1N1 backbone with H5N1 NS
+17,"Suttie A. et al., 2019",Increased virulence in swine,H1N1 backbone with H5N1 NS
+17,"Long J. et al., 2008",Increased virulence in mice,"H1N1 backbone with H5N1 HA, NA and NS"
+17,"Long J. et al., 2008",Increased virulence in chickens,"H1N1 backbone with H5N1 HA, NA and NS"
+17,"Suttie A. et al., 2019",Increased virulence in mice,"H1N1 backbone with H5N1 HA, NA and NS"
+17,"Suttie A. et al., 2019",Increased virulence in chickens,"H1N1 backbone with H5N1 HA, NA and NS"
+19,"Ayllon J. et al., 2014",Increased viral replication in mammalian cells,H1N1 with all internal genes from H7N9
+19,"Ayllon J. et al., 2014",Increased virulence in mice,H1N1 with all internal genes from H7N9
+19,"Suttie A. et al., 2019",Increased viral replication in mammalian cells,H1N1 with all internal genes from H7N9
+19,"Suttie A. et al., 2019",Increased virulence in mice,H1N1 with all internal genes from H7N9
+20,"Li J. et al., 2018",Increased viral replication in mammalian cells,H5N1
+20,"Li J. et al., 2018",Decreased interferon response,H5N1
+20,"Suttie A. et al., 2019",Increased viral replication in mammalian cells,H5N1
+20,"Suttie A. et al., 2019",Decreased interferon response,H5N1
+21,"Li Z. et al., 2006",Increased virulence in chickens,H5N1
+21,"Li Z. et al., 2006",Decreased interferon response in chickens,H5N1
+21,"Suttie A. et al., 2019",Increased virulence in chickens,H5N1
+21,"Suttie A. et al., 2019",Decreased interferon response in chickens,H5N1
+22,"Kuo R. et al., 2009",Increased virulence in mice,H5N1
+22,"Spesock A. et al., 2011",Increased virulence in mice,H5N1
+22,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+23,"Imai H. et al., 2010",Decreased antiviral response in ferrets,H5N1
+23,"Suttie A. et al., 2019",Decreased antiviral response in ferrets,H5N1
+24,"Imai H. et al., 2010",Decreased antiviral response in ferrets,H5N1
+24,"Suttie A. et al., 2019",Decreased antiviral response in ferrets,H5N1
+25,"Kanrai P. et al., 2016",Enhanced replication in mammalian cells,H7N1 backbone with H5N1 NS
+25,"Kanrai P. et al., 2016",Enhanced pathogenicity in mice,H7N1 backbone with H5N1 NS
+25,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H7N1 backbone with H5N1 NS
+25,"Suttie A. et al., 2019",Enhanced pathogenicity in mice,H7N1 backbone with H5N1 NS
+26,"Trapp S. et al., 2018",Decreased replication in mammalian cells,H7N1
+26,"Trapp S. et al., 2018",Decreased replication in avian cells,H7N1
+26,"Suttie A. et al., 2019",Decreased replication in mammalian cells,H7N1
+26,"Suttie A. et al., 2019",Decreased replication in avian cells,H7N1
+27,"Li J. et al., 2018",Enhanced replication in mammalian cells,H5N1
+27,"Li J. et al., 2018",Decreased interferon response,H5N1
+27,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H5N1
+27,"Suttie A. et al., 2019",Decreased interferon response,H5N1
+28,"Reuther P. et al., 2014",Increased polymerase activity in mammalian cells,H5N1
+28,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+29,"Reuther P. et al., 2014",Increased polymerase activity in mammalian cells,H5N1
+29,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+30,"Zhu W. et al., 2015",Increased polymerase activity in mammalian cells,H7N9
+30,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+31,"Chen L. et al., 2017",Decreased polymerase activity in mammalian cells,H5N1
+31,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H5N1
+32,"Tada T. et al., 2011b",Increased virulence in chickens,H5N1
+32,"Tada T. et al., 2011",Increased virulence in chickens,H5N1
+32,"Suttie A. et al., 2019",Increased virulence in chickens,H5N1
+33,"Tada T. et al., 2011b",Increased polymerase activity in chickens (but not ducks),H5N1
+33,"Tada T. et al., 2011b",Increased virulence in chickens,H5N1
+33,"Tada T. et al., 2011b",Increased replication in chickens (but not ducks),H5N1
+33,"Tada T. et al., 2011",Increased polymerase activity in chickens (but not ducks),H5N1
+33,"Tada T. et al., 2011",Increased virulence in chickens,H5N1
+33,"Tada T. et al., 2011",Increased replication in chickens (but not ducks),H5N1
+33,"Suttie A. et al., 2019",Increased polymerase activity in chickens (but not ducks),H5N1
+33,"Suttie A. et al., 2019",Increased virulence in chickens,H5N1
+33,"Suttie A. et al., 2019",Increased replication in chickens (but not ducks),H5N1
+34,"Wasilenko J. et al., 2009",Increased replication in avian cells,H5N1
+34,"Wasilenko J. et al., 2009",Increased virulence in chickens,H5N1
+34,"Wasilenko J. et al., 2009",Enhanced interferon response,H5N1
+34,"Suttie A. et al., 2019",Increased replication in avian cells,H5N1
+34,"Suttie A. et al., 2019",Increased virulence in chickens,H5N1
+34,"Suttie A. et al., 2019",Enhanced interferon response,H5N1
+35,"Chen L. et al., 2017",Decreased polymerase activity in mammalian cells,H5N1
+35,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H5N1
+36,"Zhu W. et al., 2015",Increased polymerase activity in mammalian cells,H7N9
+36,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+37,"Chen L. et al., 2017",Increased polymerase activity in mammalian cells,H5N1
+37,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+38,"Chen L. et al., 2017",Increased polymerase activity in mammalian cells,H5N1
+38,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+39,"Gabriel G. et al., 2005",Increased polymerase activity in mammalian cells,H7N7
+39,"Gabriel G. et al., 2005",Increased replication in mammalian cells,H7N7
+39,"Gabriel G. et al., 2008",Increased polymerase activity in mammalian cells,H7N7
+39,"Gabriel G. et al., 2008",Increased replication in mammalian cells,H7N7
+39,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N7
+39,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N7
+40,"Sang X. et al., 2015b",Increased polymerase activity in mammalian cells,H9N2
+40,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+41,"Chen L. et al., 2017",Increased virulence in mice,H5N1
+41,"Chen L. et al., 2017",Increased polymerase activity in mammalian cells,H5N1
+41,"Chen L. et al., 2017",Increased replication in mammalian cells,H5N1
+41,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+41,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+41,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+42,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+42,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+43,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+43,"Graef K. et al., 2010",Increased virulence in mice,H5N1
+43,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+44,"Zhao D. et al., 2015",Increased virulence in mice,H5N1 backbone with H1N1 NS
+44,"Suttie A. et al., 2019",Increased virulence in mice,H5N1 backbone with H1N1 NS
+45,"Li J. et al., 2011",Decreased pathogenicity in mice,H5N1
+45,"Suttie A. et al., 2019",Decreased pathogenicity in mice,H5N1
+47,"Xu G. et al., 2020",Increased virulence in mice,H4N6
+47,"Xu G. et al., 2020",Increased polymerase activity in mammalian cells,H4N6
+47,"Xu G. et al., 2020",Increased replication in mammalian cells,H4N6
+47,"Suttie A. et al., 2019",Increased virulence in mice,H4N6
+47,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H4N6
+47,"Suttie A. et al., 2019",Increased replication in mammalian cells,H4N6
+48,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+48,"Taft A. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+48,"Taft A. et al., 2015",Increased polymerase activity in avian cells,H5N1
+48,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+48,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+48,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H5N1
+49,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+49,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+50,"Zhang J. et al., 2018",Increased polymerase activity in mammalian cells,H9N2
+50,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+51,"Manzoor R. et al., 2009",Increased polymerase activity in mammalian cells,H5N1 backbone with pH1N1 PB2
+51,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1 backbone with pH1N1 PB2
+53,"Gao W. et al., 2019",Increased virulence in mice,H9N2
+53,"Gao W. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+53,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+53,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+54,"DesRochers B. et al., 2016",Decreased virulence in mice,H7N3
+54,"Suttie A. et al., 2019",Decreased virulence in mice,H7N3
+56,"Hu M. et al., 2017b",Increased polymerase activity in mammalian cells,H7N9
+56,"Hu M. et al., 2017b",Increased replication in mammalian cells,H7N9
+56,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+56,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+57,"Liu Y. et al., 2013",Decreased polymerase activity in mice,H5N1
+57,"Liu Y. et al., 2013",Decreased virulence in mice,H5N1
+57,"Suttie A. et al., 2019",Decreased polymerase activity in mice,H5N1
+57,"Suttie A. et al., 2019",Decreased virulence in mice,H5N1
+58,"Yamayoshi S. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+58,"Yamayoshi S. et al., 2018",Increased polymerase activity in mammalian cells,H7N9
+58,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+59,"Song W. et al., 2014",Increased polymerase activity in mammalian cells,H5N1
+59,"Song W. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+59,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+59,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+60,"Chen G. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+60,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+61,"Xiao C. et al., 2016",Increased replication in avian cells,H7N9
+61,"Xiao C. et al., 2016",Increased replication in avian cells,H9N2
+61,"Xiao C. et al., 2016",Increased replication in avian cells,H10N8
+61,"Xiao C. et al., 2016",Increased virulence in mice,H7N9
+61,"Xiao C. et al., 2016",Increased virulence in mice,H9N2
+61,"Xiao C. et al., 2016",Increased virulence in mice,H10N8
+61,"Xiao C. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+61,"Xiao C. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+61,"Xiao C. et al., 2016",Increased polymerase activity in mammalian cells,H10N8
+61,"Xiao C. et al., 2016",Increased polymerase activity in avian cells,H7N9
+61,"Xiao C. et al., 2016",Increased polymerase activity in avian cells,H9N2
+61,"Xiao C. et al., 2016",Increased polymerase activity in avian cells,H10N8
+61,"Xiao C. et al., 2016",Increased replication in mammalian cells,H7N9
+61,"Xiao C. et al., 2016",Increased replication in mammalian cells,H9N2
+61,"Xiao C. et al., 2016",Increased replication in mammalian cells,H10N8
+61,"Suttie A. et al., 2019",Increased replication in avian cells,H7N9
+61,"Suttie A. et al., 2019",Increased replication in avian cells,H9N2
+61,"Suttie A. et al., 2019",Increased replication in avian cells,H10N8
+61,"Suttie A. et al., 2019",Increased virulence in mice,H7N9
+61,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+61,"Suttie A. et al., 2019",Increased virulence in mice,H10N8
+61,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+61,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+61,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H10N8
+61,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H7N9
+61,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H9N2
+61,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H10N8
+61,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+61,"Suttie A. et al., 2019",Increased replication in mammalian cells,H9N2
+61,"Suttie A. et al., 2019",Increased replication in mammalian cells,H10N8
+62,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+62,"Taft A. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+62,"Taft A. et al., 2015",Increased polymerase activity in avian cells,H5N1
+62,"Taft A. et al., 2015",Increased replication in mammalian cells,H5N1
+62,"Shinya Y. et al., 2010",Increased virulence in mice,H5N1
+62,"Shinya Y. et al., 2010",Increased polymerase activity in mammalian cells,H5N1
+62,"Shinya Y. et al., 2010",Increased polymerase activity in avian cells,H5N1
+62,"Shinya Y. et al., 2010",Increased replication in mammalian cells,H5N1
+62,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+62,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+62,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H5N1
+62,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+62,"Chen G. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+62,"Chen G. et al., 2016",Increased polymerase activity in avian cells,H7N9
+62,"Mok C. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+62,"Mok C. et al., 2014",Increased polymerase activity in avian cells,H7N9
+62,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+62,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H7N9
+62,"Wang C. et al., 2016",Increased virulence in mice,H9N2
+62,"Wang C. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+62,"Wang C. et al., 2016",Increased replication in mammalian cells,H9N2
+62,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+62,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+62,"Suttie A. et al., 2019",Increased replication in mammalian cells,H9N2
+65,"Hu M. et al., 2017b",Increased virulence in mice,H7N9
+65,"Hu M. et al., 2017b",Increased polymerase activity in mammalian cells,H7N9
+65,"Hu M. et al., 2017b",Increased replication in mammalian cells,H7N9
+65,"Suttie A. et al., 2019",Increased virulence in mice,H7N9
+65,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+65,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+66,"Hu M. et al., 2017b",Increased virulence in mice,H7N9
+66,"Hu M. et al., 2017b",Increased polymerase activity in mammalian cells,H7N9
+66,"Hu M. et al., 2017b",Increased replication in mammalian cells,H7N9
+66,"Suttie A. et al., 2019",Increased virulence in mice,H7N9
+66,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+66,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+73,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+73,"Taft A. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+73,"Taft A. et al., 2015",Increased replication in mammalian cells,H5N1
+73,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+73,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+73,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+79,"Taft A. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+79,"Taft A. et al., 2015",Increased replication in mammalian cells,H5N1
+79,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+79,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+79,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+79,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+80,"Gabriel G. et al., 2005",Increased polymerase activity in mammalian cells,H7N7
+80,"Gabriel G. et al., 2005",Increased replication in mammalian cells,H7N7
+80,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H7N7
+80,"Sediri H. et al., 2016",Increased replication in mammalian cells,H7N7
+80,"Gabriel G. et al., 2007",Increased polymerase activity in mammalian cells,H7N7
+80,"Gabriel G. et al., 2007",Increased replication in mammalian cells,H7N7
+80,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N7
+80,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N7
+80,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+80,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+82,"Sun H. et al., 2015",Decreased virulence in mice,H5N1
+82,"Suttie A. et al., 2019",Decreased virulence in mice,H5N1
+83,"Leung B. et al., 2010",Decreased polymerase activity in mammalian cells,H5N1
+83,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H5N1
+84,"Li J. et al., 2009",Increased polymerase activity in mammalian cells,H5N1
+84,"Li J. et al., 2009",Increased virulence in mice,H5N1
+84,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+84,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+85,"Li J. et al., 2009",Increased polymerase activity in mammalian cells,H5N1
+85,"Li J. et al., 2009",Increased virulence in mice,H5N1
+85,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+85,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+86,"Wang J. et al., 2012",Increased polymerase activity in mammalian cells,H9N2
+86,"Wang J. et al., 2012",Increased virulence in mice,H9N2
+86,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+86,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+87,"Fan S. et al., 2014",Increased polymerase activity in mammalian cells,H5N1
+87,"Fan S. et al., 2014",Increased virulence in mice,H5N1
+87,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+87,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+88,"Song W. et al., 2014",Increased polymerase activity in mammalian cells,H5N1
+88,"Song W. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+88,"Song W. et al., 2014",Increased replication in mammalian cells,H5N1
+88,"Song W. et al., 2014",Increased replication in mammalian cells,H7N9
+88,"Song W. et al., 2014",Increased virulence in mice,H5N1
+88,"Song W. et al., 2014",Increased virulence in mice,H7N9
+88,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+88,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+88,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+88,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+88,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+88,"Suttie A. et al., 2019",Increased virulence in mice,H7N9
+89,"Zhu W. et al., 2015",Increased polymerase activity in mammalian cells,H7N9
+89,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+90,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H7N7
+90,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+90,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+90,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N7
+90,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+90,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+91,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+91,"Sediri H. et al., 2016",Increased virulence in mice,H9N2
+91,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+91,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+92,"Czudai-Matwich V. et al., 2014",Increased replication in mammalian cells,H5N1
+92,"Czudai-Matwich V. et al., 2014",Increased virulence in mice,H5N1
+92,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+92,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+92,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H7N7
+92,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+92,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+92,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N7
+92,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+92,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+94,"Elgendy E. et al., 2017",Increased polymerase activity in avian cells,H5N1
+94,"Elgendy E. et al., 2017",Increased replication in avian cells,H5N1
+94,"Elgendy E. et al., 2017",Increased polymerase activity in mammalian cells,H5N1
+94,"Elgendy E. et al., 2017",Increased replication in mammalian cells,H5N1
+94,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H5N1
+94,"Suttie A. et al., 2019",Increased replication in avian cells,H5N1
+94,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+94,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+95,"Taft A. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+95,"Taft A. et al., 2015",Increased replication in mammalian cells,H5N1
+95,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+95,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+95,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+95,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+96,"Hulse-Post D. et al., 2007",Decreased polymerase activity in mammalian cells,H5N1
+96,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H5N1
+97,"Hulse-Post D. et al., 2007",Decreased polymerase activity in mammalian cells,H5N1
+97,"Hulse-Post D. et al., 2007",Decreased virulence in mice,H5N1
+97,"Hulse-Post D. et al., 2007",Decreased virulence in ducks,H5N1
+97,"Hulse-Post D. et al., 2007",Decreased virulence in ferrets,H5N1
+97,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H5N1
+97,"Suttie A. et al., 2019",Decreased virulence in mice,H5N1
+97,"Suttie A. et al., 2019",Decreased virulence in ducks,H5N1
+97,"Suttie A. et al., 2019",Decreased virulence in ferrets,H5N1
+98,"Xu C. et al., 2012",Decreased polymerase activity in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+98,"Xu C. et al., 2012",Decreased replication in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+98,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+98,"Suttie A. et al., 2019",Decreased replication in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+99,"Kamiki H. et al., 2018",Increased polymerase activity in mice,H9N2
+99,"Kamiki H. et al., 2018",Increased virulence in mice,H9N2
+99,"Suttie A. et al., 2019",Increased polymerase activity in mice,H9N2
+99,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+100,"Xu C. et al., 2012",Decreased polymerase activity in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+100,"Xu C. et al., 2012",Decreased replication in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+100,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+100,"Suttie A. et al., 2019",Decreased replication in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+101,"Feng X. et al., 2016",Increased polymerase activity in mice,H5N1
+101,"Feng X. et al., 2016",Increased virulence in mice,H5N1
+101,"Suttie A. et al., 2019",Increased polymerase activity in mice,H5N1
+101,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+102,"Li J. et al., 2011b",Increased polymerase activity in mammalian cells,H5N1
+102,"Li J. et al., 2011b",Decreased virulence in mice,H5N1
+102,"Li J. et al., 2011b",Decreased replication in mammalian cells,H5N1
+102,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+102,"Suttie A. et al., 2019",Decreased virulence in mice,H5N1
+102,"Suttie A. et al., 2019",Decreased replication in mammalian cells,H5N1
+103,"Gabriel G. et al., 2007",Increased replication in avian cells,H7N7
+103,"Gabriel G. et al., 2007",Increased replication in mammalian cells,H7N7
+103,"Suttie A. et al., 2019",Increased replication in avian cells,H7N7
+103,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N7
+104,"Salomon R. et al., 2006",Decreased replication in ferrets,H5N1
+104,"Salomon R. et al., 2006",Decreased virulence in ferrets,H5N1
+104,"Suttie A. et al., 2019",Decreased replication in ferrets,H5N1
+104,"Suttie A. et al., 2019",Decreased virulence in ferrets,H5N1
+105,"Xu C. et al., 2012",Decreased polymerase activity in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+105,"Xu C. et al., 2012",Decreased replication in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+105,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+105,"Suttie A. et al., 2019",Decreased replication in mammalian cells,"H1N1 backbone with H5N1 PB2, PB1, PA and NP"
+106,"Schmolke M. et al., 2011",Enhanced replication in mice,H5N1
+106,"Schmolke M. et al., 2011",Enhanced virulence in mice,H5N1
+106,"Schmolke M. et al., 2011",Enhanced antiviral response in mice,H5N1
+106,"Conenello G. et al., 2007",Enhanced replication in mice,H5N1
+106,"Conenello G. et al., 2007",Enhanced virulence in mice,H5N1
+106,"Conenello G. et al., 2007",Enhanced antiviral response in mice,H5N1
+106,"Suttie A. et al., 2019",Enhanced replication in mice,H5N1
+106,"Suttie A. et al., 2019",Enhanced virulence in mice,H5N1
+106,"Suttie A. et al., 2019",Enhanced antiviral response in mice,H5N1
+107,"Marjuki H. et al., 2010",Decreased polymerase activity in ducks,H5N1
+107,"Marjuki H. et al., 2010",Decreased replication in ducks,H5N1
+107,"Marjuki H. et al., 2010",Decreased virulence in ducks,H5N1
+107,"Suttie A. et al., 2019",Decreased polymerase activity in ducks,H5N1
+107,"Suttie A. et al., 2019",Decreased replication in ducks,H5N1
+107,"Suttie A. et al., 2019",Decreased virulence in ducks,H5N1
+108,"Yamayoshi S. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+108,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+109,"Hu M. et al., 2017",Decreased polymerase activity in mammalian cells,H7N7
+109,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H7N7
+110,"Hu M. et al., 2017",Increased polymerase activity in mammalian cells,H7N7
+110,"Hu M. et al., 2017",Enhanced replication in mammalian cells,H7N7
+110,"Hu M. et al., 2017",Increased virulence in mice,H7N7
+110,"Hu M. et al., 2016",Increased polymerase activity in mammalian cells,H7N7
+110,"Hu M. et al., 2016",Enhanced replication in mammalian cells,H7N7
+110,"Hu M. et al., 2016",Increased virulence in mice,H7N7
+110,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N7
+110,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H7N7
+110,"Suttie A. et al., 2019",Increased virulence in mice,H7N7
+111,"Taft A. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+111,"Taft A. et al., 2015",Increased replication in mammalian cells,H5N1
+111,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+111,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+111,"Suttie A. et al., 2019",Increased replication in mammalian cells,H5N1
+111,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+111,"Song M. et al., 2009",Increased polymerase activity in mammalian cells,H5N2
+111,"Song M. et al., 2009",Increased virulence in mice,H5N2
+111,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N2
+111,"Suttie A. et al., 2019",Increased virulence in mice,H5N2
+111,"Cheng K. et al., 2014",Increased polymerase activity in mammalian cells,H6N1
+111,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H6N1
+114,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+114,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+115,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+115,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+116,"Elgendy E. et al., 2017",Increased polymerase activity in mammalian cells,H5N1
+116,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+117,"DesRochers B. et al., 2016",Decreased virulence in mice,H7N3
+117,"Suttie A. et al., 2019",Decreased virulence in mice,H7N3
+118,"Xu G. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+118,"Xu G. et al., 2016",Enhanced replication in mammalian cells,H9N2
+118,"Xu G. et al., 2016",Increased virulence in mice,H9N2
+118,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+118,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H9N2
+118,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+119,"Song J. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+119,"Song J. et al., 2015",Increased polymerase activity in avian cells,H5N1
+119,"Song J. et al., 2011",Increased polymerase activity in mammalian cells,H5N1
+119,"Song J. et al., 2011",Increased polymerase activity in avian cells,H5N1
+119,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+119,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H5N1
+120,"DesRochers B. et al., 2016",Decreased virulence in mice,H7N3
+120,"Suttie A. et al., 2019",Decreased virulence in mice,H7N3
+121,"Yamayoshi S. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+121,"Yamayoshi S. et al., 2014",Increased replication in mammalian cells,H7N9
+121,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+121,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+122,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+122,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+123,"Zhao D. et al., 2015",Increased virulence in mice,H5N1
+123,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+124,"Yamayoshi S. et al., 2018",Increased polymerase activity in mammalian cells,H7N9 (human isolate)
+124,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9 (human isolate)
+125,"Gao H. et al., 2015b",Decreased polymerase activity in mammalian cells,H5N1
+125,"Gao H. et al., 2015b",Decreased virulence in ducks,H5N1
+125,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H5N1
+125,"Suttie A. et al., 2019",Decreased virulence in ducks,H5N1
+126,"Gabriel G. et al., 2005",Increased polymerase activity in mammalian cells,H7N7
+126,"Gabriel G. et al., 2005",Increased virulence in mice,H7N7
+126,"Gabriel G. et al., 2007",Increased polymerase activity in mammalian cells,H7N7
+126,"Gabriel G. et al., 2007",Increased virulence in mice,H7N7
+126,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N7
+126,"Suttie A. et al., 2019",Increased virulence in mice,H7N7
+127,"Zhong G. et al., 2018",Increased polymerase activity in mammalian cells,H5N1
+127,"Zhong G. et al., 2018",Increased virulence in mice,H5N1
+127,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+127,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+128,"Gao P. et al., 2018",Decreased polymerase activity in mammalian cells,H7N7
+128,"Gao P. et al., 2018",Decreased virulence in mice,H7N7
+128,"Suttie A. et al., 2019",Decreased polymerase activity in mammalian cells,H7N7
+128,"Suttie A. et al., 2019",Decreased virulence in mice,H7N7
+129,"Xiao C. et al., 2016",Enhanced replication in duck cells,H5N1
+129,"Xiao C. et al., 2016",Increased polymerase activity in duck cells,H5N1
+129,"Xiao C. et al., 2016",Increased polymerase activity in mice cells,H5N1
+129,"Xiao C. et al., 2016",Enhanced replication in mice cells,H5N1
+129,"Xiao C. et al., 2016",Increased virulence in ducks,H5N1
+129,"Xiao C. et al., 2016",Increased virulence in mice,H5N1
+129,"Leung B. et al., 2010",Enhanced replication in duck cells,H5N1
+129,"Leung B. et al., 2010",Increased polymerase activity in duck cells,H5N1
+129,"Leung B. et al., 2010",Increased polymerase activity in mice cells,H5N1
+129,"Leung B. et al., 2010",Enhanced replication in mice cells,H5N1
+129,"Leung B. et al., 2010",Increased virulence in ducks,H5N1
+129,"Leung B. et al., 2010",Increased virulence in mice,H5N1
+129,"Suttie A. et al., 2019",Enhanced replication in duck cells,H5N1
+129,"Suttie A. et al., 2019",Increased polymerase activity in duck cells,H5N1
+129,"Suttie A. et al., 2019",Increased polymerase activity in mice cells,H5N1
+129,"Suttie A. et al., 2019",Enhanced replication in mice cells,H5N1
+129,"Suttie A. et al., 2019",Increased virulence in ducks,H5N1
+129,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+130,"Schmolke M. et al., 2011",Increased polymerase activity in mammalian cells,H7N9
+130,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+131,"Yamaji R. et al., 2015",Increased polymerase activity in mammalian cells,H5N1
+131,"Yamaji R. et al., 2015",Increased virulence in mice,H5N1
+131,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+131,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+132,"Leung B. et al., 2010",Increased polymerase activity in mammalian cells,H5N1
+132,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+133,"Xu G. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+133,"Xu G. et al., 2016",Enhanced replication in mammalian cells,H9N2
+133,"Xu G. et al., 2016",Increased virulence in mice,H9N2
+133,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+133,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H9N2
+133,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+134,"Su Y. et al., 2008",Increased pseudovirus binding to α2-6,H5N1
+134,"Suttie A. et al., 2019",Increased pseudovirus binding to α2-6,H5N1
+135,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+135,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+136,"Yang Z. et al., 2007",Increased pseudovirus binding to α2-6,H5N1
+136,"Suttie A. et al., 2019",Increased pseudovirus binding to α2-6,H5N1
+138,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+138,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+139,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+139,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+141,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+141,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+142,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+142,"Wang W. et al., 2010",Increased transmission in guinea pigs,H5N1
+142,"Gao Y. et al., 2009",Increased virus binding to α2-6,H5N1
+142,"Gao Y. et al., 2009",Increased transmission in guinea pigs,H5N1
+142,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+142,"Suttie A. et al., 2019",Increased transmission in guinea pigs,H5N1
+143,"Dortmans J. et al., 2013",Increased virus binding to α2-3,H7N9
+143,"Suttie A. et al., 2019",Increased virus binding to α2-3,H7N9
+144,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+144,"Kongchanagul A. et al., 2008",Increased virus binding to α2-6,H5N1
+144,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+144,"Gao Y. et al., 2009",Increased virus binding to α2-6,H5N1
+144,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+145,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+145,"Kongchanagul A. et al., 2008",Increased virus binding to α2-6,H5N1
+145,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+145,"Gao Y. et al., 2009",Increased virus binding to α2-6,H5N1
+145,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+146,"Lu X. et al., 2013",Increased virus binding to α2-6,H13N6
+146,"Lu X. et al., 2013",Decreased virus binding to α2-3,H13N6
+146,"Suttie A. et al., 2019",Increased virus binding to α2-6,H13N6
+146,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H13N6
+147,"Wang F. et al., 2015",Decreased virus binding to α2-3,H6N1
+147,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H6N1
+148,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+148,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+149,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+149,"Chen L. et al., 2012",Maintained virus binding to α2-3,H5N1
+149,"Chen L. et al., 2012",Decreased virulence in mice,H5N1
+149,"Han P. et al., 2015",Increased virus binding to α2-6,H5N1
+149,"Han P. et al., 2015",Maintained virus binding to α2-3,H5N1
+149,"Han P. et al., 2015",Decreased virulence in mice,H5N1
+149,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+149,"Suttie A. et al., 2019",Maintained virus binding to α2-3,H5N1
+149,"Suttie A. et al., 2019",Decreased virulence in mice,H5N1
+150,"Qu Z. et al., 2017",Decreased virus binding to α2-3,H6N2
+150,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H6N2
+151,"Teng Q. et al., 2016",Enhanced binding affinity to mammalian cells,H9N2
+151,"Teng Q. et al., 2016",Enhanced replication in mammalian cells,H9N2
+151,"Suttie A. et al., 2019",Enhanced binding affinity to mammalian cells,H9N2
+151,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H9N2
+152,"Yang Z. et al., 2007",Increased pseudovirus binding to α2-6,H5N1
+152,"Suttie A. et al., 2019",Increased pseudovirus binding to α2-6,H5N1
+153,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+153,"Peng W. et al., 2018",Increased virus binding to α2-6,H5N1
+153,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+154,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+154,"Peng W. et al., 2018",Increased virus binding to α2-6,H5N1
+154,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+155,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+155,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+155,"Watanabe Y. et al., 2011",Increased virus binding to α2-6,H5N1
+155,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+156,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+156,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+156,"Watanabe Y. et al., 2011",Increased virus binding to α2-6,H5N1
+156,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+157,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+157,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+158,"Watanabe Y. et al., 2011",Increased virus binding to α2-6,H5N1
+158,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+166,"Xu R. et al., 2013",Decreased virus binding to α2-3,H7N9
+166,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H7N9
+167,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+167,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+167,"Kongchanagul A. et al., 2008",Increased virus binding to α2-6,H5N1
+167,"Gambaryan A. et al., 2006",Increased virus binding to α2-6,H5N1
+167,"Shinya K. et al., 2010",Increased virus binding to α2-6,H5N1
+167,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+168,"Song H. et al., 2017",Increased virus binding to α2-6,H4N6
+168,"Song H. et al., 2017",Dual receptor specificity,H4N6
+168,"Suttie A. et al., 2019",Increased virus binding to α2-6,H4N6
+168,"Suttie A. et al., 2019",Dual receptor specificity,H4N6
+175,"Watanabe Y. et al., 2011",Increased virus binding to α2-6,H5N1
+175,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+176,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+176,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+177,"Abdelwhab E. et al., 2016",Decreased pH of fusion,H5N1
+177,"Abdelwhab E. et al., 2016",Increased HA stability,H5N1
+177,"Abdelwhab E. et al., 2016",Increased viral replication efficiency,H5N1
+177,"Abdelwhab E. et al., 2016",Increased virulence in mice,H5N1
+177,"Reed M. et al., 2009",Decreased pH of fusion,H5N1
+177,"Reed M. et al., 2009",Increased HA stability,H5N1
+177,"Reed M. et al., 2009",Increased viral replication efficiency,H5N1
+177,"Reed M. et al., 2009",Increased virulence in mice,H5N1
+177,"Krenn B. et al., 2011",Decreased pH of fusion,H5N1
+177,"Krenn B. et al., 2011",Increased HA stability,H5N1
+177,"Krenn B. et al., 2011",Increased viral replication efficiency,H5N1
+177,"Krenn B. et al., 2011",Increased virulence in mice,H5N1
+177,"Suttie A. et al., 2019",Decreased pH of fusion,H5N1
+177,"Suttie A. et al., 2019",Increased HA stability,H5N1
+177,"Suttie A. et al., 2019",Increased viral replication efficiency,H5N1
+177,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+178,"Sun X. et al., 2019",Increased pH of fusion,H7N9
+178,"Sun X. et al., 2019",Decreased HA stability,H7N9
+178,"Sun X. et al., 2019",Decreased virulence in mice,H7N9
+178,"Suttie A. et al., 2019",Increased pH of fusion,H7N9
+178,"Suttie A. et al., 2019",Decreased HA stability,H7N9
+178,"Suttie A. et al., 2019",Decreased virulence in mice,H7N9
+179,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+179,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+180,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+180,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+181,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+181,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+182,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+182,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+183,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+183,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+184,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+184,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+185,"Herfst S. et al., 2012",Transmitted via aerosol among ferrets,H5N1
+185,"Linster M. et al., 2014",Transmitted via aerosol among ferrets,H5N1
+185,"Suttie A. et al., 2019",Transmitted via aerosol among ferrets,H5N1
+186,"Wessels U. et al., 2018",Increased virulence in chickens,H5N1
+186,"Wessels U. et al., 2018",Increased virulence in mice,H5N1
+186,"Wessels U. et al., 2018",Increased pH of fusion,H5N1
+186,"Suttie A. et al., 2019",Increased virulence in chickens,H5N1
+186,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+186,"Suttie A. et al., 2019",Increased pH of fusion,H5N1
+187,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+187,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+188,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+188,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+189,"Yang Z. et al., 2007",Increased pseudovirus binding to α2-6,H5N1
+189,"Suttie A. et al., 2019",Increased pseudovirus binding to α2-6,H5N1
+190,"Chutinimitkul S. et al., 2010",Decreased virus binding to α2-3,H5N1
+190,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+190,"Yamada S. et al., 2006",Decreased virus binding to α2-3,H5N1
+190,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+190,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H5N1
+190,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+191,"Imai M. et al., 2012",Transmissible among ferrets,H5N1
+191,"Suttie A. et al., 2019",Transmissible among ferrets,H5N1
+192,"Ilyushina N. et al., 2008",Increased virus binding to α2-6,H5N1
+192,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+193,"Ilyushina N. et al., 2008",Increased virus binding to α2-6,H5N1
+193,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+194,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+194,"Wang F. et al., 2015",Increased virus binding to α2-6,H5N1
+194,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+195,"Yen H. et al., 2009",Increased virus binding to α2-6,H5N1
+195,"Yen H. et al., 2009",Reduced lethality in mice,H5N1
+195,"Yen H. et al., 2009",Systemic spread in mice,H5N1
+195,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+195,"Suttie A. et al., 2019",Reduced lethality in mice,H5N1
+195,"Suttie A. et al., 2019",Systemic spread in mice,H5N1
+196,"Peng W. et al., 2018",Increased virus binding to α2-6,H5N1
+196,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+197,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+197,"Wang F. et al., 2015",Increased virus binding to α2-6,H5N1
+197,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+198,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+198,"Wang F. et al., 2015",Increased virus binding to α2-6,H5N1
+198,"Stevens J. et al., 2008",Increased virus binding to α2-6,H5N1
+198,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+199,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+199,"Wang F. et al., 2015",Increased virus binding to α2-6,H5N1
+199,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+200,"de Vries R. et al., 2017",Increased virus binding to α2-6,H7N9
+200,"Suttie A. et al., 2019",Increased virus binding to α2-6,H7N9
+201,"de Vries R. et al., 2017",Increased virus binding to α2-6,H7N9
+201,"Suttie A. et al., 2019",Increased virus binding to α2-6,H7N9
+202,"de Vries R. et al., 2017",Increased virus binding to α2-6,H7N9
+202,"Suttie A. et al., 2019",Increased virus binding to α2-6,H7N9
+203,"de Vries R. et al., 2017",Increased virus binding to α2-6,H7N9
+203,"Suttie A. et al., 2019",Increased virus binding to α2-6,H7N9
+204,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+204,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+205,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+205,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+206,"Maines T. et al., 2011",Increased virus binding to α2-6,H5N1
+206,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+207,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+207,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+208,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+208,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+210,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+210,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+211,"Stevens J. et al., 2008",Increased virus binding to α2-6,H5N1
+211,"Zhang H. et al., 2015",Increased virus binding to α2-6,H5N1
+211,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+212,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+212,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+213,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+213,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+213,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+214,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+214,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+214,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+215,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+215,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+216,"Guo H. et al., 2017",Increased virus binding to α2-3,H5N1
+216,"Guo H. et al., 2017",Increased virus binding to α2-6,H5N1
+216,"Suttie A. et al., 2019",Increased virus binding to α2-3,H5N1
+216,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+217,"de Vries R. et al., 2017",Increased virus binding to α2-6,H7N9
+217,"Suttie A. et al., 2019",Increased virus binding to α2-6,H7N9
+218,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+218,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+219,"Song H. et al., 2017",Increased virus binding to α2-6,H4N6
+219,"Suttie A. et al., 2019",Increased virus binding to α2-6,H4N6
+219,"Srinivasan K. et al., 2013",Increased virus binding to α2-6,H7N7 (human isolate)
+219,"Suttie A. et al., 2019",Increased virus binding to α2-6,H7N7 (human isolate)
+219,"Sang X. et al., 2015b",Loss of binding to α2–3,H10N8 (human isolate)
+219,"Sang X. et al., 2015b",No binding to α2–6,H10N8 (human isolate)
+219,"Tzarum N. et al., 2017",Loss of binding to α2–3,H10N8 (human isolate)
+219,"Tzarum N. et al., 2017",No binding to α2–6,H10N8 (human isolate)
+219,"Zhang H. et al., 2015",Loss of binding to α2–3,H10N8 (human isolate)
+219,"Zhang H. et al., 2015",No binding to α2–6,H10N8 (human isolate)
+219,"Suttie A. et al., 2019",Loss of binding to α2–3,H10N8 (human isolate)
+219,"Suttie A. et al., 2019",No binding to α2–6,H10N8 (human isolate)
+219,"Stevens J. et al., 2006",Increased virus binding to α2-6,H5N1
+219,"Stevens J. et al., 2006",Decreased antiviral response in host,H5N1
+219,"Stevens J. et al., 2006",Reduced tissue tropism in guinea pigs,H5N1
+219,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+219,"Chutinimitkul S. et al., 2010",Decreased antiviral response in host,H5N1
+219,"Chutinimitkul S. et al., 2010",Reduced tissue tropism in guinea pigs,H5N1
+219,"Chen L. et al., 2012",Increased virus binding to α2-6,H5N1
+219,"Chen L. et al., 2012",Decreased antiviral response in host,H5N1
+219,"Chen L. et al., 2012",Reduced tissue tropism in guinea pigs,H5N1
+219,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+219,"Wang W. et al., 2010",Decreased antiviral response in host,H5N1
+219,"Wang W. et al., 2010",Reduced tissue tropism in guinea pigs,H5N1
+219,"Gao Y. et al., 2009",Increased virus binding to α2-6,H5N1
+219,"Gao Y. et al., 2009",Decreased antiviral response in host,H5N1
+219,"Gao Y. et al., 2009",Reduced tissue tropism in guinea pigs,H5N1
+219,"Wang F. et al., 2015",Increased virus binding to α2-6,H5N1
+219,"Wang F. et al., 2015",Decreased antiviral response in host,H5N1
+219,"Wang F. et al., 2015",Reduced tissue tropism in guinea pigs,H5N1
+219,"Kode S. et al., 2019",Increased virus binding to α2-6,H5N1
+219,"Kode S. et al., 2019",Decreased antiviral response in host,H5N1
+219,"Kode S. et al., 2019",Reduced tissue tropism in guinea pigs,H5N1
+219,"McCown M. et al., 2005",Increased virus binding to α2-6,H5N1
+219,"McCown M. et al., 2005",Decreased antiviral response in host,H5N1
+219,"McCown M. et al., 2005",Reduced tissue tropism in guinea pigs,H5N1
+219,"Ilyushina N. et al., 2008",Increased virus binding to α2-6,H5N1
+219,"Ilyushina N. et al., 2008",Decreased antiviral response in host,H5N1
+219,"Ilyushina N. et al., 2008",Reduced tissue tropism in guinea pigs,H5N1
+219,"Stevens J. et al., 2008",Increased virus binding to α2-6,H5N1
+219,"Stevens J. et al., 2008",Decreased antiviral response in host,H5N1
+219,"Stevens J. et al., 2008",Reduced tissue tropism in guinea pigs,H5N1
+219,"Maines T. et al., 2011",Increased virus binding to α2-6,H5N1
+219,"Maines T. et al., 2011",Decreased antiviral response in host,H5N1
+219,"Maines T. et al., 2011",Reduced tissue tropism in guinea pigs,H5N1
+219,"Harvey R. et al., 2004",Increased virus binding to α2-6,H5N1
+219,"Harvey R. et al., 2004",Decreased antiviral response in host,H5N1
+219,"Harvey R. et al., 2004",Reduced tissue tropism in guinea pigs,H5N1
+219,"Ayora-Talavera G. et al., 2009",Increased virus binding to α2-6,H5N1
+219,"Ayora-Talavera G. et al., 2009",Decreased antiviral response in host,H5N1
+219,"Ayora-Talavera G. et al., 2009",Reduced tissue tropism in guinea pigs,H5N1
+219,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+219,"Suttie A. et al., 2019",Decreased antiviral response in host,H5N1
+219,"Suttie A. et al., 2019",Reduced tissue tropism in guinea pigs,H5N1
+223,"Hurt A. et al., 2007",Reduced susceptibility to Oseltamivir,H5N1
+223,"Hurt A. et al., 2007",Reduced susceptibility to Zanamivir,H5N1
+223,"Boltz D. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+223,"Boltz D. et al., 2010",Reduced susceptibility to Zanamivir,H5N1
+223,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+223,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+224,"Kode S. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+224,"Kode S. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+224,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+224,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+225,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+225,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+225,"Ilyushina N. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+225,"Ilyushina N. et al., 2010",Reduced susceptibility to Zanamivir,H5N1
+225,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+225,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+226,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+226,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+226,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+226,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+226,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+226,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+227,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+227,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+227,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+227,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+228,"Hurt A. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+228,"Hurt A. et al., 2010",Reduced susceptibility to Zanamivir,H5N1
+228,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+228,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+229,"Hurt A. et al., 2009",Reduced susceptibility to Oseltamivir,H5N1
+229,"Hurt A. et al., 2009",Reduced susceptibility to Zanamivir,H5N1
+229,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+229,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+230,"Hurt A. et al., 2009",Reduced susceptibility to Oseltamivir,H5N1
+230,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+231,"Boltz D. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+231,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+232,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+232,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+232,"Ilyushina N. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+232,"Ilyushina N. et al., 2010",Reduced susceptibility to Peramivir,H5N1
+232,"Hurt A. et al., 2009",Reduced susceptibility to Oseltamivir,H5N1
+232,"Hurt A. et al., 2009",Reduced susceptibility to Peramivir,H5N1
+232,"Gubareva L. et al., 2017b",Reduced susceptibility to Oseltamivir,H5N1
+232,"Gubareva L. et al., 2017b",Reduced susceptibility to Peramivir,H5N1
+232,"Le Q. et al., 2005",Reduced susceptibility to Oseltamivir,H5N1
+232,"Le Q. et al., 2005",Reduced susceptibility to Peramivir,H5N1
+232,"Nguyen H. et al., 2013",Reduced susceptibility to Oseltamivir,H5N1
+232,"Nguyen H. et al., 2013",Reduced susceptibility to Peramivir,H5N1
+232,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+232,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+233,"Govorkova E. et al., 2007",Reduced susceptibility to Oseltamivir,H5N1
+233,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+234,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+234,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+234,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+234,"Ilyushina N. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+234,"Ilyushina N. et al., 2010",Reduced susceptibility to Zanamivir,H5N1
+234,"Ilyushina N. et al., 2010",Reduced susceptibility to Peramivir,H5N1
+234,"Le Q. et al., 2005",Reduced susceptibility to Oseltamivir,H5N1
+234,"Le Q. et al., 2005",Reduced susceptibility to Zanamivir,H5N1
+234,"Le Q. et al., 2005",Reduced susceptibility to Peramivir,H5N1
+234,"Earhart K. et al., 2009",Reduced susceptibility to Oseltamivir,H5N1
+234,"Earhart K. et al., 2009",Reduced susceptibility to Zanamivir,H5N1
+234,"Earhart K. et al., 2009",Reduced susceptibility to Peramivir,H5N1
+234,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+234,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+234,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+235,"Creanga A. et al., 2017",Reduced susceptibility to Zanamivir,H5N1
+235,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+236,"Hurt A. et al., 2007",Reduced susceptibility to Oseltamivir,H5N1
+236,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+237,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+237,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+237,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+237,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+237,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+237,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+238,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+238,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+238,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+238,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+238,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+238,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+239,"Baek Y. et al., 2015",Reduced susceptibility to Oseltamivir,H5N1
+239,"Baek Y. et al., 2015",Reduced susceptibility to Peramivir,H5N1
+239,"Baek Y. et al., 2015",Reduced susceptibility to Zanamivir,H5N1
+239,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+239,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+239,"Suttie A. et al., 2019",Reduced susceptibility to Zanamivir,H5N1
+240,"Creanga A. et al., 2017",Reduced susceptibility to Oseltamivir,H5N1
+240,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+241,"Hurt A. et al., 2009",Reduced susceptibility to Oseltamivir,H5N1
+241,"Hurt A. et al., 2009",Reduced susceptibility to Peramivir,H5N1
+241,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+241,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+242,"Hurt A. et al., 2009",Reduced susceptibility to Oseltamivir,H5N1
+242,"Hurt A. et al., 2009",Reduced susceptibility to Peramivir,H5N1
+242,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+242,"Suttie A. et al., 2019",Reduced susceptibility to Peramivir,H5N1
+243,"Boltz D. et al., 2010",Reduced susceptibility to Oseltamivir,H5N1
+243,"Suttie A. et al., 2019",Reduced susceptibility to Oseltamivir,H5N1
+244,"de Vries R. et al., 2017",Dual α2–3 and α2–6 binding,H7N9
+244,"Suttie A. et al., 2019",Dual α2–3 and α2–6 binding,H7N9
+247,"Huang W. et al., 2018",Reduced inhibition to Oseltamivir,H1N1
+247,"Huang W. et al., 2018",Reduced inhibition to Zanamiriv,H1N1
+247,"Lackenby A. et al., 2018",Reduced inhibition to Oseltamivir,H1N1
+247,"Lackenby A. et al., 2018",Reduced inhibition to Zanamiriv,H1N1
+223,"Boltz D. et al., 2010",Reduced inhibition to Oseltamivir,H5N1
+223,"Boltz D. et al., 2010",Reduced inhibition to Zanamiriv,H5N1
+223,"Hurt A. et al., 2007",Reduced inhibition to Oseltamivir,H5N1
+223,"Hurt A. et al., 2007",Reduced inhibition to Zanamiriv,H5N1
+250,"Gubareva L. et al., 2017",Reduced inhibition to Zanamiriv,H1N1
+224,"Kode S. et al., 2019",Reduced inhibition to Oseltamivir,H5N1
+224,"Kode S. et al., 2019",Reduced inhibition to Zanamiriv,H5N1
+225,"Samson M. et al., 2014",From normal to reduced inhibition to Oseltamivir,H1N1
+225,"Samson M. et al., 2014",Reduced inhibition to Zanamiriv,H1N1
+225,"Samson M. et al., 2014",From normal to reduced inhibition to Peramivir,H1N1
+225,"Samson M. et al., 2014",Reduced inhibition to Laninamivir,H1N1
+225,"Baek Y. et al., 2015",From normal to reduced inhibition to Oseltamivir,H1N1
+225,"Baek Y. et al., 2015",Reduced inhibition to Zanamiriv,H1N1
+225,"Baek Y. et al., 2015",From normal to reduced inhibition to Peramivir,H1N1
+225,"Baek Y. et al., 2015",Reduced inhibition to Laninamivir,H1N1
+225,"Baek Y. et al., 2015",Reduced inhibition to Oseltamivir,H5N1
+225,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H5N1
+225,"Ilyushina N. et al., 2010",Reduced inhibition to Oseltamivir,H5N1
+225,"Ilyushina N. et al., 2010",Highly reduced inhibition to Zanamivir,H5N1
+254,"Pizzorno A. et al., 2011",Reduced inhibition to Oseltamivir,H1N1
+254,"Pizzorno A. et al., 2011",Highly reduced inhibition to Zanamivir,H1N1
+254,"Pizzorno A. et al., 2011",Reduced inhibition to Peramivir,H1N1
+254,"Abed Y. et al., 2006",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+254,"Abed Y. et al., 2006",Highly reduced inhibition to Zanamivir,H1N1
+254,"Abed Y. et al., 2006",Highly reduced inhibition to Peramivir,H1N1
+254,"Choi W. et al., 2013",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+254,"Choi W. et al., 2013",Highly reduced inhibition to Zanamivir,H1N1
+254,"Choi W. et al., 2013",Highly reduced inhibition to Peramivir,H1N1
+226,"Baek Y. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+226,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H1N1
+226,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H1N1
+226,"Baek Y. et al., 2015",Highly reduced inhibition to Laninamivir,H1N1
+226,"L'Huillier A. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+226,"L'Huillier A. et al., 2015",Highly reduced inhibition to Peramivir,H1N1
+226,"L'Huillier A. et al., 2015",Highly reduced inhibition to Zanamivir,H1N1
+226,"L'Huillier A. et al., 2015",Highly reduced inhibition to Laninamivir,H1N1
+226,"Lloren K. et al., 2019",Reduced inhibition to Oseltamivir,H1N1
+226,"Lloren K. et al., 2019",Highly reduced inhibition to Peramivir,H1N1
+226,"Lloren K. et al., 2019",Highly reduced inhibition to Zanamivir,H1N1
+226,"Lloren K. et al., 2019",Highly reduced inhibition to Laninamivir,H1N1
+226,"Baek Y. et al., 2015",Reduced inhibition to Oseltamivir,H5N1
+226,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H5N1
+226,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H5N1
+227,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H1N1
+227,"Baek Y. et al., 2015",From reduced to highly reduced inhibition to Peramivir,H1N1
+227,"Baek Y. et al., 2015",Highly reduced inhibition to Laninamivir,H1N1
+227,"Lloren K. et al., 2019",Highly reduced inhibition to Zanamivir,H1N1
+227,"Lloren K. et al., 2019",From reduced to highly reduced inhibition to Peramivir,H1N1
+227,"Lloren K. et al., 2019",Highly reduced inhibition to Laninamivir,H1N1
+227,"Pizzorno A. et al., 2011",Highly reduced inhibition to Zanamivir,H1N1
+227,"Pizzorno A. et al., 2011",From reduced to highly reduced inhibition to Peramivir,H1N1
+227,"Pizzorno A. et al., 2011",Highly reduced inhibition to Laninamivir,H1N1
+227,"Tamura D. et al., 2015b",Highly reduced inhibition to Zanamivir,H1N1
+227,"Tamura D. et al., 2015b",From reduced to highly reduced inhibition to Peramivir,H1N1
+227,"Tamura D. et al., 2015b",Highly reduced inhibition to Laninamivir,H1N1
+227,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H5N1
+227,"Baek Y. et al., 2015",From reduced to highly reduced inhibition to Peramivir,H5N1
+227,"Hurt A. et al., 2009",Highly reduced inhibition to Zanamivir,H5N1
+227,"Hurt A. et al., 2009",From reduced to highly reduced inhibition to Peramivir,H5N1
+228,"Hurt A. et al., 2010",Reduced inhibition to Oseltamivir,H5N1
+228,"Hurt A. et al., 2010",Highly reduced inhibition to Zanamivir,H5N1
+261,"Samson M. et al., 2014",Highly reduced inhibition to Zanamivir,H1N1
+261,"Samson M. et al., 2014",Highly reduced inhibition to Peramivir,H1N1
+261,"Samson M. et al., 2014",Reduced inhibition to Laninamivir,H1N1
+261,"Kaminski M. et al., 2013",Highly reduced inhibition to Zanamivir,H1N1
+261,"Kaminski M. et al., 2013",Highly reduced inhibition to Peramivir,H1N1
+261,"Kaminski M. et al., 2013",Reduced inhibition to Laninamivir,H1N1
+261,"Pizzorno A. et al., 2013",Highly reduced inhibition to Zanamivir,H1N1
+261,"Pizzorno A. et al., 2013",Highly reduced inhibition to Peramivir,H1N1
+261,"Pizzorno A. et al., 2013",Reduced inhibition to Laninamivir,H1N1
+263,"Baek Y. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+263,"Baek Y. et al., 2015",From normal to reduced inhibition to Zanamivir,H1N1
+263,"Baek Y. et al., 2015",Reduced inhibition to Laninamivir,H1N1
+263,"Lloren K. et al., 2019",Reduced inhibition to Oseltamivir,H1N1
+263,"Lloren K. et al., 2019",From normal to reduced inhibition to Zanamivir,H1N1
+263,"Lloren K. et al., 2019",Reduced inhibition to Laninamivir,H1N1
+264,"Monto A. et al., 2006",Highly reduced inhibition to Oseltamivir,H1N1
+264,"Monto A. et al., 2006",Highly reduced inhibition to Zanamivir,H1N1
+265,"Lloren K. et al., 2019",Reduced inhibition to Oseltamivir,H1N1
+265,"Takashita E. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+266,"Takashita E. et al., 2020",Reduced inhibition to Oseltamivir,H1N1
+266,"Takashita E. et al., 2020",Reduced inhibition to Zanamiriv,H1N1
+229,"Hurt A. et al., 2009",Reduced inhibition to Oseltamivir,H5N1
+229,"Hurt A. et al., 2009",Reduced inhibition to Zanamiriv,H5N1
+268,"Takashita E. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+268,"Nguyen H. et al., 2010",Reduced inhibition to Oseltamivir,H1N1
+268,"Huang L. et al., 2014",Reduced inhibition to Oseltamivir,H1N1
+269,"Govorkova E. et al., 2022",Reduced inhibition to Oseltamivir,H1N1
+270,"Takashita E. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+270,"Takashita E. et al., 2015",From normal to reduced inhibition to Zanamivir,H1N1
+270,"Huang L. et al., 2014",Reduced inhibition to Oseltamivir,H1N1
+270,"Huang L. et al., 2014",From normal to reduced inhibition to Zanamivir,H1N1
+270,"van der Vries E. et al., 2010",Reduced inhibition to Oseltamivir,H1N1
+270,"van der Vries E. et al., 2010",From normal to reduced inhibition to Zanamivir,H1N1
+270,"Eshaghi A. et al., 2011",Reduced inhibition to Oseltamivir,H1N1
+270,"Eshaghi A. et al., 2011",From normal to reduced inhibition to Zanamivir,H1N1
+270,"Pizzorno A. et al., 2012",Reduced inhibition to Oseltamivir,H1N1
+270,"Pizzorno A. et al., 2012",From normal to reduced inhibition to Zanamivir,H1N1
+271,"Samson M. et al., 2014",From normal to reduced inhibition to Oseltamivir,H1N1
+230,"Hurt A. et al., 2009",Reduced inhibition to Oseltamivir,H5N1
+277,"Takashita E. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+279,"Gubareva L. et al., 2017",Reduced inhibition to Oseltamivir,H1N1
+279,"Gubareva L. et al., 2017",Reduced inhibition to Zanamiriv,H1N1
+279,"Gubareva L. et al., 2017",From reduced to highly reduced inhibition to Peramivir,H1N1
+279,"Gubareva L. et al., 2017",From reduced to highly reduced inhibition to Laninamivir,H1N1
+231,"Boltz D. et al., 2010",Reduced inhibition to Oseltamivir,H5N1
+232,"Baz M. et al., 2009",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Baz M. et al., 2009",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Okomo-Adhiambo M. et al., 2010b",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Nguyen H. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Nguyen H. et al., 2010b",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Nguyen H. et al., 2012",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Nguyen H. et al., 2012",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Ikematsu H. et al., 2012",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Ikematsu H. et al., 2012",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Takashita E. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Takashita E. et al., 2013",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Okomo-Adhiambo M. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Okomo-Adhiambo M. et al., 2013",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Dapat C. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Dapat C. et al., 2013",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Leang S. et al., 2014",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Leang S. et al., 2014",From reduced to highly reduced inhibition to Peramivir,H1N1
+232,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Peramivir,H1N1
+232,"Sheu T. et al., 2008",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Sheu T. et al., 2008",Highly reduced inhibition to Peramivir,H1N1
+232,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Choi W. et al., 2013",Highly reduced inhibition to Peramivir,H1N1
+232,"Mishin V. et al., 2005",Highly reduced inhibition to Oseltamivir,H1N1
+232,"Mishin V. et al., 2005",Highly reduced inhibition to Peramivir,H1N1
+232,"Baek Y. et al., 2015",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+232,"Baek Y. et al., 2015",From reduced to highly reduced inhibition to Peramivir,H5N1
+232,"Hurt A. et al., 2009",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+232,"Hurt A. et al., 2009",From reduced to highly reduced inhibition to Peramivir,H5N1
+232,"Ilyushina N. et al., 2010",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+232,"Ilyushina N. et al., 2010",From reduced to highly reduced inhibition to Peramivir,H5N1
+232,"Le Q. et al., 2005b",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+232,"Le Q. et al., 2005b",From reduced to highly reduced inhibition to Peramivir,H5N1
+232,"Nguyen H. et al., 2013",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+232,"Nguyen H. et al., 2013",From reduced to highly reduced inhibition to Peramivir,H5N1
+285,"Baek Y. et al., 2015",Reduced inhibition to Oseltamivir,H1N1
+285,"Tamura D. et al., 2015b",Reduced inhibition to Oseltamivir,H1N1
+285,"Choi W. et al., 2013",Reduced inhibition to Zanamiriv,H1N1
+234,"Samson M. et al., 2014",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+234,"Samson M. et al., 2014",From normal to reduced inhibition to Peramivir,H1N1
+234,"Baek Y. et al., 2015",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+234,"Baek Y. et al., 2015",From normal to reduced inhibition to Peramivir,H1N1
+234,"Pizzorno A. et al., 2011",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+234,"Pizzorno A. et al., 2011",From normal to reduced inhibition to Peramivir,H1N1
+234,"Meijer A. et al., 2014",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+234,"Meijer A. et al., 2014",From normal to reduced inhibition to Peramivir,H1N1
+234,"Abed Y. et al., 2006",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+234,"Abed Y. et al., 2006",Reduced inhibition to Peramivir,H1N1
+234,"Choi W. et al., 2013",From reduced to highly reduced inhibition to Oseltamivir,H1N1
+234,"Choi W. et al., 2013",Reduced inhibition to Peramivir,H1N1
+234,"Baek Y. et al., 2015",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+234,"Baek Y. et al., 2015",From normal to reduced inhibition to Zanamivir,H5N1
+234,"Baek Y. et al., 2015",From normal to highly reduced inhibition to Peramivir,H5N1
+234,"Ilyushina N. et al., 2010",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+234,"Ilyushina N. et al., 2010",From normal to reduced inhibition to Zanamivir,H5N1
+234,"Ilyushina N. et al., 2010",From normal to highly reduced inhibition to Peramivir,H5N1
+234,"Le Q. et al., 2005b",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+234,"Le Q. et al., 2005b",From normal to reduced inhibition to Zanamivir,H5N1
+234,"Le Q. et al., 2005b",From normal to highly reduced inhibition to Peramivir,H5N1
+234,"Earhart K. et al., 2009",From reduced to highly reduced inhibition to Oseltamivir,H5N1
+234,"Earhart K. et al., 2009",From normal to reduced inhibition to Zanamivir,H5N1
+234,"Earhart K. et al., 2009",From normal to highly reduced inhibition to Peramivir,H5N1
+290,"Takashita E. et al., 2020",Reduced inhibition to Oseltamivir,H1N1
+290,"Takashita E. et al., 2020",Reduced inhibition to Zanamiriv,H1N1
+290,"Takashita E. et al., 2020",Reduced inhibition to Laninamivir,H1N1
+235,"Creanga A. et al., 2017",Reduced inhibition to Zanamiriv,H5N1
+293,"Lloren K. et al., 2019",Highly reduced inhibition to Oseltamivir,H1N1
+293,"Lloren K. et al., 2019",Highly reduced inhibition to Zanamivir,H1N1
+293,"Lloren K. et al., 2019",Highly reduced inhibition to Peramivir,H1N1
+293,"Lloren K. et al., 2019",Highly reduced inhibition to Laninamivir,H1N1
+294,"Choi W. et al., 2013",Highly reduced inhibition to Zanamivir,H1N1
+295,"Choi W. et al., 2013",Reduced inhibition to Oseltamivir,H1N1
+295,"Choi W. et al., 2013",Highly reduced inhibition to Zanamivir,H1N1
+296,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+297,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+298,"Choi W. et al., 2013",Reduced inhibition to Oseltamivir,H1N1
+299,"Choi W. et al., 2013",Reduced inhibition to Oseltamivir,H1N1
+236,"Hurt A. et al., 2007",Reduced inhibition to Oseltamivir,H5N1
+237,"Baek Y. et al., 2015",Highly reduced inhibition to Oseltamivir,H1N1
+237,"Baek Y. et al., 2015",Reduced inhibition to Zanamiriv,H1N1
+238,"Baek Y. et al., 2015",Highly reduced inhibition to Oseltamivir,H1N1
+238,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H1N1
+238,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H1N1
+238,"Baek Y. et al., 2015",Highly reduced inhibition to Laninamivir,H1N1
+238,"L'Huillier A. et al., 2015",Highly reduced inhibition to Oseltamivir,H1N1
+238,"L'Huillier A. et al., 2015",Highly reduced inhibition to Zanamivir,H1N1
+238,"L'Huillier A. et al., 2015",Highly reduced inhibition to Peramivir,H1N1
+238,"L'Huillier A. et al., 2015",Highly reduced inhibition to Laninamivir,H1N1
+239,"Baek Y. et al., 2015",Highly reduced inhibition to Oseltamivir,H1N1
+239,"Baek Y. et al., 2015",Highly reduced inhibition to Zanamivir,H1N1
+239,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H1N1
+239,"Baek Y. et al., 2015",Highly reduced inhibition to Laninamivir,H1N1
+239,"Tamura D. et al., 2015b",Highly reduced inhibition to Oseltamivir,H1N1
+239,"Tamura D. et al., 2015b",Highly reduced inhibition to Zanamivir,H1N1
+239,"Tamura D. et al., 2015b",Highly reduced inhibition to Peramivir,H1N1
+239,"Tamura D. et al., 2015b",Highly reduced inhibition to Laninamivir,H1N1
+237,"Baek Y. et al., 2015",Highly reduced inhibition to Oseltamivir,H5N1
+237,"Baek Y. et al., 2015",Reduced inhibition to Zanamiriv,H5N1
+237,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H5N1
+238,"Baek Y. et al., 2015",Highly reduced inhibition to Oseltamivir,H5N1
+238,"Baek Y. et al., 2015",Reduced inhibition to Zanamiriv,H5N1
+238,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H5N1
+239,"Baek Y. et al., 2015",Highly reduced inhibition to Oseltamivir,H5N1
+239,"Baek Y. et al., 2015",Reduced inhibition to Zanamiriv,H5N1
+239,"Baek Y. et al., 2015",Highly reduced inhibition to Peramivir,H5N1
+307,"Choi W. et al., 2013",Reduced inhibition to Oseltamivir,H1N1
+307,"Choi W. et al., 2013",Highly reduced inhibition to Zanamivir,H1N1
+308,"Okomo-Adhiambo M. et al., 2010b",Reduced inhibition to Zanamiriv,H1N1
+308,"Okomo-Adhiambo M. et al., 2010b",Reduced inhibition to Peramivir,H1N1
+309,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+309,"Okomo-Adhiambo M. et al., 2010b",Reduced inhibition to Zanamiriv,H1N1
+309,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Peramivir,H1N1
+310,"Gubareva L. et al., 2017",Highly reduced inhibition to Oseltamivir,H1N1
+310,"Gubareva L. et al., 2017",Highly reduced inhibition to Peramivir,H1N1
+311,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+311,"Okomo-Adhiambo M. et al., 2010b",From reduced to highly reduced inhibition to Peramivir,H1N1
+312,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+312,"Okomo-Adhiambo M. et al., 2010b",From reduced to highly reduced inhibition to Peramivir,H1N1
+313,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+313,"Okomo-Adhiambo M. et al., 2010b",Reduced inhibition to Zanamiriv,H1N1
+313,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Peramivir,H1N1
+314,"Okomo-Adhiambo M. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+314,"Okomo-Adhiambo M. et al., 2013",Highly reduced inhibition to Peramivir,H1N1
+241,"Hurt A. et al., 2009",Highly reduced inhibition to Oseltamivir,H1N1
+241,"Hurt A. et al., 2009",Highly reduced inhibition to Peramivir,H1N1
+241,"Hurt A. et al., 2009",Highly reduced inhibition to Oseltamivir,H5N1
+241,"Hurt A. et al., 2009",Highly reduced inhibition to Peramivir,H5N1
+240,"Creanga A. et al., 2017",Reduced inhibition to Oseltamivir,H5N1
+318,"Choi W. et al., 2013",Reduced inhibition to Oseltamivir,H1N1
+319,"Nguyen H. et al., 2012",Highly reduced inhibition to Oseltamivir,H1N1
+319,"Nguyen H. et al., 2012",Reduced inhibition to Zanamiriv,H1N1
+319,"Nguyen H. et al., 2012",Highly reduced inhibition to Peramivir,H1N1
+319,"Nguyen H. et al., 2012",Reduced inhibition to Laninamivir,H1N1
+320,"Nguyen H. et al., 2010",Highly reduced inhibition to Oseltamivir,H1N1
+320,"Nguyen H. et al., 2010",Reduced inhibition to Zanamiriv,H1N1
+320,"Nguyen H. et al., 2010",Highly reduced inhibition to Peramivir,H1N1
+320,"Nguyen H. et al., 2010",Reduced inhibition to Laninamivir,H1N1
+320,"Pizzorno A. et al., 2012",Highly reduced inhibition to Oseltamivir,H1N1
+320,"Pizzorno A. et al., 2012",Reduced inhibition to Zanamiriv,H1N1
+320,"Pizzorno A. et al., 2012",Highly reduced inhibition to Peramivir,H1N1
+320,"Pizzorno A. et al., 2012",Reduced inhibition to Laninamivir,H1N1
+320,"Nguyen H. et al., 2012",Highly reduced inhibition to Oseltamivir,H1N1
+320,"Nguyen H. et al., 2012",Reduced inhibition to Zanamiriv,H1N1
+320,"Nguyen H. et al., 2012",Highly reduced inhibition to Peramivir,H1N1
+320,"Nguyen H. et al., 2012",Reduced inhibition to Laninamivir,H1N1
+242,"Pizzorno A. et al., 2011",Highly reduced inhibition to Oseltamivir,H1N1
+242,"Pizzorno A. et al., 2011",Highly reduced inhibition to Peramivir,H1N1
+242,"Centers for Disease Control and Prevention, 2009(2009",Highly reduced inhibition to Oseltamivir,H1N1
+242,"Centers for Disease Control and Prevention, 2009(2009",Highly reduced inhibition to Peramivir,H1N1
+242,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+242,"Choi W. et al., 2013",Highly reduced inhibition to Peramivir,H1N1
+242,"Hurt A. et al., 2009",Highly reduced inhibition to Oseltamivir,H1N1
+242,"Hurt A. et al., 2009",Highly reduced inhibition to Peramivir,H1N1
+242,"Hurt A. et al., 2009",Highly reduced inhibition to Oseltamivir,H5N1
+242,"Hurt A. et al., 2009",Highly reduced inhibition to Peramivir,H5N1
+324,"Hurt A. et al., 2011",Highly reduced inhibition to Oseltamivir,H1N1
+324,"Hurt A. et al., 2011",Highly reduced inhibition to Peramivir,H1N1
+326,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+327,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+328,"Okomo-Adhiambo M. et al., 2010b",Reduced inhibition to Oseltamivir,H1N1
+328,"Okomo-Adhiambo M. et al., 2010b",From normal to reduced inhibition to Zanamivir,H1N1
+328,"Hurt A. et al., 2012",Reduced inhibition to Oseltamivir,H1N1
+328,"Hurt A. et al., 2012",From normal to reduced inhibition to Zanamivir,H1N1
+329,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+330,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+330,"Choi W. et al., 2013",Reduced inhibition to Zanamiriv,H1N1
+331,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+331,"Choi W. et al., 2013",Reduced inhibition to Zanamiriv,H1N1
+332,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Oseltamivir,H1N1
+332,"Okomo-Adhiambo M. et al., 2010b",Highly reduced inhibition to Peramivir,H1N1
+333,"Choi W. et al., 2013",Highly reduced inhibition to Oseltamivir,H1N1
+333,"Choi W. et al., 2013",Reduced inhibition to Zanamiriv,H1N1
+243,"Boltz D. et al., 2010",Reduced inhibition to Oseltamivir,H5N1
+339,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,H1N1
+348,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,H1N1
+352,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+366,"Herfst S. et al., 2012",Transmitted via aerosol among ferrets,H5N1
+366,"Suttie A. et al., 2019",Transmitted via aerosol among ferrets,H5N1
+367,"Yamada S. et al., 2006",Increased virus binding to α2-6,H5N1
+367,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+368,"Auewarakul P. et al., 2007",Increased virus binding to α2-6,H5N1
+368,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+369,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+369,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+372,"Bogs J. et al., 2011",Reduced susceptibility to Zanamivir,H4N2
+375,"Soubies S. et al., 2010",Reduced susceptibility to Oseltamivir,H7N9
+370,"Nilsson B. et al., 2017",Reduced susceptibility to Laninamivir,H7N9
+370,"Nilsson B. et al., 2017",Reduced susceptibility to Oseltamivir,H7N9
+370,"Nilsson B. et al., 2017",Reduced susceptibility to Peramivir,H7N9
+370,"Nilsson B. et al., 2017",Reduced susceptibility to Zanamivir,H7N9
+371,"Nilsson B. et al., 2017",Reduced susceptibility to Laninamivir,H7N9
+371,"Nilsson B. et al., 2017",Reduced susceptibility to Oseltamivir,H7N9
+371,"Nilsson B. et al., 2017",Reduced susceptibility to Peramivir,H7N9
+371,"Nilsson B. et al., 2017",Reduced susceptibility to Zanamivir,H7N9
+372,"Nilsson B. et al., 2017",Reduced susceptibility to Laninamivir,H7N9
+372,"Nilsson B. et al., 2017",Reduced susceptibility to Oseltamivir,H7N9
+372,"Nilsson B. et al., 2017",Reduced susceptibility to Peramivir,H7N9
+372,"Nilsson B. et al., 2017",Reduced susceptibility to Zanamivir,H7N9
+372,"Krenn B. et al., 2011",Reduced susceptibility to Laninamivir,H7N9
+372,"Krenn B. et al., 2011",Reduced susceptibility to Oseltamivir,H7N9
+372,"Krenn B. et al., 2011",Reduced susceptibility to Peramivir,H7N9
+372,"Krenn B. et al., 2011",Reduced susceptibility to Zanamivir,H7N9
+374,"Nilsson B. et al., 2017",Reduced susceptibility to Laninamivir,H7N9
+374,"Nilsson B. et al., 2017",Reduced susceptibility to Oseltamivir,H7N9
+374,"Nilsson B. et al., 2017",Reduced susceptibility to Peramivir,H7N9
+374,"Nilsson B. et al., 2017",Reduced susceptibility to Zanamivir,H7N9
+362,"de Vries E. et al., 2023",Distruption of the second sialic acid binding site (2SBS),H5N1
+383,"de Vries E. et al., 2023",Distruption of the second sialic acid binding site (2SBS),H5N1
+384,"de Vries E. et al., 2023",Distruption of the second sialic acid binding site (2SBS),H5N1
+385,"Zhang X. et al., 2017",Increased polymerase activity in mice,H10N7
+385,"Zhang X. et al., 2017",Increased virulence in mice,H10N7
+386,"Mänz B. et al., 2013b",Resistance to human interferon-induced antiviral factor MxA,H5N1
+387,"Mänz B. et al., 2013b",Resistance to human interferon-induced antiviral factor MxA,H5N1
+388,"Mänz B. et al., 2013b",Resistance to human interferon-induced antiviral factor MxA,H5N1
+389,"Mänz B. et al., 2013b",Resistance to human interferon-induced antiviral factor MxA,H5N1
+292,"Kwon J. et al., 2018",Reduced inhibition to Zanamiriv,A(H1N1)pdm09
+292,"Kwon J. et al., 2018",Reduced inhibition to Peramivir,A(H1N1)pdm09
+292,"Kwon J. et al., 2018",Reduced inhibition to Oseltamivir,A(H1N1)pdm09
+292,"Kwon J. et al., 2018",Reduced inhibition to Laninamivir,A(H1N1)pdm09
+325,"Kwon J. et al., 2018",Reduced inhibition to Zanamiriv,A(H1N1)pdm09
+325,"Kwon J. et al., 2018",Highly reduced inhibition to Peramivir,A(H1N1)pdm09
+325,"Kwon J. et al., 2018",Highly reduced inhibition to Oseltamivir,A(H1N1)pdm09
+325,"Kwon J. et al., 2018",Reduced inhibition to Laninamivir,A(H1N1)pdm09
+335,"Komeno T. et al., 2022",Resistance to Favipiravir,Unknown
+336,"Gubareva L., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+336,"Takashita E. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+336,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+336,"Jones J. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+337,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+337,"Takashita E. et al., 2020b",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+337,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+337,"Jones J. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+338,"Jones J. et al., 2022b",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+340,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)
+341,"Sato M. et al., 2021",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+342,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+342,"Koszalka P. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+342,"Jones J. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+343,"Hashimoto T. et al., 2021",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+343,"Gubareva L., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+343,"Takashita E. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+343,"Chesnokov A. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+343,"Hickerson B. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+344,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+344,"Koszalka P. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+344,"Jones J. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+344,"Kiso M. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+345,"Hashimoto T. et al., 2021",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)
+345,"Ince W. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)
+346,"Hashimoto T. et al., 2021",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+346,"Govorkova E. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+346,"Takashita E. et al., 2020b",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+346,"Chesnokov A. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+346,"Sato M. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Noshi T. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Takashita E. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Takashita E. et al., 2020b",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Jones J. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Chesnokov A. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Checkmahomed L. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Imai M. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+347,"Koszalka P. et al., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+348,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+348,"Gubareva L., 2019",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+349,"Omoto S. et al., 2018",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)
+350,"Takizawa N. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+352,"Kiso M. et al., 2020",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+353,"Hickerson B. et al., 2022",PA inhibitor (PAI) baloxavir susceptibility,A(H1N1)pdm09
+354,"Pinto R. et al., 2023",Evade human BTN3A3 (inhibitor of avian influenza A viruses replication),Unknown
+355,"Pinto R. et al., 2023",Evade human BTN3A3 (inhibitor of avian influenza A viruses replication),Unknown
+356,"Pinto R. et al., 2023",Evade human BTN3A3 (inhibitor of avian influenza A viruses replication),Unknown
+361,"Lee J. et al., 2008",Conferred Amantidine resistance,Unknown
+357,"Uhlendorff J. et al., 2009",Distruption of the second sialic acid binding site (2SBS),Unknown
+358,"Du W. et al., 2018",Distruption of the second sialic acid binding site (2SBS),Unknown
+359,"Dai M. et al., 2017",Distruption of the second sialic acid binding site (2SBS),Unknown
+362,"Du W. et al., 2018",Distruption of the second sialic acid binding site (2SBS),Unknown
+363,"Dai M. et al., 2021",Distruption of the second sialic acid binding site (2SBS),Unknown
+364,"Dai M. et al., 2021",Distruption of the second sialic acid binding site (2SBS),Unknown
+365,"Meijer A. et al., 2014",Highly reduced inhibition to Zanamivir,Unknown
+365,"Meijer A. et al., 2014",Highly reduced inhibition to Peramivir,Unknown
+365,"Meijer A. et al., 2014",Reduced inhibition to Laninamivir,Unknown
+390,"Jang S. et al., 2024",Increased virus binding to α2-6,H5N1
+390,"Jang S. et al., 2024",Transmissible among ferrets,H5N1
+53,"Xiao C. et al., 2016",Increased polymerase activity in mammalian cells,H10N8
+53,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H10N8
+99,"Kamiki H. et al., 2018",Increased polymerase activity in mammalian cells,H9N2
+99,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+101,"Feng X. et al., 2016",Increased polymerase activity in mammalian cells,H5N1
+101,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+151,"Teng Q. et al., 2016",Enhanced replication in mice,H9N2
+151,"Suttie A. et al., 2019",Enhanced replication in mice,H9N2
+111,"Suttie A. et al., 2019",Increased virulence in mice,H6N1
+111,"Cheng K. et al., 2014",Increased virulence in mice,H6N1
+391,"Zhang J. et al., 2023",Increased viral replication in mice lungs,H9N2
+391,"Zhang J. et al., 2023",Increased virus thermostability,H9N2
+392,"Zhang J. et al., 2023",Increased replication in avian cells,H9N2
+392,"Zhang J. et al., 2023",Increased viral replication in mammalian cells,H9N2
+392,"Zhang J. et al., 2023",Increased virus thermostability,H9N2
+140,"Jin F. et al., 2019",Decreased virulence in mice,H9N2
+140,"Suttie A. et al., 2019",Decreased virulence in mice,H9N2
+140,"Chang P. et al., 2023",Enhanced replication in mammalian cells,H7N9
+140,"Chang P. et al., 2023",Decreased virus binding to α2-3,H7N9
+140,"Chang P. et al., 2023",Decreased virus binding to α2-6,H7N9
+393,"Liu K. et al., 2023",Increased virus binding to α2-6,H9N2
+393,"Liu K. et al., 2023",Enhanced virulence in mice,H9N2
+393,"Liu K. et al., 2023",Enhanced replication in mice,H9N2
+393,"Liu K. et al., 2023",Contact transmission in guinea pigs,H9N2
+394,"Jang S. et al., 2024",Increased virus binding to α2-6,H5N1
+394,"Jang S. et al., 2024",Contact transmission in ferrets,H5N1
+394,"Jang S. et al., 2024",Increased virulence in mice,H5N1
+395,"Zhu M. et al., 2023",Increased virulence in mice,H1N1
+396,"Zhang J. et al., 2023",Increased replication in mammalian cells,H9N2
+396,"Zhang J. et al., 2023",Increased replication in avian cells,H9N2
+396,"Zhang J. et al., 2023",Increased viral replication in mice lungs,H9N2
+159,"Suttie A. et al., 2019",Increased virus binding to α2-6,H6N1
+159,"Vries R. et al., 2017",Increased virus binding to α2-6,H6N1
+159,"AbuBakar U. et al., 2023",Increased virus binding to α2-6,H1N1
+169,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+169,"Qu Z. et al., 2017",Decreased virus binding to α2-3,H6N2
+169,"Sang X. et al., 2015b",Decreased virus binding to α2-3,H10N8 (human isolate)
+169,"Sang X. et al., 2015b",No binding to α2–6,H10N8 (human isolate)
+169,"Song H. et al., 2017",Dual receptor specificity,H4N6
+169,"Song H. et al., 2017",Increased virus binding to α2-6,H4N6
+169,"Stevens J. et al., 2006",Increased virus binding to α2-6,H5N1
+169,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H10N8 (human isolate)
+169,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H6N2
+169,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H7N9
+169,"Suttie A. et al., 2019",Decreased virus binding to α2-6,H7N9
+169,"Suttie A. et al., 2019",Dual receptor specificity,H4N6
+169,"Suttie A. et al., 2019",Increased replication in mammalian cells,H1N2
+169,"Suttie A. et al., 2019",Increased virulence in mice,H1N2
+169,"Suttie A. et al., 2019",Increased virus binding to α2-6,H4N6
+169,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+169,"Suttie A. et al., 2019",No binding to α2–6,H10N8 (human isolate)
+169,"Wang F. et al., 2015",Increased virus binding to α2-6,H5N1
+169,"Wang W. et al., 2010",Increased virus binding to α2-6,H5N1
+169,"Yu Z. et al., 2019",Increased replication in mammalian cells,H1N2
+169,"Yu Z. et al., 2019",Increased virulence in mice,H1N2
+169,"Zhang H. et al., 2015",Decreased virus binding to α2-3,H10N8 (human isolate)
+169,"Zhang H. et al., 2015",No binding to α2–6,H10N8 (human isolate)
+169,"de Vries R. et al., 2017",Decreased virus binding to α2-3,H7N9
+169,"de Vries R. et al., 2017",Decreased virus binding to α2-6,H7N9
+169,"Sun H. et al., 2017",Increased virus binding to α2-6,H6N6
+397,"Tan L. et al., 2014",Increased virulence in mice,H6N6
+398,"Lyashko A. et al., 2023",Decreased virulence in mice,H7N2
+398,"Lyashko A. et al., 2023",Increased virus binding to α2-6,H7N2
+399,"Tang S. et al., 2024",Decreased pH of fusion,H6N2
+400,"Tang S. et al., 2024",Decreased pH of fusion,H6N2
+400,"Tang S. et al., 2024",Increased replication in mammalian cells,H6N2
+400,"Tang S. et al., 2024",Increased virulence in mice,H6N2
+400,"Tang S. et al., 2024",Enhanced replication in guinea pigs,H6N2
+401,"Eggink D. et al., 2020",Increased virus binding to α2-6,H5N1
+137,"Kongchanagul A. et al., 2008",Increased infectivity in mammalian cells,H5N1
+137,"Naughtin M. et al., 2011",Increased infectivity in mammalian cells,H5N1
+137,"Peng X. et al., 2018",Increased virus binding to α2-6,H5N6
+137,"Peng X. et al., 2018",Loss of binding to α2–3,H5N6
+137,"Suttie A. et al., 2019",Increased infectivity in mammalian cells,H5N1
+137,"Crusat M. et al., 2013",Decreased virus binding to α2-3,H5N1
+402,"Hu M. et al., 2023",Prevents airborne transmission in ferrets,H3N2
+402,"Hu M. et al., 2023",Increased virus binding to α2-3,H3N2
+402,"Liang W. et al., 2022",Increased virus binding to α2-3,H3N2
+160,"Bosch F. et al., 1981",Increased virus binding to α2-6,H6N2
+160,"Bosch F. et al., 1981",Transmitted via aerosol among guinea pigs,H6N2
+160,"Chutinimitkul S. et al., 2010",Decreased virus binding to α2-3,H5N1
+160,"Chutinimitkul S. et al., 2010",Increased virus binding to α2-6,H5N1
+160,"Qu Z. et al., 2017",Increased virus binding to α2-6,H6N2
+160,"Qu Z. et al., 2017",Transmitted via aerosol among guinea pigs,H6N2
+160,"Ramos I. et al., 2013",Decreased virus binding to α2-6,H7N9
+160,"Ramos I. et al., 2013",Increased virus binding to α2-3,H7N9
+160,"Sang X. et al., 2015b",Loss of binding to α2–3,H10N8 (human isolate)
+160,"Song H. et al., 2017",Increased virus binding to α2-6,H4N6
+160,"Suttie A. et al., 2019",Decreased virus binding to α2-3,H5N1
+160,"Suttie A. et al., 2019",Decreased virus binding to α2-6,H7N9
+160,"Suttie A. et al., 2019",Enhanced contact transmission in ferrets,H9N2
+160,"Suttie A. et al., 2019",Enhanced replication in ferrets,H9N2
+160,"Suttie A. et al., 2019",Enhanced replication in mammalian cells,H9N2
+160,"Suttie A. et al., 2019",Increased virus binding to α2-3,H7N9
+160,"Suttie A. et al., 2019",Increased virus binding to α2-6,H4N6
+160,"Suttie A. et al., 2019",Increased virus binding to α2-6,H5N1
+160,"Suttie A. et al., 2019",Increased virus binding to α2-6,H6N2
+160,"Suttie A. et al., 2019",Increased virus binding to α2-6,H9N2
+160,"Suttie A. et al., 2019",Loss of binding to α2–3,H10N8 (human isolate)
+160,"Suttie A. et al., 2019",Transmitted via aerosol among guinea pigs,H6N2
+160,"Tzarum N. et al., 2017",Loss of binding to α2–3,H10N8 (human isolate)
+160,"Wan H. et al., 2007",Enhanced contact transmission in ferrets,H9N2
+160,"Wan H. et al., 2007",Enhanced replication in ferrets,H9N2
+160,"Wan H. et al., 2007",Enhanced replication in mammalian cells,H9N2
+160,"Wan H. et al., 2007",Increased virus binding to α2-6,H9N2
+160,"Wan H. et al., 2008",Enhanced contact transmission in ferrets,H9N2
+160,"Wan H. et al., 2008",Enhanced replication in ferrets,H9N2
+160,"Wan H. et al., 2008",Enhanced replication in mammalian cells,H9N2
+160,"Wan H. et al., 2008",Increased virus binding to α2-6,H9N2
+160,"Xu R. et al., 2013",Decreased virus binding to α2-6,H7N9
+160,"Xu R. et al., 2013",Increased virus binding to α2-3,H7N9
+160,"Zhang H. et al., 2015",Loss of binding to α2–3,H10N8 (human isolate)
+160,"AbuBakar U. et al., 2023",Increased virus binding to α2-6,H2N2
+160,"AbuBakar U. et al., 2023",Decreased virus binding to α2-3,H2N2
+160,"Song H. et al., 2017",Increased virus binding to α2-6,H3N2
+160,"Song H. et al., 2017",Decreased virus binding to α2-3,H3N2
+404,"Suzuki Y. et al., 1989",Increased virus binding to α2-6,H3N1
+405,"Eggink D. et al., 2020",Increased virus binding to α2-6,H5N1
+405,"Imai M. et al., 2012",Increased virus binding to α2-6,H5N1
+405,"Imai M. et al., 2012",Decreased virus binding to α2-3,H5N1
+46,"Suttie A. et al., 2019",Increased virulence in mice,H5N2
+46,"Zhou B. et al., 2011",Increased virulence in mice,H5N2
+46,"Suttie A. et al., 2019",Increased virulence in mice,H5N9
+46,"Zhou B. et al., 2011",Increased virulence in mice,H5N9
+46,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N2
+46,"Zhou B. et al., 2011",Increased polymerase activity in mammalian cells,H5N2
+46,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N9
+46,"Zhou B. et al., 2011",Increased polymerase activity in mammalian cells,H5N9
+46,"Cauldwell A. et al., 2013",Increased polymerase activity in mammalian cells,H5N1
+46,"Cauldwell A. et al., 2013",Increased polymerase activity in avian cells,H5N1
+52,"Restori K. et al., 2024",Enhanced contact transmission in ferrets,H5N1
+52,"Restori K. et al., 2024",Enhanced replication in ferrets,H5N1
+52,"Restori K. et al., 2024",Transmitted via aerosol among ferrets,H5N1
+52,"Bussey K. et al., 2010",Increased polymerase activity in mammalian cells,H5N1
+52,"Cauldwell A. et al., 2013",Increased polymerase activity in mammalian cells,H5N1
+52,"Foeglein Á. et al., 2011",Increased polymerase activity in mammalian cells,H5N1
+52,"Mok C. et al., 2014",Increased polymerase activity in mammalian cells,H5N1
+52,"Peacock T. et al., 2023",Increased polymerase activity in mammalian cells,H5N1
+52,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H5N1
+52,"Bussey K. et al., 2010",Increased polymerase activity in mammalian cells,H3N2 (avian)
+52,"Foeglein Á. et al., 2011",Increased polymerase activity in mammalian cells,H3N2 (avian)
+52,"Mok C. et al., 2014",Increased polymerase activity in mammalian cells,H3N2 (avian)
+52,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H3N2 (avian)
+52,"Bussey K. et al., 2010",Increased polymerase activity in mammalian cells,H7N9
+52,"Foeglein Á. et al., 2011",Increased polymerase activity in mammalian cells,H7N9
+52,"Mok C. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+52,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+52,"Bussey K. et al., 2010",Increased polymerase activity in mammalian cells,H1N1
+52,"Bussey K. et al., 2010",Increased polymerase activity in avian cells,H5N1
+52,"Foeglein Á. et al., 2011",Increased polymerase activity in avian cells,H5N1
+52,"Mok C. et al., 2014",Increased polymerase activity in avian cells,H5N1
+52,"Peacock T. et al., 2023",Increased polymerase activity in avian cells,H5N1
+52,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H5N1
+52,"Bussey K. et al., 2010",Increased polymerase activity in avian cells,H3N2 (avian)
+52,"Foeglein Á. et al., 2011",Increased polymerase activity in avian cells,H3N2 (avian)
+52,"Mok C. et al., 2014",Increased polymerase activity in avian cells,H3N2 (avian)
+52,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H3N2 (avian)
+52,"Bussey K. et al., 2010",Increased polymerase activity in avian cells,H7N9
+52,"Foeglein Á. et al., 2011",Increased polymerase activity in avian cells,H7N9
+52,"Mok C. et al., 2014",Increased polymerase activity in avian cells,H7N9
+52,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H7N9
+406,"Peacock T. et al., 2023",Increased polymerase activity in mammalian cells,H5N1
+406,"Cauldwell A. et al., 2013",Increased polymerase activity in mammalian cells,H5N1
+67,"Bogs J. et al., 2011",Contributes to contact transmission in guinea pigs,H5N1
+67,"Bortz E. et al., 2011",Contributes to contact transmission in guinea pigs,H5N1
+67,"Chen H. et al., 2007",Contributes to contact transmission in guinea pigs,H5N1
+67,"Fornek J. et al., 2009",Contributes to contact transmission in guinea pigs,H5N1
+67,"Hatta H. et al., 2001",Contributes to contact transmission in guinea pigs,H5N1
+67,"Hatta M. et al., 2007",Contributes to contact transmission in guinea pigs,H5N1
+67,"Herfst S. et al., 2012",Contributes to contact transmission in guinea pigs,H5N1
+67,"Kim J. et al., 2010",Contributes to contact transmission in guinea pigs,H5N1
+67,"Le Q. et al., 2005",Contributes to contact transmission in guinea pigs,H5N1
+67,"Long J. et al., 2013",Contributes to contact transmission in guinea pigs,H5N1
+67,"Manzoor R. et al., 2009",Contributes to contact transmission in guinea pigs,H5N1
+67,"Mase M. et al., 2006",Contributes to contact transmission in guinea pigs,H5N1
+67,"Richard M. et al., 2017",Contributes to contact transmission in guinea pigs,H5N1
+67,"Shinya K. et al., 2004",Contributes to contact transmission in guinea pigs,H5N1
+67,"Suttie A. et al., 2019",Contributes to contact transmission in guinea pigs,H5N1
+67,"Bogs J. et al., 2011",Enhanced polymerase activity,H5N1
+67,"Bortz E. et al., 2011",Enhanced polymerase activity,H5N1
+67,"Chen H. et al., 2007",Enhanced polymerase activity,H5N1
+67,"Fornek J. et al., 2009",Enhanced polymerase activity,H5N1
+67,"Hatta H. et al., 2001",Enhanced polymerase activity,H5N1
+67,"Hatta M. et al., 2007",Enhanced polymerase activity,H5N1
+67,"Herfst S. et al., 2012",Enhanced polymerase activity,H5N1
+67,"Kim J. et al., 2010",Enhanced polymerase activity,H5N1
+67,"Le Q. et al., 2005",Enhanced polymerase activity,H5N1
+67,"Long J. et al., 2013",Enhanced polymerase activity,H5N1
+67,"Manzoor R. et al., 2009",Enhanced polymerase activity,H5N1
+67,"Mase M. et al., 2006",Enhanced polymerase activity,H5N1
+67,"Richard M. et al., 2017",Enhanced polymerase activity,H5N1
+67,"Shinya K. et al., 2004",Enhanced polymerase activity,H5N1
+67,"Suttie A. et al., 2019",Enhanced polymerase activity,H5N1
+67,"Bogs J. et al., 2011",Decreased replication in avian cells,H5N1
+67,"Bortz E. et al., 2011",Decreased replication in avian cells,H5N1
+67,"Chen H. et al., 2007",Decreased replication in avian cells,H5N1
+67,"Fornek J. et al., 2009",Decreased replication in avian cells,H5N1
+67,"Hatta H. et al., 2001",Decreased replication in avian cells,H5N1
+67,"Hatta M. et al., 2007",Decreased replication in avian cells,H5N1
+67,"Herfst S. et al., 2012",Decreased replication in avian cells,H5N1
+67,"Kim J. et al., 2010",Decreased replication in avian cells,H5N1
+67,"Le Q. et al., 2005",Decreased replication in avian cells,H5N1
+67,"Long J. et al., 2013",Decreased replication in avian cells,H5N1
+67,"Manzoor R. et al., 2009",Decreased replication in avian cells,H5N1
+67,"Mase M. et al., 2006",Decreased replication in avian cells,H5N1
+67,"Richard M. et al., 2017",Decreased replication in avian cells,H5N1
+67,"Shinya K. et al., 2004",Decreased replication in avian cells,H5N1
+67,"Suttie A. et al., 2019",Decreased replication in avian cells,H5N1
+67,"De Jong R. et al., 2013",Increased virulence in ferrets,H7N7
+67,"Sediri H. et al., 2016",Increased virulence in ferrets,H7N7
+67,"Suttie A. et al., 2019",Increased virulence in ferrets,H7N7
+67,"Bogs J. et al., 2011",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Bortz E. et al., 2011",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Chen H. et al., 2007",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Fornek J. et al., 2009",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Hatta H. et al., 2001",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Hatta M. et al., 2007",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Herfst S. et al., 2012",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Kim J. et al., 2010",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Le Q. et al., 2005",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Long J. et al., 2013",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Manzoor R. et al., 2009",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Mase M. et al., 2006",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Richard M. et al., 2017",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Shinya K. et al., 2004",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Suttie A. et al., 2019",Contributes to airborne pathogenicity in ferrets,H5N1
+67,"Cheng K. et al., 2014",Increased virulence in mice,H6N1
+67,"Suttie A. et al., 2019",Increased virulence in mice,H6N1
+67,"Bogs J. et al., 2011",Increased virulence in mice,H5N1
+67,"Bortz E. et al., 2011",Increased virulence in mice,H5N1
+67,"Chen H. et al., 2007",Increased virulence in mice,H5N1
+67,"Fornek J. et al., 2009",Increased virulence in mice,H5N1
+67,"Hatta H. et al., 2001",Increased virulence in mice,H5N1
+67,"Hatta M. et al., 2007",Increased virulence in mice,H5N1
+67,"Herfst S. et al., 2012",Increased virulence in mice,H5N1
+67,"Kim J. et al., 2010",Increased virulence in mice,H5N1
+67,"Le Q. et al., 2005",Increased virulence in mice,H5N1
+67,"Long J. et al., 2013",Increased virulence in mice,H5N1
+67,"Manzoor R. et al., 2009",Increased virulence in mice,H5N1
+67,"Mase M. et al., 2006",Increased virulence in mice,H5N1
+67,"Richard M. et al., 2017",Increased virulence in mice,H5N1
+67,"Shinya K. et al., 2004",Increased virulence in mice,H5N1
+67,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+67,"Sang X. et al., 2015",Increased virulence in mice,H9N2
+67,"Sediri H. et al., 2016",Increased virulence in mice,H9N2
+67,"Suttie A. et al., 2019",Increased virulence in mice,H9N2
+67,"Suttie A. et al., 2019",Increased virulence in mice,H4N6
+67,"Xu G. et al., 2020",Increased virulence in mice,H4N6
+67,"De Jong R. et al., 2013",Increased virulence in mice,H7N7
+67,"Sediri H. et al., 2016",Increased virulence in mice,H7N7
+67,"Suttie A. et al., 2019",Increased virulence in mice,H7N7
+67,"Sediri H. et al., 2016",Increased virulence in mice,H7N9
+67,"Suttie A. et al., 2019",Increased virulence in mice,H7N9
+67,"Zhang H. et al., 2014",Increased virulence in mice,H7N9
+67,"Tan L. et al., 2014",Increased virulence in mice,H6N6
+67,"Bogs J. et al., 2011",Decreases virulence in chickens,H5N1
+67,"Bortz E. et al., 2011",Decreases virulence in chickens,H5N1
+67,"Chen H. et al., 2007",Decreases virulence in chickens,H5N1
+67,"Fornek J. et al., 2009",Decreases virulence in chickens,H5N1
+67,"Hatta H. et al., 2001",Decreases virulence in chickens,H5N1
+67,"Hatta M. et al., 2007",Decreases virulence in chickens,H5N1
+67,"Herfst S. et al., 2012",Decreases virulence in chickens,H5N1
+67,"Kim J. et al., 2010",Decreases virulence in chickens,H5N1
+67,"Le Q. et al., 2005",Decreases virulence in chickens,H5N1
+67,"Long J. et al., 2013",Decreases virulence in chickens,H5N1
+67,"Manzoor R. et al., 2009",Decreases virulence in chickens,H5N1
+67,"Mase M. et al., 2006",Decreases virulence in chickens,H5N1
+67,"Richard M. et al., 2017",Decreases virulence in chickens,H5N1
+67,"Shinya K. et al., 2004",Decreases virulence in chickens,H5N1
+67,"Suttie A. et al., 2019",Decreases virulence in chickens,H5N1
+67,"Bogs J. et al., 2011",Decreased polymerase activity in avian cells,H5N1
+67,"Bortz E. et al., 2011",Decreased polymerase activity in avian cells,H5N1
+67,"Chen H. et al., 2007",Decreased polymerase activity in avian cells,H5N1
+67,"Fornek J. et al., 2009",Decreased polymerase activity in avian cells,H5N1
+67,"Hatta H. et al., 2001",Decreased polymerase activity in avian cells,H5N1
+67,"Hatta M. et al., 2007",Decreased polymerase activity in avian cells,H5N1
+67,"Herfst S. et al., 2012",Decreased polymerase activity in avian cells,H5N1
+67,"Kim J. et al., 2010",Decreased polymerase activity in avian cells,H5N1
+67,"Le Q. et al., 2005",Decreased polymerase activity in avian cells,H5N1
+67,"Long J. et al., 2013",Decreased polymerase activity in avian cells,H5N1
+67,"Manzoor R. et al., 2009",Decreased polymerase activity in avian cells,H5N1
+67,"Mase M. et al., 2006",Decreased polymerase activity in avian cells,H5N1
+67,"Richard M. et al., 2017",Decreased polymerase activity in avian cells,H5N1
+67,"Shinya K. et al., 2004",Decreased polymerase activity in avian cells,H5N1
+67,"Suttie A. et al., 2019",Decreased polymerase activity in avian cells,H5N1
+67,"Cheng K. et al., 2014",Increased polymerase activity in mammalian cells,H6N1
+67,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H6N1
+67,"Cauldwell A. et al., 2013",Increased polymerase activity in mammalian cells,H5N1
+67,"Peacock T. et al., 2023",Increased polymerase activity in mammalian cells,H5N1
+67,"Sang X. et al., 2015",Increased polymerase activity in mammalian cells,H9N2
+67,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+67,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+67,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H4N6
+67,"Xu G. et al., 2020",Increased polymerase activity in mammalian cells,H4N6
+67,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+67,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+67,"Zhang H. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+67,"De Jong R. et al., 2013",Increased polymerase activity in avian cells,H7N7
+67,"Sediri H. et al., 2016",Increased polymerase activity in avian cells,H7N7
+67,"Suttie A. et al., 2019",Increased polymerase activity in avian cells,H7N7
+67,"Suttie A. et al., 2019",Increased replication in mammalian cells,H4N6
+67,"Xu G. et al., 2020",Increased replication in mammalian cells,H4N6
+67,"Sediri H. et al., 2016",Increased replication in mammalian cells,H7N9
+67,"Suttie A. et al., 2019",Increased replication in mammalian cells,H7N9
+67,"Zhang H. et al., 2014",Increased replication in mammalian cells,H7N9
+75,"Gao Y. et al., 2009",Contact transmission in guinea pigs,H5N1
+75,"Le Q. et al., 2009",Contact transmission in guinea pigs,H5N1
+75,"Li Z. et al., 2005",Contact transmission in guinea pigs,H5N1
+75,"Steel J. et al., 2009",Contact transmission in guinea pigs,H5N1
+75,"Suttie A. et al., 2019",Contact transmission in guinea pigs,H5N1
+75,"Taft A. et al., 2015",Contact transmission in guinea pigs,H5N1
+75,"Gao Y. et al., 2009",Increased polymerase activity in guinea pigs,H5N1
+75,"Le Q. et al., 2009",Increased polymerase activity in guinea pigs,H5N1
+75,"Li Z. et al., 2005",Increased polymerase activity in guinea pigs,H5N1
+75,"Steel J. et al., 2009",Increased polymerase activity in guinea pigs,H5N1
+75,"Suttie A. et al., 2019",Increased polymerase activity in guinea pigs,H5N1
+75,"Taft A. et al., 2015",Increased polymerase activity in guinea pigs,H5N1
+75,"Gao Y. et al., 2009",Enhanced replication in guinea pigs,H5N1
+75,"Le Q. et al., 2009",Enhanced replication in guinea pigs,H5N1
+75,"Li Z. et al., 2005",Enhanced replication in guinea pigs,H5N1
+75,"Steel J. et al., 2009",Enhanced replication in guinea pigs,H5N1
+75,"Suttie A. et al., 2019",Enhanced replication in guinea pigs,H5N1
+75,"Taft A. et al., 2015",Enhanced replication in guinea pigs,H5N1
+75,"Gao Y. et al., 2009",Increased virulence in guinea pigs,H5N1
+75,"Le Q. et al., 2009",Increased virulence in guinea pigs,H5N1
+75,"Li Z. et al., 2005",Increased virulence in guinea pigs,H5N1
+75,"Steel J. et al., 2009",Increased virulence in guinea pigs,H5N1
+75,"Suttie A. et al., 2019",Increased virulence in guinea pigs,H5N1
+75,"Taft A. et al., 2015",Increased virulence in guinea pigs,H5N1
+75,"Suttie A. et al., 2019",Increased viral replication in mammalian cells,H1N2
+75,"Yu Z. et al., 2019",Increased viral replication in mammalian cells,H1N2
+75,"Gao Y. et al., 2009",Increased virulence in mice,H5N1
+75,"Le Q. et al., 2009",Increased virulence in mice,H5N1
+75,"Li Z. et al., 2005",Increased virulence in mice,H5N1
+75,"Steel J. et al., 2009",Increased virulence in mice,H5N1
+75,"Suttie A. et al., 2019",Increased virulence in mice,H5N1
+75,"Taft A. et al., 2015",Increased virulence in mice,H5N1
+75,"Suttie A. et al., 2019",Increased virulence in mice,H1N2
+75,"Yu Z. et al., 2019",Increased virulence in mice,H1N2
+75,"Chen G. et al., 2016",Enhanced replication in mice,H7N9
+75,"Mok C. et al., 2014",Enhanced replication in mice,H7N9
+75,"Suttie A. et al., 2019",Enhanced replication in mice,H7N9
+75,"Sediri H. et al., 2016",Increased polymerase activity in mammalian cells,H9N2
+75,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+75,"Chen G. et al., 2016",Increased polymerase activity in mammalian cells,H7N9
+75,"Mok C. et al., 2014",Increased polymerase activity in mammalian cells,H7N9
+75,"Suttie A. et al., 2019",Increased polymerase activity in mammalian cells,H7N9
+75,"Peacock T. et al., 2023",Increased polymerase activity in mammalian cells,H5N1
+75,"Cauldwell A. et al., 2013",Increased polymerase activity in mammalian cells,H5N1
+407,"Peacock T. et al., 2023",Increased polymerase activity in avian cells,H5N1
+407,"Peacock T. et al., 2023",Increased polymerase activity in mammalian cells,H5N1
+408,"Peacock T. et al., 2023",Increased polymerase activity in mammalian cells,H5N1
+408,"Peacock T. et al., 2023",Increased polymerase activity in avian cells,H5N1
+409,"Zhao Z. et al., 2014",Enhanced polymerase activity,H1N1
+409,"Zhao Z. et al., 2014",Enhanced virulence in mice,H1N1
+410,"Mehle A. et al., 2009",Increased polymerase activity in mammalian cells,H1N1
+410,"Mehle A. et al., 2009",Increased viral replication in mammalian cells,H1N1
+411,"Zhang T. et al., 2017",Increased viral replication in mammalian cells,H1N1
+411,"Zhang T. et al., 2017",Enhanced virulence in mice,H1N1
+412,"Guo Y. et al., 2023",Increased virulence in mice,H9N2
+412,"Guo Y. et al., 2023",Increased viral replication in mammalian cells,H9N2
+412,"Guo Y. et al., 2023",Increased polymerase activity in mammalian cells,H9N2
+413,"Arai Y. et al., 2019",Increased polymerase activity in mammalian cells,H9N2
+413,"Arai Y. et al., 2019",Enhanced pathogenicity in mice,H9N2
+414,"Sutton T. et al., 2014",Transmitted via aerosol among ferrets,H7N1
+415,"Chan M. et al., 2020",Increased replication in mammalian cells,H7N9
+416,"Choi E. et al., 2020",Increased replication in mammalian cells,H3N2
+416,"Choi E. et al., 2020",Increased viral replication in mice lungs,H3N2
+417,"Zhang C. et al., 2021",Transmitted via aerosol among guinea pigs,H7N9
+418,"Good M. et al., 2024",Increased binding breadth to glycans bearing terminal α2-3 sialic acids,H5N1
+246,"Sang X. et al., 2015b",Enhanced contact transmission in guinea pigs,H9N2
+246,"Suttie A. et al., 2019",Enhanced contact transmission in guinea pigs,H9N2
+209,"Sorrell E. et al., 2009",Enhanced replication in ferrets,H3N2 (human isolate) backbone with H9N2 HA
+209,"Suttie A. et al., 2019",Enhanced replication in ferrets,H3N2 (human isolate) backbone with H9N2 HA
+209,"Sorrell E. et al., 2009",Transmitted via aerosol among ferrets,H3N2 (human isolate) backbone with H9N2 HA
+209,"Suttie A. et al., 2019",Transmitted via aerosol among ferrets,H3N2 (human isolate) backbone with H9N2 HA
+245,"Sang X. et al., 2015b",Enhanced contact transmission in guinea pigs,H9N2
+245,"Suttie A. et al., 2019",Enhanced contact transmission in guinea pigs,H9N2
+419,"Zhang M. et al., 2025",Increased replication in avian cells,H5N1
+419,"Zhang M. et al., 2025",Enhanced virulence in mice,H5N1
+419,"Zhang M. et al., 2025",Enhanced replication in mammalian cells,H5N1
+419,"Zhang M. et al., 2025",Enhanced replication in mice,H5N1
