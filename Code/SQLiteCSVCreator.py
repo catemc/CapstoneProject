@@ -12,4 +12,5 @@ merged_df.to_csv('C:/Users/catem/OneDrive/Desktop/CapstoneProject/CombinedEffect
 mutations.to_csv('C:/Users/catem/OneDrive/Desktop/CapstoneProject/MarkerMutations.csv', index=False)
 effects_dropped.to_csv('C:/Users/catem/OneDrive/Desktop/CapstoneProject/MarkerEffects.csv', index=False)
 
+
 conn.close()
