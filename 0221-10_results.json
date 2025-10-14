@@ -1,0 +1,162 @@
+[
+    {
+        "protein": "HA1-5",
+        "mutation": "S227N",
+        "subtype": "H5N1",
+        "effect": [
+            "Enhanced replication in mammalian cells"
+        ],
+        "quote": "only the removal of the 158N glycosylation, together with an S227N change, resulted in more-efﬁcient viral replication in the upper respiratory tract of ferrets and an increased serum antibody response",
+        "citation": "Wang et al., 2010"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q226L",
+        "subtype": "H3N2",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "For influenza H3 subtype viruses, substitutions of Q226L and G228S could completely reverse receptor-binding specificity from α2-3SAL to α2-6SAL (4, 21).",
+        "citation": "Rogers et al., 1983"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T160A",
+        "subtype": "H5N1",
+        "effect": [
+            "Decreased glycosylation at N158"
+        ],
+        "quote": "To confirm whether a T-to-A substitution at residue 160 that is present in the HA protein of HK03 affected the 158N glycosylation status of VN04 HA, Western blotting was performed to examine the mobility change of the HA protein on a polyacrylamide gel.",
+        "citation": "Xue et al., 2007"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "VOL. 84",
+        "subtype": "H5N1",
+        "effect": [
+            "Enhanced replication in mammalian cells"
+        ],
+        "quote": "the most frequently isolated large-plaque isolates contained sequence changes at or near the HAVOL. 84",
+        "citation": "Unknown"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "E190D",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "The 190D or 225E mutation has been reported to affect receptor speciﬁcities of H1 viruses (6, 15, 19, 25).",
+        "citation": "Herfst et al., 2010"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T160A",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "The VN04 cavariants with the 160A residue (VN-T160A, VN-S159N/T160A, VN-T160A/S227N, VN-Q226L/T160A, and VN-Q226L/G228S/T160A) re-acted with the HK03 ferret serum much better than the VN04 ca virus and other VN04 cavariants, suggesting that the 160 residue determined strain-speciﬁc reactivity.",
+        "citation": "Wang et al., 2012"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "S125N",
+        "subtype": "H5N1",
+        "effect": [
+            "Dual receptor specificity"
+        ],
+        "quote": "The introduction of single amino acids from HK03 HA, S125N, S159N, T160A, K193R, and the double S159N/T160A and T160A/S227N mutations resulted in increased binding to /H9251-2,6SAL without a loss of binding to /H9251-2,3SAL.",
+        "citation": "Li et al., 2010"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q226L",
+        "subtype": "H5N1",
+        "effect": [
+            "Decreased virus binding to α2-3"
+        ],
+        "quote": "The Q226L mutation reduced the receptorbinding afﬁnity for /H92512,3SAL without detectable binding to /H92512,6SAL being shown.",
+        "citation": "Stevens et al., 2010"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T160A",
+        "subtype": "H5N1",
+        "effect": [
+            "Enhanced replication in ferrets"
+        ],
+        "quote": "the T160A mutation ... enabled the VN04 cavirus to replicate more efficiently in the upper respiratory tract of ferrets",
+        "citation": "Maines et al., 2006"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T160A",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "Among the 9 amino acids that differed between these two H5N1 viruses, four amino acid changes, at residues 125, 159, 160, and 193, individually resulted in increased binding to /H92512,6SAL.",
+        "citation": "Wang et al., 2008"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T160A",
+        "subtype": "H5N1",
+        "effect": [
+            "Dual receptor specificity"
+        ],
+        "quote": "glycosylation through the T160A mutation or the K193R change in the H5 HA of the VN04 ca virus allowed the virus to bind to α2,6SAL receptors.",
+        "citation": "Chen et al., 2010"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q226L",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased pseudovirus binding to α2-6"
+        ],
+        "quote": "the introduced Q226L and G228S mutations were associated with increased sensitivity in the HAI assay using sera from ferrets... did not change the receptor binding specificity of the VN04 ca virus. Residues 190 and 225 have been found to affect virus receptor binding specificity for the H1N1 viruses, including the 1918 and 2009 H1N1 pandemic viruses (3, 6, 27).",
+        "citation": "Hensley et al., 2009"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "193R",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "H5N1 viruses in clade 2.2 have evolved to have receptor binding speciﬁcity to α2-6SAL due to the loss of glycosylation at residue 158 and the acquisition of the 193R residue",
+        "citation": "Chen et al., 2006"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q226L",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased virulence in mice"
+        ],
+        "quote": "Avian inﬂuenza (H5N1) viruses isolated from humans in Asia in 2004 exhibit increased virulence in mammals.",
+        "citation": "Maines et al., 2005"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Gln226Leu",
+        "subtype": "H3N2",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "a single amino acid change in hemagglutinin altered its recognition of sialyloligosaccharides",
+        "citation": "Nobusawa et al., 2000"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "226 and 228",
+        "subtype": "H5N1",
+        "effect": [
+            "Increased virus binding to α2-6"
+        ],
+        "quote": "The role of inﬂuenza A virus hemagglutinin residues 226 and 228 in receptor speciﬁcity and host range restriction.",
+        "citation": "Vines et al., 1998"
+    }
+]
