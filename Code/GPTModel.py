@@ -1,10 +1,11 @@
-from openai import OpenAI
-from PyPDF2 import PdfReader
+from openai import OpenAI # type: ignore
+from PyPDF2 import PdfReader # type: ignore
 from pathlib import Path
 import re
-import tiktoken
+import tiktoken # type: ignore
+import time
 import json
-from json_repair import repair_json
+from json_repair import repair_json # type: ignore
 
 client = OpenAI(api_key="")
 
@@ -47,16 +48,13 @@ def chunk_text_by_tokens(text, max_tokens=1000, overlap_tokens=50, model="gpt-4.
             if current_chunk:
                 chunks.append(" ".join(current_chunk))
             # handle overlap
-            if overlap_tokens > 0:
-                last_words = current_chunk[-overlap_tokens:]
-                current_chunk = last_words.copy()
+            if overlap_tokens > 0 and len(current_chunk) > overlap_tokens:
+                current_chunk = current_chunk[-overlap_tokens:]
                 current_tokens = count_tokens(" ".join(current_chunk), model)
             else:
                 current_chunk = []
                 current_tokens = 0
-            current_chunk.extend(paragraph.split())
-            current_tokens += para_tokens
-        else:
+            
             current_chunk.extend(paragraph.split())
             current_tokens += para_tokens
 
@@ -223,6 +221,21 @@ def genotype_phenotype(term, client):
         print(f"Error generating JSON: {e}")
         return None
 
+def safe_genotype_phenotype(term, client, max_retries=5):
+    for attempt in range(max_retries):
+        try:
+            return genotype_phenotype(term, client)
+        except Exception as e:
+            if "rate_limit" in str(e).lower():
+                wait_time = (2 ** attempt) + 1
+                print(f"⚠️ Rate limit hit. Waiting {wait_time}s before retry...")
+                time.sleep(wait_time)
+            else:
+                print(f"Error generating JSON: {e}")
+                return None
+    print("Max retries reached; skipping chunk.")
+    return None
+
 for pdf_path in pdf_folder.glob("*.pdf"):
     text = ""
     reader = PdfReader(pdf_path)
@@ -231,14 +244,21 @@ for pdf_path in pdf_folder.glob("*.pdf"):
 
     all_annotations = []
 
-    # Use token-based chunking instead of word-based
     for chunk in chunk_text_by_tokens(text, max_tokens=1000, overlap_tokens=50, model="gpt-4.1"):
-        output = genotype_phenotype(chunk, client)
+        output = safe_genotype_phenotype(chunk, client)
         if output:
             all_annotations.append(output)
+        time.sleep(0.5) 
 
+    combined_results = []
     out_file = results_folder / f"{pdf_path.stem}_results.json"
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(all_annotations, f, indent=4, ensure_ascii=False)
-
+    combined_results.extend(all_annotations)
     print(f"Saved results for {pdf_path.name} → {out_file}")
+
+    combined_file = results_folder / "combined_results.json"
+    with open(combined_file, "w", encoding="utf-8") as f:
+        json.dump(combined_results, f, indent=4, ensure_ascii=False)
+
+    print(f"Combined results saved → {combined_file}")
