@@ -1,0 +1,73 @@
+[
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "H1N1",
+        "effect": [
+            "Reduced susceptibility to Oseltamivir"
+        ],
+        "quote": "The dominant change conferring oseltamivir resistance in the current seasonal inﬂuenza viruses is a mutation in the NAgene, H275Y (N1 numbering). ... most isolated seasonal inﬂuenza A(H1N1) viruses during the 2008e 2009 season were found to encode the H275Y substitutionin the NAgene, conferring resistance to oseltamivir [9].",
+        "citation": "WooYoung Choi et al., 2013"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I117V",
+        "subtype": "H1N1",
+        "effect": [
+            "Reduced susceptibility to Oseltamivir"
+        ],
+        "quote": "To investigate mutations at NA key residues (N1 numbering: I117V, I117M, E119V, I223V, Y275H, R293K, N295S, and S334N), site-directed mutagenesis was conducted ... To investigate the effect of different NA mutations on the NAI resistance phenotype of A/Chungbuk/4448/2008(H1N1) virus",
+        "citation": "Author et al., Year"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I117V",
+        "subtype": "H1N1",
+        "effect": [
+            "Reduced susceptibility to Oseltamivir",
+            "Reduced susceptibility to Zanamivir"
+        ],
+        "quote": "NA- inhibition assays showed that E119V mutation of the wild-type virus containing tyrosine (Y) at NA residue275 (Chungbuk-Y275-E119V) and E119V mutation of",
+        "citation": "Choi et al., 2013"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "Y275H-E119V",
+        "subtype": "H1N1",
+        "effect": [
+            "Highly reduced inhibition to Zanamivir"
+        ],
+        "quote": "the mutant virus containing histidine (H) at NA residue 275 (Chungbuk-Y275H-E119V) conferred important levels of resistance to zanamivir, with 202.5-fold and 135.7-fold increases in IC50 values compared with that of the wild-type virus (Chungbuk-Y275) and Chungbuk-Y275H mutant virus, respectively, whereas these mutants were susceptible to oseltamivir.",
+        "citation": "Kim et al., 2020"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "Y275H",
+        "subtype": "H1N1",
+        "effect": [
+            "Reduced susceptibility to Oseltamivir"
+        ],
+        "quote": "all the single and double mutants containing the Y275, except the single Y275-E119V mutant, conferred important levels of resistance to oseltamivir",
+        "citation": "Choi et al., Year"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "H1N1",
+        "effect": [
+            "Reduced susceptibility to Zanamivir"
+        ],
+        "quote": "whereas all the single, double,and triple mutants containing the E119V mutation wereassociated with the resistance to zanamivir ( Table 2 )",
+        "citation": "Sheu et al., 2008"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I117V",
+        "subtype": "A(H1N1)pdm09",
+        "effect": [
+            "Reduced susceptibility to Oseltamivir"
+        ],
+        "quote": "Mutations I117V and I117M and oseltamivir sensitivity of pandemic (H1N1) 2009 viruses.",
+        "citation": "Hurt et al., 2012"
+    }
+]

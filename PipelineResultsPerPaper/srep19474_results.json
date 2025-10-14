@@ -1,0 +1,191 @@
+[
+    {
+        "protein": "PB2",
+        "mutation": "A588V",
+        "subtype": "H9N2",
+        "effect": [
+            "Increased polymerase activity in mammalian cells",
+            "Enhanced replication in mammalian cells",
+            "Enhanced replication in avian cells",
+            "Enhanced pathogenicity in mice"
+        ],
+        "quote": "The avian-origin H10N8, H7N9, and H9N2 viruses harboring PB2-588 V exhibited higher polymerase activity, more efficient replication in mammalian and avian cells, and higher virulence in mice when compared to viruses with PB2-588 A.",
+        "citation": "Xiao et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "E627K",
+        "subtype": "H5N1",
+        "effect": [
+            "Enhanced replication in mammalian cells",
+            "Enhanced virulence in mice"
+        ],
+        "quote": "One well-characterized mutation in PB2 is the glutamate change to lysine at position 627 (E627K) that results in efficient virus replication in mammalian cells and enhanced virulence in mammals.",
+        "citation": "Subbarao et al., 1993; Hatta et al., 2001; Li et al., 2005"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "JX346-derived PB2",
+        "subtype": "H10N8",
+        "effect": [
+            "Increased virulence in mice",
+            "Increased viral replication in mice lungs"
+        ],
+        "quote": "The recombinant virus JX102-JX346PB2 containing the JX346-derived PB2 gene was virulent in mice, inducing severe weight loss (Fig. 2a) and 100% mortality, as compared with the rescued parental rJX102 and other 5 recombinant viruses (Fig. 2b). The JX102-JX346PB2 virus titer in mouse lungs was significantly higher than that of the parental rJX102...",
+        "citation": "Zhao et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "627K",
+        "subtype": "H10N8",
+        "effect": [
+            "Enhanced virulence in mice"
+        ],
+        "quote": "As expected, the JX102-PB2 627K exhibited enhanced viru-lence, resulting in 100% case fatality rate and higher virus lung titers, as compared with the parental virus JX102 (Table 2). Furthermore, the virus was also detected in the brain of the infected mice (Table 2).",
+        "citation": "Liu et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "87E→D/627E",
+        "subtype": "H10N8",
+        "effect": [
+            "Decreased polymerase activity in mammalian cells",
+            "Decreased virulence in mice",
+            "Decreased viral replication in mice lungs"
+        ],
+        "quote": "JX346-PB2 87D/627E...were less viru-lent (Table 2)...The virus titers in lungs of mice infected with JX346-PB2 87D/627E...were also lower than those infected with the parental virus JX346 and JX346-PB2 627E viruses.",
+        "citation": "Liu et al., 2014"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "588A",
+        "subtype": "H10N8",
+        "effect": [
+            "Decreased polymerase activity in mammalian cells",
+            "Decreased polymerase activity in avian cells"
+        ],
+        "quote": "only the V588A substitution in PB2 resulted in a significantly lower polymerase activity in both human 293T and avian DF-1 cells (Fig. 3)",
+        "citation": "Zhang et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "A588V",
+        "subtype": "H10N8",
+        "effect": [
+            "Enhanced replication in mammalian cells",
+            "Increased virulence in mice"
+        ],
+        "quote": "the substitution A588V markedly enhanced virus rep-lication of JX102...To investigate the effects of PB2 A588V on the virulence of the H10N8 viruses...The single substitution A588V in PB2 enhanced the virulence of the avian-origin JX102 virus, evidenced by a reduced the dose of MLD50 and the efficient virus lung replication in infected mice when compared to the parental JX102 virus (Table 3 and Fig. 5)",
+        "citation": "Liu et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "A588V",
+        "subtype": "H10N8",
+        "effect": [
+            "Enhanced polymerase activity",
+            "Enhanced replication in mice",
+            "Enhanced virulence in mice"
+        ],
+        "quote": "Mutation of A588V in PB2 enhances polymerase activity, virus replication, and virulence of avian-origin H7N9 and H9N2 viruses.",
+        "citation": "Li et al., 2017"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "A588V",
+        "subtype": "H9N2",
+        "effect": [
+            "Enhanced polymerase activity",
+            "Increased virulence in mice"
+        ],
+        "quote": "the substitution A588V in PB2 also enhanced the polymerase activity in both human and avian cells and the virulence of avian-origin H7N9 and H9N2 viruses.",
+        "citation": "Zhou et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "588V",
+        "subtype": "H7N9",
+        "effect": [
+            "Enhanced replication in mammalian cells",
+            "Enhanced pathogenicity in mice"
+        ],
+        "quote": "H7N9, H10N8, and H9N2 subtype viruses encoding 588V in PB2 have increased in abundance since the first identification of human infections in 2013... In our study, besides 627K, six residues 87E, 292V , 340K, 588V , 648V , and 676M in PB2 contributed to the high virulence of the human H10N8 JX346 virus in mice.",
+        "citation": "Ge et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "627K",
+        "subtype": "H9N2",
+        "effect": [
+            "Enhanced replication in mammalian cells"
+        ],
+        "quote": "virus was only detected from brains of mice infected with the viruses with the PB2 627K and not from those infected with the 627E mutant viruses ... this data indicates that influenza virus neural tropism may be related to the 627K in PB2, not the 588V in the PB2",
+        "citation": "Zhang et al., 2016"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "A588V",
+        "subtype": "H7N9",
+        "effect": [
+            "Increased virulence in mice",
+            "Enhanced replication in mammalian cells",
+            "Increased polymerase activity in mammalian cells"
+        ],
+        "quote": "In our study, the mutation A588V in PB2 enhanced the virulence of avian H7N9, H10N8, and H9N2 influenza viruses. Together, these data indicate the importance of the 588 position in PB2 for polymerase activ-ity, replication, and virulence of different subtypes of avian influenza viruses in mammals, suggesting that it is another mammalian adaption marker for avian influenza viruses. ... PB2-588V also enhanced the viral replication and polymerase activity in DF1 cells (Figs 4 and 6); ... PB2-588V identified in our study is important for polymerase activity, virus replication, and virulence in mice, indicating that it may be a new marker of mammalian adaption for the avian influenza virus.",
+        "citation": "Zhang et al., 2017"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "627E",
+        "subtype": "H9N2",
+        "effect": [
+            "Decreased virulence in mice"
+        ],
+        "quote": "Reverse genetic sys-tems for V and V-627E were described previously.",
+        "citation": "Zhao et al., 2016"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q226L",
+        "subtype": "H7N9",
+        "effect": [
+            "Increased virus binding to α2-6",
+            "Enhanced binding affinity to mammalian cells"
+        ],
+        "quote": "Q226L mutation in H7N9 HA increases binding to human-type α2-6 sialic acid receptors and enhances replication in mammalian cells.",
+        "citation": "Chen et al., 2013"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "E627K",
+        "subtype": "H9N2",
+        "effect": [
+            "Increased virulence in mice"
+        ],
+        "quote": "A single E627K mutation in the PB2 protein of H9N2 avian influenza virus increases virulence by inducing higher glucocorticoids (GCs) level.",
+        "citation": "Tian et al., 2012"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "627K",
+        "subtype": "H7N9",
+        "effect": [
+            "Increased virulence in mice",
+            "Enhanced replication in mammalian cells"
+        ],
+        "quote": "PB2 amino acids 627K or 627E/701N ... increased transmission of influenza virus in a mammalian host (Steel et al., 2009).",
+        "citation": "Steel et al., 2009"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "PB2-588I",
+        "subtype": "H1N1",
+        "effect": [
+            "Increased virulence in mice",
+            "Increased viral replication in mammalian cells",
+            "Decreased interferon response"
+        ],
+        "quote": "PB2-588I enhances 2009 H1N1 pandemic influenza virus virulence by increasing viral replication and exacerbating PB2 inhibition of beta interferon expression.",
+        "citation": "Zhao et al., 2014"
+    }
+]
