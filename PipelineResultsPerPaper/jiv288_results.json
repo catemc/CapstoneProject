@@ -1,0 +1,138 @@
+[
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119D mutant that exhibited a marked increase in the 50% inhibitory concentrations against all tested NAIs (827-, 25-, 286-, and 702-fold for zanamivir, oseltamivir, peramivir, and laninamivir, respectively)",
+        "citation": "L’Huillier et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "none stated",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "clinical influenza isolates ... contain an acetamide group at the same position. Consequently, clinical influenza isolates",
+        "citation": "L’Huillier et al., 2015"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "H3N2",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "the E119V and R292K substitutions are molecular markers of oseltamivir resistance in A(H3N2) viruses",
+        "citation": "Colman et al., 1998"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119D ... were tested by NA inhibition assays ... for their susceptibility to ... oseltamivir",
+        "citation": "Duan et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119D ... resistance to favipiravir (T-705) was determined by plaque re- wasstoppedafter24hoursbecauseofanegativereal-timeRT- ductionassays",
+        "citation": "Hurt et al., 2012"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "none stated",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "Sanger sequencing allowed the identification of the H275Y mutation in the NA gene.",
+        "citation": "L’Huillier et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "Reduced susceptibility to Zanamivir",
+        "quote": "after 8 days of zanamivir treatment, an E119D substitution appeared in a mixed population",
+        "citation": "NAIPan-ResistanceinanA(H1N1)Isolate et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Zanamivir",
+        "quote": "E119D 778(64.5)[827]",
+        "citation": "L’Huillier et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "none stated",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119D ... 849.13(31.44)",
+        "citation": "none stated"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Zanamivir",
+        "quote": "This reduced ability to form salt bridges with zanamivir probably destabilizes inhibitor binding.",
+        "citation": "Hurt et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "none stated",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119D/H275Y 252.29(27.14)c",
+        "citation": "none stated"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "the single E119D mutation alone led to increased resistance to all NAIs",
+        "citation": "Baek et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Zanamivir",
+        "quote": "This could be explained by the induction of in vivo resistance drug resistance (E119D)",
+        "citation": "L’Huillier et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "H1N1",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "a multidrug-resistant strain of pandemic influenza A 2009(H1N1) virus carrying a dual H275Y/I223R mutation from a child after prolonged treatment with oseltamivir",
+        "citation": "Nguyen et al., 2010"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "H1N1",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "oseltamivir-resistant influenza A(H1N1)pdm09 virus",
+        "citation": "Pizzorno et al., 2011"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "H275Y oseltamivir-resistant A(H1N1)pdm09",
+        "citation": "Hurt et al., 2012"
+    }
+]

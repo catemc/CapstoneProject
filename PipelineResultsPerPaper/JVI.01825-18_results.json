@@ -1,0 +1,162 @@
+[
+    {
+        "protein": "NA-1",
+        "mutation": "D199E",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Laninamivir",
+        "quote": "substitutions conferring resistance to laninamivir by enriching random mutations in the NA gene of the 2009 pandemic influenza [A(H1N1)pdm09] virus followed by deep sequencing of the laninamivir-selected variants. After the generation of single mutants possessing each identified mutation, two A(H1N1)pdm09 recombinants possessing novel NA gene substitutions (i.e., D199E and P458T) were shown to exhibit resistance to more than one NAI",
+        "citation": "Lloren et al., 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "S31N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Laninamivir",
+        "quote": "viruses were blind passaged in increasing concentrations of laninamivir...",
+        "citation": "March et al., 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Laninamivir",
+        "quote": "Substitutions in the N1 amino acid residue, which are known to confer resistance to NAIs (e.g., E119D, E119G, Q136K, and R152K), were also identified in this study and escaped the laninamivir selection pressure",
+        "citation": "Kawasuji et al., 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "RI(93.3)",
+        "citation": "Lloren et al., 2022"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "the E119D mutation conferred reduced inhibition by oseltamivir (a 95-fold increase in the 50% inhibitory concentration [IC ])",
+        "citation": "Takashita et al., 2016"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "D199E",
+        "subtype": "none stated",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "The D199E ... impact ... NAmutations ... compared with that of the WT virus",
+        "citation": "none stated"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "D199E",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Decreased replication in mammalian cells",
+        "quote": "there was a significant reduction in the viral titers observed at 36 hpi for the D199E ... mutants ... compared with the titer for the WT",
+        "citation": "Journal of Virology, 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "D199E",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Decreased virulence in mice",
+        "quote": "those infected with the same amount of single D199E and P458T mutant viruses showed lower mortality rates (70% and 80%, respectively)",
+        "citation": "Lloren et al., 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119G",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "known NA mutations in an A(H1N1)pdm09 virus (e.g., E119G, E119V, and Q136K) conferring reduced to highly",
+        "citation": "Jones et al., 2019"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "D199E",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "In this study, the D199E substitution conferred reduced inhibition by oseltamivir",
+        "citation": "Lloren et al., 2024"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "D199E",
+        "subtype": "none stated",
+        "effect": "Reduced susceptibility to Zanamivir",
+        "quote": "susceptibility to other NAIs was maintained. Although this amino acid change results in higher NA activity, kinetics, and expression compared with those for the WT",
+        "citation": "none stated"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "Reduced susceptibility to Laninamivir",
+        "quote": "Novel NA Substitutions in H1N1 Selected by Laninamivir",
+        "citation": "Journal of Virology, 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "P458T",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Laninamivir",
+        "quote": "a novel substitution conferring resistance to multiple NAIs following escape from in vitro laninamivir pressure in A(H1N1)pdm09.",
+        "citation": "Lloren et al., 2024"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I117V",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Laninamivir",
+        "quote": "the NA gene of the passaged viruses was deep sequenced to identify any substitutions and to select the resistant variants present at \u001e2% frequency in the viral population that had escaped the laninamivir pressure",
+        "citation": "Takashita et al., 2013"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "H5N1",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "viruses with a 10-to 100-fold IC50 increase were considered to have reduced inhibition by the NAI",
+        "citation": "Lloren et al., 2024"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I427T",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "The I427T neuraminidase (NA) substitution, located outside the NA active site of an influenza A(H1N1)pdm09 variant with reduced susceptibility to NA inhibitors",
+        "citation": "Tu et al., 2017"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "An I436N substitution confers resistance of influenza A(H1N1)pdm09 viruses to multiple neuraminidase inhibitors",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "Q136K",
+        "subtype": "H1N1",
+        "effect": "Highly reduced inhibition to Zanamivir",
+        "quote": "carrying a Q136K mutation in the neuraminidase gene is resistant to zanamivir",
+        "citation": "Kaminski et al., 2013"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H274Y",
+        "subtype": "H5N1",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "H274Y (H5N1): Reduced susceptibility to Oseltamivir",
+        "citation": "Sheu et al., 2008"
+    }
+]

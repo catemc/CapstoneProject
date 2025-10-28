@@ -1,0 +1,170 @@
+[
+    {
+        "protein": "NP",
+        "mutation": "E434K",
+        "subtype": "H9N2",
+        "effect": "Increased polymerase activity in mammalian cells",
+        "quote": "the NP- E434K mutation enhanced viral RNA polymerase activity in vitro",
+        "citation": "Sang et al., 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H9N2",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "H9N2 influenza viruses bearing ... leucine at amino acid position 222 (H5) of the HA protein possess the ability to predominantly bind α 2,6-linked SA moieties",
+        "citation": "Wan and Perez, 2007"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T28I",
+        "subtype": "H9N2",
+        "effect": "Dual receptor specificity",
+        "quote": "A wild-type H9N2 AIV isolate with affinity for both α 2,6-linked SA (the human-type recep- tor) and α 2,3 -linked SA (the avian-type receptor) moieties",
+        "citation": "Wan et al., 2018"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H9N2",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "A/Chicken/Shandong/Li-2/2010 (SD3/H9N2) ... 1% Siaα2,6- CRBC 32 ... L",
+        "citation": "none stated"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H9N2",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "these results are consistent with previous studies that demonstrated that H9N2 viruses carrying HA-L222 (H5) preferentially recognize human-type receptors, while viruses bearing HA-Q222 (H5) preferentially recognize avian-type receptors",
+        "citation": "Wan and Perez, 2007"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "I28T",
+        "subtype": "none stated",
+        "effect": "none",
+        "quote": "",
+        "citation": ""
+    },
+    {
+        "protein": "PB2",
+        "mutation": "D195N",
+        "subtype": "H9N2",
+        "effect": "Contact transmission in guinea pigs",
+        "quote": "PB2-D195N, HA1-Q227P, and NP-E434K are sufficient to confer a transmissible phenotype to the SD2/H9N2 virus",
+        "citation": "Sorrell et al., 2017"
+    },
+    {
+        "protein": "NP",
+        "mutation": "E434K",
+        "subtype": "H9N2",
+        "effect": "Contact transmission in guinea pigs",
+        "quote": "NP-E434K and either HA1-Q227P or HA2-D46E are required for contact transmission of the adapted virus in guinea pigs.",
+        "citation": "Sorrell et al., 2018"
+    },
+    {
+        "protein": "HA2-5",
+        "mutation": "D46E",
+        "subtype": "H5N1",
+        "effect": "Increased HA stability",
+        "quote": "a HA2-D46E substitution had a stabilizing effect on the HA of the adapted virus",
+        "citation": "Scientific RepoRts, 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222P",
+        "subtype": "none stated",
+        "effect": "Unknown",
+        "quote": "HA1d 227 Q P P P P P [HA1 residue 227, which corresponds to 222 in H5 numbering]",
+        "citation": "none stated"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "D195N",
+        "subtype": "H9N2",
+        "effect": "Increased polymerase activity in mammalian cells",
+        "quote": "The PB2-D195N substitution increased polymerase activity by about 3.5-fold",
+        "citation": "Yuan et al., 2015"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q227P",
+        "subtype": "H9N2",
+        "effect": "Increased virus binding to α2-3",
+        "quote": "We found that the HA1-Q227P ... independently increased the ability of each virus to bind an avian-type α 2,3 SA receptor when compared to the parental SD2/H9N2 virus",
+        "citation": "Sorrell et al., 2019"
+    },
+    {
+        "protein": "PB2",
+        "mutation": "D195N",
+        "subtype": "H9N2",
+        "effect": "Increased polymerase activity in mammalian cells",
+        "quote": "PB2-D195N and NP-E434K substitution independently enhanced polymerase activity in mammalian cells.",
+        "citation": "Scientific Reports, 2015"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "T28I",
+        "subtype": "H9N2",
+        "effect": "Enhanced replication in guinea pigs",
+        "quote": "guinea pig-adapted virus",
+        "citation": "Scientific Reports, 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H9N2",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "virus receptor specificity was evaluated ... Biotinylated glycans ... Neu5Acα 2-6 ... Abundant binding of the adapted virus harboring Q226L to α2-6 linked sialic acid demonstrates a switch in receptor specificity",
+        "citation": "Sun et al., 2019"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H5N1",
+        "effect": "Transmitted via aerosol among ferrets",
+        "quote": "Experimental adaptation of an influenza H5 HA confers respiratory droplet transmission to a reassortant H5 HA/ H1N1 virus in ferrets.",
+        "citation": "Imai et al., 2012"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H9N2",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "Amino acid 222 (H5) in the hemagglutinin of H9N2 influenza viruses determines cell tropism and replication in human airway epithelial cells.",
+        "citation": "Wan et al., 2007"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    }
+]

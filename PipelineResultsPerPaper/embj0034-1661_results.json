@@ -1,0 +1,194 @@
+[
+    {
+        "protein": "HA1-5",
+        "mutation": "P185L",
+        "subtype": "H6N1",
+        "effect": "Decreased virus binding to α2-3",
+        "quote": "the P185L (H5) substitution could reduce the binding to avian receptor",
+        "citation": "Wang et al., 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "Q222L has evolved in the receptor-binding site of Taiwan H6 HAs, contributing to increased human-type receptor (α2-6) binding.",
+        "citation": "Wang et al., 2014"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "P185L",
+        "subtype": "H6N1",
+        "effect": "Increased pseudovirus binding to α2-6",
+        "quote": "P185L (H5) substitution is responsible for the receptor-binding preference change.",
+        "citation": "Shi et al., 2014"
+    },
+    {
+        "protein": "none",
+        "mutation": "none",
+        "subtype": "none stated",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "Dual α2–3 and α2–6 binding",
+        "quote": "The chicken-H6N1 and human-H6N1 HAs bind to both avian and human receptors.",
+        "citation": "Fei Wang et al., 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-3",
+        "quote": "Duck-H6N1HA shows strong binding to the a2,3-linked sialylglycan receptor but undetectable binding to the a2,6-linked sialylglycan receptor.",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "none stated",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "H6N1",
+        "effect": "No binding to α2-6",
+        "quote": "rDuck-H6N1 preferentially bound to 30SLNLN, with no detectable binding to 60SLNLN.",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-3",
+        "quote": "The chicken-H6N1-189 (H5)-224 (H5) HA mutant shows preferential binding to the a2,3-linked sialylglycan receptor but undetectable binding to the a2,6-linked sialylglycan receptor, which mimics the duck-H6N1 HA. The ‘avian-signature’ residue Q222 (H5) forms two hydrogen bonds with the Sia-1",
+        "citation": "Fei Wang et al., 2012"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "P185L",
+        "subtype": "none stated",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "The Gal-2 rotates by ~60°, which might result from the P185L (H5) substitution.",
+        "citation": "Wu et al., 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "185H",
+        "subtype": "H6N1",
+        "effect": "Decreased virus binding to α2-3",
+        "quote": "The chicken-H6N1-185 (H5) HA mutant shows significantly reduced binding to the a2,3-linked sialylglycan receptor",
+        "citation": "none stated"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "P185L",
+        "subtype": "none stated",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "In the hH6/60SLNLN complex, Q222 (H5) forms a hydrogen bond with the Gal-2. The Gal-2 rotates by ~60°, which might result from the P185L (H5) substitution.",
+        "citation": "none stated"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "Q226L in HA confers human-like receptor (α2-6-linked sialic acid) binding",
+        "citation": "Fei Wang et al., 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "P185L",
+        "subtype": "H6N1",
+        "effect": "Enhanced binding affinity to mammalian cells",
+        "quote": "a subtle conformation adjustment occurs when cH6 and hH6 bind to different receptor analogs, as a result of the P185L (H5) substitution",
+        "citation": "Fei Wang et al., 2014"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "189",
+        "subtype": "H5N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "the human receptor analogs bind in a similar cis conformation in the AHH7 and InH5mut complexes, but the directions of the Gal-2/GlcNAc-3 linkage site are different. The Gal-2/GlcNAc-3 moieties fold back and go through the 189 (H5)-helix in the InH5mut complex, like that in the pandemic H1, H2, and H3 complexes",
+        "citation": "Figure 5"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "V185N",
+        "subtype": "H13N6",
+        "effect": "Decreased virus binding to α2-3",
+        "quote": "an artificial V185N (H5) substitution reduces the binding to the avian receptor analog while increasing the binding to the human receptor analog",
+        "citation": "Lu et al., 2013a"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "E189V",
+        "subtype": "H6N1",
+        "effect": "Enhanced binding affinity to mammalian cells",
+        "quote": "the E189V (H5) and G224S (H5) substitutions are important for the human receptor-binding capacity",
+        "citation": "Wei et al., 2013"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "H6N1",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "H6N1",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "Q226L mutation increased human-type receptor binding (α2-6)",
+        "citation": "Fei Wang et al., 2015"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "156",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "The affinity values of human-H6N1 HA and chicken-H6N1 HA mutants to receptor were calculated...",
+        "citation": "Eisen et al., 1997"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H5N1",
+        "effect": "Transmissible among ferrets",
+        "quote": "Experimental adaptation of an influenza H5HA confers respiratory droplet transmission to a reassortant H5HA/H1N1 virus in ferrets.",
+        "citation": "Imai et al., 2012"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "the Q226L mutation in H6 HA resulted in an increased binding to human-type (α2-6-linked sialic acid) receptors",
+        "citation": "Shi et al., 2013a"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "none stated",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    }
+]

@@ -1,0 +1,154 @@
+[
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "I436N alone reduced inhibition by all NAIs, suggesting that it is a multi-NAI resistance marker.",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "none stated",
+        "effect": "Multi-NAI resistance",
+        "quote": "I436N; multi-NAI resistance",
+        "citation": "Baek et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "H1N1",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "The rg-virus carrying the I436N single substitutions combined with H275Y in A(H1N1) exhibited reduced inhibition to all NAIs tested.",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "conferred resistance to all four NAls",
+        "citation": "Hayashi et al., 2015"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Zanamivir",
+        "quote": "ZA-resistant variants were selected in vitro. The NA genes of the viruses growing in the presence of ZA were sequenced. Substitutions found within the NA gene...the impact of these alterations on NAI susceptibility was evaluated.",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Oseltamivir",
+        "quote": "rg-I436N 20.00±4.30 ... RI(30.8)",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "NA activity was determined in triplicate, and significant differences are indicated as follows: *P<0.01 for the comparison of mutants to the rg-H275Y virus and **P<0.005 for the comparison of mutants to the rg-I436N virus.",
+        "citation": "Author et al., Year"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "rg-I436N 20.00±4.30... RI(30.8)",
+        "citation": "none stated"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "rg-H275Y-I436N viruses",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "rg-H275Y-I436N",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "We identified a novel I436N substitution in an A(H1N1)pdm09 NA via ZA selection in MDCK cells that confers multi-NAI resistance.",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Zanamivir",
+        "quote": "The I436N mutation was selected by ZA and the highest level of IC 50 was also shown in the NA inhibition assay with ZA",
+        "citation": "Takashita et al., 2019"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I436N",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "I436N substitution in the NA gene of the A(H1N1) pdm09 virus could be a potential marker for multi-NAI resistance",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H274Y",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced inhibition to Zanamiriv",
+        "quote": "The resistant variants were selected under ZA treatment after infection of the variant libraries in MDCK cells",
+        "citation": "Kwon et al., 2018"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "The phenotype of resistance to NAIs was identified by NA inhibition assays ... carrying single or double NA substitutions.",
+        "citation": "none stated"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "H3N2",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "Detection of E119V and E119I mutations in influenza A (H3N2) viruses...",
+        "citation": "Okomo-Adhiambo et al., 2009"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "I427T",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "I427T of NAI-resistant neuraminidase (NA) substitution, located outside the NA active site of an influenza A(H1N1)pdm09 variant with reduced susceptibility to NA inhibitors",
+        "citation": "Tu et al., 2017"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "H275Y",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "H275Y oseltami- vir-resistant A(H1N1)pdm09 influenza",
+        "citation": "Tamura et al., 2012"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "A(H1N1)pdm09",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119D neuraminidase mutation conferring pan-resistance to neuraminidase inhibitors in an A(H1N1)pdm09 isolate",
+        "citation": "L’Huillier et al., 2015"
+    }
+]

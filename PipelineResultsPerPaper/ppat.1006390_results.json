@@ -1,0 +1,170 @@
+[
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "contained a hemagglutinin (HA) mutation (Q222L (H5)) that has previously been associated with a switch in receptor specificity from avian-type (NeuAcα2-3Gal) to human-type (NeuAcα2-6Gal)",
+        "citation": "de Vries et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "none",
+        "subtype": "H7N9",
+        "effect": "none",
+        "quote": "none",
+        "citation": "none"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H7N9",
+        "effect": "Increased pseudovirus binding to α2-6",
+        "quote": "While the H7N9 virus with the Q222L (H5) mutation maintained receptor specificity for avian-type receptors, some increase in avidity for human-type receptor analogs was noted",
+        "citation": "Xiong et al., 2013"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "K189T",
+        "subtype": "H7N2",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "This position is invariably a threonine or serine in human H2 and H3 viruses, respectively, and recently has been implicated to be important in the evolution of the H3N2 pandemic virus",
+        "citation": "Xiong et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "G224S",
+        "subtype": "H7N9",
+        "effect": "Increased pseudovirus binding to α2-6",
+        "quote": "mutant H7 HAs ... that confer human-type receptor binding: G224S (H5)",
+        "citation": "Shi et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-3",
+        "quote": "The wild-type Sh2 HA that contains the Q222L (H5) mutation has a high preference for avian-type receptors, with minimal binding to human-type receptors",
+        "citation": "Yang et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "N224K",
+        "subtype": "H7N9",
+        "effect": "Enhanced binding affinity to mammalian cells",
+        "quote": "we observed a significant increase in binding. Thus, there are multiple ways for H7N9 to obtain human-type receptor specificity. The N224K mutant does not confer specificity to human-type receptors in other Sh2 backgrounds (S3 Table), but does increase binding in human-specific Sh2 mutants (S1 Fig). We conclude that a lysine at position 224 does not significantly alter receptor specificity, but does enhance the strength of binding, likely through a positive avidity contribution",
+        "citation": "de Vries et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "V185K",
+        "subtype": "H7N9",
+        "effect": "Loss of binding to α2–3",
+        "quote": "The Sh2 V185K (H5)-K190T (H5)-G224S (H5) mutant lost almost all binding to avian-type receptors",
+        "citation": "de Vries et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "K189T",
+        "subtype": "H5N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "the Sh2 V185 (H5)-K190T (H5)-G224S (H5) mutant exhibits human-type receptor specificity",
+        "citation": "Russell et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "K189T",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "K190T (H5) for H10N8 to obtain binding to human-type receptors",
+        "citation": "Hayes et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "K189T",
+        "subtype": "H7N9",
+        "effect": "Dual receptor specificity",
+        "quote": "several alternative three-amino-acid mutations (V185G (H5)/ K-K190T (H5)-G224S (H5) or V185N (H5)-N224K-G224S (H5)) can switch the receptor specificity of the H7N9 HA from avian- to human-type",
+        "citation": "de Vries et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "K189T",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "The mutants show profound loss of binding to avian-type (α2–3 linked) receptors, and increased binding to human-type (α2–6 linked) receptors in both glycan microarrays and glycan ELISA-type avidity assays.",
+        "citation": "Xiong et al., 2013"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "The Q226L mutation in H7 (H3 numbering, corresponds to Q222L in H5 numbering) conferred increased binding to human-like (α2-6–linked) receptors.",
+        "citation": "de Vries et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "G224S",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "The ectodomain of the Sh2 H7 HA mutant (V185K (H5)-K190T (H5)-G224S (H5)) was expressed ... The HA1 domain triple mutant (G224S (H5), V185K (H5), K190T (H5)) was made by site-directed mutagenesis.",
+        "citation": "de Vries et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "G224S",
+        "subtype": "H5N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "G224S (H5)",
+        "citation": "none stated"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "V185K",
+        "subtype": "H7N9",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "H7 mutant HA (V185K (H5)-K190T (H5)-G224S (H5))",
+        "citation": "Xiong et al., 2017"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119V",
+        "subtype": "H5N1",
+        "effect": "Reduced susceptibility to Oseltamivir",
+        "quote": "E119V substitution was associated with reduced susceptibility to oseltamivir",
+        "citation": "June15 et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "G224S",
+        "subtype": "H7N9",
+        "effect": "Increased pseudovirus binding to α2-6",
+        "quote": "the H7 triple mutant V185K/K190T/G224S acquired human-type receptor binding",
+        "citation": "Wu et al., 2017"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "none stated",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "Sialic acid α2,6Gal-specific clones of A/duck/Ukraine/1/63 revert to sialic acid α2,3Gal-specific wild type in ovo.",
+        "citation": "Rogers et al., 1985"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H5N1",
+        "effect": "Increased virus binding to α2-6",
+        "quote": "Q226L (H3 numbering; H5: Q222L), has important influence on the switch to human-type (α2–6) receptor binding",
+        "citation": "Imai et al., 2012"
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "Q222L",
+        "subtype": "H5N1",
+        "effect": "Transmissible among ferrets",
+        "quote": "Identification, characterization, and natural selection of mutations driving airborne transmission of A/H5N1 virus.",
+        "citation": "Linster et al., 2014"
+    }
+]
