@@ -14,12 +14,6 @@ pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
 results_folder.mkdir(parents=True, exist_ok=True)
 
-H3_TO_H5_MAP = {
-    155: 154, 156: 155, 158: 156, 159: 157, 160: 158,
-    186: 185, 190: 189, 193: 190, 194: 191, 196: 193,
-    198: 195, 226: 222, 228: 224
-}
-
 SUBSCRIPT_MAP = str.maketrans("₀₁₂₃₄₅₆₇₈₉ₐₑₒₓₕₖₗₘₙₚₛₜ", "0123456789aeoxhklmnpst")
 
 def normalize_subscripts(text):
@@ -58,25 +52,6 @@ def clean_mutation_label(mutation: str) -> str:
     if not isinstance(mutation, str):
         return mutation
     return re.sub(r"\s*\(H[35]\)\s*", "", mutation).strip()
-
-def convert_h3_to_h5(text):
-    """Convert H3 numbering in text to H5 based on mapping."""
-    def replace_match(match):
-        aa_from = match.group("from") or ""
-        pos = int(match.group("pos"))
-        aa_to = match.group("to") or ""
-        original = match.group(0)
-        if pos in H3_TO_H5_MAP:
-            new_pos = H3_TO_H5_MAP[pos]
-            if aa_from and aa_to:
-                return f"{aa_from}{new_pos}{aa_to} (H5)"
-            elif aa_from:
-                return f"{aa_from}{new_pos} (H5)"
-            else:
-                return f"{new_pos} (H5)"
-        return original
-    pattern = re.compile(r"(?P<from>[A-Z])?(?P<pos>\d{1,3})(?P<to>[A-Z])?(?:\s*\(?H3(?: numbering)?\)?)?", flags=re.IGNORECASE)
-    return pattern.sub(replace_match, text)
 
 def count_tokens(text, model="gpt-4.1"):
     enc = tiktoken.encoding_for_model(model)
@@ -149,10 +124,9 @@ def genotype_phenotype(term, client):
         "Each table row represents structured data — typically including mutation, effect, subtype, and citation. "
         "Interpret each row as a complete sentence describing a relationship, and extract markers and effects the same way you would from normal text. "
 
-        # H3->H5
-        "Mutations may be reported using H3 numbering. Convert all H3-numbered mutations to H5 numbering using the standard mapping provided: "
-        f"{H3_TO_H5_MAP}. Include the converted H5 mutation in the output, and retain the original H3 numbering in parentheses if present. "
-        "Do not skip mutations originally labeled with '(H3)'. "
+        # Number Conversion
+        "Evaluate each paper's mutations as you get to a new PDF and determine which numbering scheme is being used, putting it in the 'numbering' section of the JSON for each query."
+        "Here are potential numbering schemes that can be found in papers: 'H1', 'H3', 'H5', 'N1', 'N2', etc. "
 
         # Definition of marker
         "A marker is a unique amino acid mutation in the format 'LetterNumberLetter' (e.g., E627K, Q226L) or 'NumberLetter' (e.g., 234G, 101A). "
@@ -162,8 +136,9 @@ def genotype_phenotype(term, client):
 
         # Effects
         "Each object must contain exactly one effect. "
-        "Definitions: 'Reduced susceptibility' means the virus is less sensitive to a drug; "
-        "'Reduced inhibition' means how much a viral protein or enzyme is blocked by a compound in vitro. "
+        "You can retrieve multiple effects using the same sentence for evidence, but still keep them separate in the file. For example: E119D mutant that exhibited a marked increase in the 50% inhibitory concentrations against all tested NAIs (827-, 25-, 286-, and 702-fold for zanamivir, oseltamivir, peramivir, and laninamivir, respectively). You could get the effects: Reduced inhibition to Zanamivir', Reduced inhibition to Oseltamivir, Reduced inhibition to Laninamivir, and Reduced inhibition to Peramivir from that one sentence for the E119D mutation."
+        "Definitions: 'Reduced susceptibility' means the virus is less sensitive to a drug. One example of a quote that shows 'Reduced susceptibility' is 'Moreover, our drug susceptibility profiling studies revealed that E119 mutations conferred reduced susceptibility mainly to zanamivir, suggesting that selective pressure is exerted by zanamivir in the N1 subtype'"
+        "'Reduced inhibition' means how much a viral protein or enzyme is blocked by a compound in vitro. One example of a quote that shows 'Reduced inhibition' is 'the E119D mutation conferred reduced inhibition by oseltamivir (a 95-fold increase in the 50% inhibitory concentration'"
         "If a mutation has multiple effects, create separate objects for each effect, duplicating other fields except the effect and quote. "
         "Only extract markers described as having an effect individually; do not extract markers that only cause effects together. "
         "Markers mentioned together but described independently are valid."
@@ -171,11 +146,12 @@ def genotype_phenotype(term, client):
         # Fields
         "For each marker, extract exactly the following fields: "
         "- protein, "
-        "- mutation (converted to H5 numbering if originally H3), "
+        "- mutation, "
         "- subtype (use 'none stated' if not provided, but always in H[number]N[number] format if subtype-specific), "
         "- effect (one effect per object, matched to the provided list of standard effect strings), "
         "- quote supporting this effect, "
         "- citation in 'Author et al., Year' format (do not include numeric IDs or brackets). "
+        "- numbering denoting which numbering scheme is used for the mutation mentioned"
         "Do not create an object if any required field is missing, empty, or 'none'/'none stated'. "
         "Deduplicate strictly by (normalized mutation, subtype, effect) and keep only the first occurrence."
 
@@ -184,7 +160,48 @@ def genotype_phenotype(term, client):
         "Assign exactly one effect per annotation and match it to the closest string from the provided unique effects list. "
         "If a mutation effect is not subtype-specific, do not create multiple objects for different subtypes."
 
-        # Effects
+        "Use this list of proteins to match a mutation protein to each subtype. Do not create an object if the protein is not listed for that subtype. "
+        + str({
+            "H5N1": ["M1", "M2", "NS-1", "NS-2", "NP", "PB2", "PB1", "PB1-F2", "PA", "HA1-5", "HA2-5", "NA-1"],
+            "H5N2": ["M2", "PA", "PB2"],
+            "H7N2": ["M2", "HA1-5"],
+            "H9N2": ["M2", "NP", "PB2", "PB1", "PA", "HA1-5", "HA2-5"],
+            "H7N1 backbone with H5N1 NS": ["NS-1"],
+            "H1N1 backbone with H5N1 NS": ["NS-1"],
+            "H1N1 backbone with H5N1 HA, NA and NS": ["NS-1"],
+            "H1N1 with all internal genes from H7N9": ["NS-1"],
+            "H7N1": ["NS-1", "NP", "M1", "PB2", "HA1-5"],
+            "H7N9": ["NP", "PB2", "PA", "HA1-5", "HA2-5", "NA-1", "PB1"],
+            "H7N7": ["NP", "PB2", "PB1", "PA"],
+            "H5N1 backbone with H1N1 NS": ["PB2"],
+            "H4N6": ["PB2", "HA1-5"],
+            "H5N1 backbone with pH1N1 PB2": ["PB2"],
+            "H10N8": ["PB2"],
+            "H7N3": ["PB2", "PA"],
+            "H1N1 backbone with H5N1 PB2, PB1, PA and NP": ["PB1"],
+            "H6N1": ["PA", "HA1-5", "PB2"],
+            "H7N9 (human isolate)": ["PA"],
+            "H13N6": ["HA1-5"],
+            "H6N2": ["HA1-5", "PB2"],
+            "H7N7 (human isolate)": ["HA1-5"],
+            "H10N8 (human isolate)": ["HA1-5"],
+            "H1N1": ["NA-1", "PA", "HA1-5", "NS-1", "PB2"],
+            "A(H1N1)pdm09": ["NA-1", "PA"],
+            "Unknown": ["PB1", "NP", "NA-1", "M2"],
+            "A(H1N1)": ["PA"],
+            "H4N2": ["NA-1"],
+            "H10N7": ["PB2"],
+            "H1N2": ["HA1-5", "PB2"],
+            "H6N6": ["HA1-5", "PA", "PB2"],
+            "H5N6": ["HA1-5"],
+            "H3N2": ["HA1-5", "PB2"],
+            "H2N2": ["HA1-5"],
+            "H3N1": ["HA1-5"],
+            "H5N9": ["PB2"],
+            "H3N2 (avian)": ["PB2"],
+            "H3N2 (human isolate) backbone with H9N2 HA": ["HA1-5", "HA2-5"]
+        })
+        + ". "
         "For each marker, identify the a quote that states the effect of the mutation."
         "Use only the minimal portion of the text that directly supports the effect, not the full paragraph or citation."
         "Using this list of unique effects match one to each marker based on direct quotes from the text: "
@@ -271,7 +288,8 @@ def genotype_phenotype(term, client):
                             "subtype": {"type": "string"},
                             "effect": {"type": "string"},
                             "quote": {"type": "string"},
-                            "citation": {"type": "string"}
+                            "citation": {"type": "string"},
+                            "numbering": {"type": "string"}
                         },
                         "required": ["protein", "mutation", "subtype", "effect", "quote", "citation"]
                     }
@@ -306,12 +324,12 @@ def append_annotations(all_annotations, output):
     """Flatten GPT output and clean mutations."""
     if isinstance(output, dict):
         if "mutation" in output:
-            output["mutation"] = clean_mutation_label(convert_h3_to_h5(output["mutation"]))
+            output["mutation"] = clean_mutation_label((output["mutation"]))
         all_annotations.append(output)
     elif isinstance(output, list):
         for o in output:
             if "mutation" in o:
-                o["mutation"] = clean_mutation_label(convert_h3_to_h5(o["mutation"]))
+                o["mutation"] = clean_mutation_label((o["mutation"]))
         all_annotations.extend(output)
     return all_annotations
 
@@ -319,7 +337,6 @@ def append_annotations(all_annotations, output):
 for pdf_path in pdf_folder.glob("*.pdf"):
     text = extract_text_with_tables(pdf_path)
     text = normalize_subscripts(text)
-    text = convert_h3_to_h5(text)
     text, joint_effects = extract_joint_effects(text)
     
     all_annotations = []
