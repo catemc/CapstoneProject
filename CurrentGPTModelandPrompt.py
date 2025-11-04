@@ -8,7 +8,7 @@ import json
 from json_repair import repair_json # type: ignore
 import pdfplumber # type: ignore
 
-client = OpenAI(api_key="")
+client = OpenAI(api_key="") 
 
 pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
