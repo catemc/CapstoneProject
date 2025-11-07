@@ -8,7 +8,7 @@ import json
 from json_repair import repair_json # type: ignore
 import pdfplumber # type: ignore
 
-client = OpenAI(api_key="") 
+client = OpenAI(api_key="")
 
 pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
@@ -57,7 +57,7 @@ def count_tokens(text, model="gpt-4.1"):
     enc = tiktoken.encoding_for_model(model)
     return len(enc.encode(text))
 
-def chunk_text_by_tokens(text, max_tokens=1000, overlap_tokens=50, model="gpt-4.1"):
+def chunk_text_by_tokens(text, model="gpt-4.1", max_tokens=2000, overlap_tokens=200):
     """Chunk text into token-limited segments, keeping tables intact."""
     table_pattern = re.compile(r"\[START_TABLE[\s\S]*?\[END_TABLE\]")
     chunks = []
@@ -133,15 +133,36 @@ def genotype_phenotype(term, client):
         "Normalize partial mutations (e.g., '31N') to the full form ('S31N') if the reference protein shows 'S' at that position. "
         "Ignore any mutation that does not include both the original and changed amino acid or a position (e.g., 'del', '316'). "
         "If the mutation text includes additional numbering systems, parentheses, or extra notes (e.g., 'E119V (H3 numbering, H5: E117V)'), only extract the canonical mutation (e.g., 'E119V') and discard everything after the first space, parenthesis, or slash."
-
+        "“Mutation markers can appear as V587T, 587V→T, V587T (H5 numbering), or V587T mutant. Treat all as equivalent.”"
+        
+        # drug instructions 
+        "Whenever a list of drugs appears, read and process each drug name explicitly. "
+        "Enumerate all drugs in the list (for example: zanamivir, oseltamivir, peramivir, laninamivir) and create one complete object per drug. "
+        "Do not skip the latter drugs even if earlier ones already have effects assigned."
+        
         # Effects
         "Each object must contain exactly one effect. "
-        "You can retrieve multiple effects using the same sentence for evidence, but still keep them separate in the file. For example: E119D mutant that exhibited a marked increase in the 50% inhibitory concentrations against all tested NAIs (827-, 25-, 286-, and 702-fold for zanamivir, oseltamivir, peramivir, and laninamivir, respectively). You could get the effects: Reduced inhibition to Zanamivir', Reduced inhibition to Oseltamivir, Reduced inhibition to Laninamivir, and Reduced inhibition to Peramivir from that one sentence for the E119D mutation."
+        "However, if a single sentence or table row contains multiple drugs or effects, you must create multiple separate objects — one per effect — while keeping all other fields the same. "
+        "For example: if a sentence lists multiple drugs (e.g., zanamivir, oseltamivir, peramivir, and laninamivir), you must create four separate effect objects — one for each drug — even if the same mutation and quote apply to all of them."
+        "For example, for the sentence: 'E119D mutant that exhibited a marked increase in the 50% inhibitory concentrations against all tested NAIs (827-, 25-, 286-, and 702-fold for zanamivir, oseltamivir, peramivir, and laninamivir, respectively)', your output must include FOUR separate entries:"
+            "Reduced inhibition to Zanamivir" 
+            "Reduced inhibition to Oseltamivir" 
+            "Reduced inhibition to Peramivir"
+            "Reduced inhibition to Laninamivir" 
+        "Each with identical mutation, subtype, quote, and citation fields."
+        "If a sentence or clause lists multiple drugs separated by commas or conjunctions (e.g., zanamivir, oseltamivir, peramivir, and laninamivir), you must treat this as a loop: extract one complete object per drug. Do not stop after the first or second drug; always continue until all listed drugs have been processed."
+        "From that one sentence, you should extract four separate effects for the E119D mutation: 'Reduced inhibition to Zanamivir', 'Reduced inhibition to Oseltamivir', 'Reduced inhibition to Peramivir', and 'Reduced inhibition to Laninamivir'."
+            "Whenever multiple drugs or substrates are listed together (for example: 'zanamivir, oseltamivir, peramivir, and laninamivir'), you **must create one effect object per drug** even if they are in the same sentence. Do not choose only one or skip others."
+            "If fold-change or inhibition data are listed in parentheses or separated by commas or semicolons, assume they map in order to the drugs listed, and still extract a separate object for each drug name."
         "Definitions: 'Reduced susceptibility' means the virus is less sensitive to a drug. One example of a quote that shows 'Reduced susceptibility' is 'Moreover, our drug susceptibility profiling studies revealed that E119 mutations conferred reduced susceptibility mainly to zanamivir, suggesting that selective pressure is exerted by zanamivir in the N1 subtype'"
         "'Reduced inhibition' means how much a viral protein or enzyme is blocked by a compound in vitro. One example of a quote that shows 'Reduced inhibition' is 'the E119D mutation conferred reduced inhibition by oseltamivir (a 95-fold increase in the 50% inhibitory concentration'"
+        "Another important distinction is that 'reduced susceptibility' refers to virological evidence (virus growth or infectivity assays) while 'reduced inhibition' refers to biochemical evidence (enzyme activity assays)"
+        "Make sure to differentiate between 'reduced inhibition' and 'reduced susceptibility', both can appear in the same paper, but they describe distinct effects."
+        "Both 'reduced susceptibility' and 'reduced inhibition' can be effects found in one paper, so check to make sure you aren't missing any mutation-phenotype pairs."
+        "If the paper that is being analyzed mentions a drug like 'Zanamivir', 'Oseltamivir', 'Peramivir', or 'Laninamivir', take extra time to make sure you're not missing any mutation-drug effect pairs"
         "If a mutation has multiple effects, create separate objects for each effect, duplicating other fields except the effect and quote. "
-        "Only extract markers described as having an effect individually; do not extract markers that only cause effects together. "
-        "Markers mentioned together but described independently are valid."
+        "If multiple mutations are mentioned together with a shared effect, assign the effect to all listed mutations."
+        "Markers mentioned together but described independently should be treated as separate, valid entries."
 
         # Fields
         "For each marker, extract exactly the following fields: "
@@ -344,7 +365,7 @@ for pdf_path in pdf_folder.glob("*.pdf"):
         output = safe_genotype_phenotype(chunk, client)
         if output:
             append_annotations(all_annotations, output)
-        time.sleep(0.5)
+        time.sleep(1)
     
     out_file = results_folder / f"{pdf_path.stem}_results.json"
     with open(out_file, "w", encoding="utf-8") as f:
