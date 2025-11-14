@@ -1,12 +1,11 @@
-from openai import OpenAI # type: ignore
-from PyPDF2 import PdfReader # type: ignore
-from pathlib import Path
 import re
-import tiktoken # type: ignore
-import time
 import json
-from json_repair import repair_json # type: ignore
-import pdfplumber # type: ignore
+import time
+import fitz
+import pdfplumber
+import tiktoken
+from pathlib import Path
+from openai import OpenAI
 
 client = OpenAI(api_key="")
 
@@ -14,13 +13,15 @@ pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
 results_folder.mkdir(parents=True, exist_ok=True)
 
-SUBSCRIPT_MAP = str.maketrans("₀₁₂₃₄₅₆₇₈₉ₐₑₒₓₕₖₗₘₙₚₛₜ", "0123456789aeoxhklmnpst")
+SUBSCRIPT_MAP = str.maketrans(
+    "₀₁₂₃₄₅₆₇₈₉ₐₑₒₓₕₖₗₘₙₚₛₜ",
+    "0123456789aeoxhklmnpst"
+)
 
 def normalize_subscripts(text):
     return text.translate(SUBSCRIPT_MAP)
 
 def extract_joint_effects(text):
-    """Extract joint/combinatorial mutation phrases and remove from main text."""
     joint_patterns = [
         r"(?:mutations?|variants?|substitutions?)\s+([A-Z]\d+[A-Z](?:\s*(?:and|,|/|\+|-)\s*[A-Z]\d+[A-Z])*)",
         r"(?:combination|double|triple)\s+mutation[s]?\s+([A-Z]\d+[A-Z](?:[/,]\s*[A-Z]\d+[A-Z])*)"
@@ -32,87 +33,80 @@ def extract_joint_effects(text):
             text = text.replace(match.group(0), "")
     return text, joint_effects
 
-def extract_text_with_tables(pdf_path):
-    """Extract text and tables from PDF; label tables for GPT parsing."""
-    text = ""
-    with pdfplumber.open(pdf_path) as pdf:
-        for i, page in enumerate(pdf.pages, start=1):
-            page_text = page.extract_text() or ""
-            text += f"\n--- Page {i} ---\n" + page_text + "\n"
-            tables = page.extract_tables()
-            for t_idx, table in enumerate(tables, start=1):
-                text += f"\n[START_TABLE page={i} table={t_idx}]\n"
-                for row in table:
-                    clean_row = [cell.strip().replace("\n", " ") if cell else "" for cell in row]
-                    text += "\t".join(clean_row) + "\n"
-                text += "[END_TABLE]\n"
-    return text
+def gpt_parse_page(text, page_num):
+    """Return: { paragraphs: [...], tables: [...] }"""
 
-def clean_mutation_label(mutation: str) -> str:
+    prompt = f"""
+You are reconstructing the structure of a scientific PDF page (page {page_num}).
+
+You will receive raw messy extracted text.
+
+Your job:
+
+- Identify REAL PARAGRAPHS
+- Identify REAL TABLES (structured data)
+- Clean line breaks, merge split sentences
+- DO NOT invent information
+- Return VALID JSON ONLY
+
+Schema (must follow exactly):
+
+{{
+  "page": {page_num},
+  "paragraphs": [
+    {{ "id": "P{page_num}-1", "text": "..." }},
+    {{ "id": "P{page_num}-2", "text": "..." }}
+  ],
+  "tables": [
+    {{ "id": "T{page_num}-1", "text": "full table content as text" }}
+  ]
+}}
+
+Raw text:
+\"\"\"{text}\"\"\""""
+
+    response = client.responses.create(
+        model="gpt-4.1",
+        input=prompt,
+        max_output_tokens=3500
+    )
+
+    return json.loads(response.output_text)
+
+def parse_pdf_into_units(pdf_path):
+    doc = fitz.open(pdf_path)
+    all_units = []   # each unit is a CLEAN paragraph or table
+    print(f"\n=== Parsing {pdf_path.name} with GPT page parser ===")
+
+    for i, page in enumerate(doc, start=1):
+        print(f" Page {i}")
+        raw = page.get_text("text")
+
+        try:
+            structured = gpt_parse_page(raw, i)
+        except Exception as e:
+            print(" GPT parse error:", e)
+            continue
+
+        # Append paragraph texts
+        for p in structured["paragraphs"]:
+            txt = p["text"].strip()
+            if txt:
+                all_units.append(txt)
+
+        # Append table texts
+        for t in structured["tables"]:
+            txt = t["text"].strip()
+            if txt:
+                all_units.append(f"[TABLE]\n{txt}\n[/TABLE]")
+
+    doc.close()
+    return all_units
+
+def clean_mutation_label(mutation):
     if not isinstance(mutation, str):
         return mutation
     return re.sub(r"\s*\(H[35]\)\s*", "", mutation).strip()
-
-def count_tokens(text, model="gpt-4.1"):
-    enc = tiktoken.encoding_for_model(model)
-    return len(enc.encode(text))
-
-def chunk_text_by_tokens(text, model="gpt-4.1", max_tokens=2000, overlap_tokens=200):
-    """Chunk text into token-limited segments, keeping tables intact."""
-    table_pattern = re.compile(r"\[START_TABLE[\s\S]*?\[END_TABLE\]")
-    chunks = []
-    tables = list(table_pattern.finditer(text))
-    segments = []
-
-    last_idx = 0
-    for table in tables:
-        if table.start() > last_idx:
-            segments.append(text[last_idx:table.start()])
-        segments.append(text[table.start():table.end()])
-        last_idx = table.end()
-    if last_idx < len(text):
-        segments.append(text[last_idx:])
-
-    for segment in segments:
-        segment = segment.strip()
-        if not segment:
-            continue
-        if segment.startswith("[START_TABLE"):
-            chunks.append(segment)
-            continue
-        paragraphs = re.split(r'\n\s*\n+', segment)
-        current_chunk, current_tokens = [], 0
-        for paragraph in paragraphs:
-            para_tokens = count_tokens(paragraph, model)
-            if para_tokens > max_tokens:
-                words = paragraph.split()
-                start = 0
-                while start < len(words):
-                    sub_words, sub_tokens = [], 0
-                    while start < len(words) and sub_tokens < max_tokens:
-                        sub_words.append(words[start])
-                        sub_tokens = count_tokens(" ".join(sub_words), model)
-                        start += 1
-                    if current_chunk:
-                        chunks.append(" ".join(current_chunk))
-                        current_chunk, current_tokens = [], 0
-                    chunks.append(" ".join(sub_words))
-            elif current_tokens + para_tokens > max_tokens:
-                if current_chunk:
-                    chunks.append(" ".join(current_chunk))
-                if overlap_tokens > 0 and len(current_chunk) > overlap_tokens:
-                    current_chunk = current_chunk[-overlap_tokens:]
-                    current_tokens = count_tokens(" ".join(current_chunk), model)
-                else:
-                    current_chunk, current_tokens = [], 0
-                current_chunk.extend(paragraph.split())
-                current_tokens += para_tokens
-            else:
-                current_chunk.extend(paragraph.split())
-                current_tokens += para_tokens
-        if current_chunk:
-            chunks.append(" ".join(current_chunk))
-    return chunks
 
 def genotype_phenotype(term, client):
     system_prompt = (
@@ -135,34 +129,85 @@ def genotype_phenotype(term, client):
         "If the mutation text includes additional numbering systems, parentheses, or extra notes (e.g., 'E119V (H3 numbering, H5: E117V)'), only extract the canonical mutation (e.g., 'E119V') and discard everything after the first space, parenthesis, or slash."
         "“Mutation markers can appear as V587T, 587V→T, V587T (H5 numbering), or V587T mutant. Treat all as equivalent.”"
         
-        # drug instructions 
-        "Whenever a list of drugs appears, read and process each drug name explicitly. "
-        "Enumerate all drugs in the list (for example: zanamivir, oseltamivir, peramivir, laninamivir) and create one complete object per drug. "
-        "Do not skip the latter drugs even if earlier ones already have effects assigned."
-        
-        # Effects
-        "Each object must contain exactly one effect. "
-        "However, if a single sentence or table row contains multiple drugs or effects, you must create multiple separate objects — one per effect — while keeping all other fields the same. "
-        "For example: if a sentence lists multiple drugs (e.g., zanamivir, oseltamivir, peramivir, and laninamivir), you must create four separate effect objects — one for each drug — even if the same mutation and quote apply to all of them."
-        "For example, for the sentence: 'E119D mutant that exhibited a marked increase in the 50% inhibitory concentrations against all tested NAIs (827-, 25-, 286-, and 702-fold for zanamivir, oseltamivir, peramivir, and laninamivir, respectively)', your output must include FOUR separate entries:"
-            "Reduced inhibition to Zanamivir" 
-            "Reduced inhibition to Oseltamivir" 
-            "Reduced inhibition to Peramivir"
-            "Reduced inhibition to Laninamivir" 
-        "Each with identical mutation, subtype, quote, and citation fields."
-        "If a sentence or clause lists multiple drugs separated by commas or conjunctions (e.g., zanamivir, oseltamivir, peramivir, and laninamivir), you must treat this as a loop: extract one complete object per drug. Do not stop after the first or second drug; always continue until all listed drugs have been processed."
-        "From that one sentence, you should extract four separate effects for the E119D mutation: 'Reduced inhibition to Zanamivir', 'Reduced inhibition to Oseltamivir', 'Reduced inhibition to Peramivir', and 'Reduced inhibition to Laninamivir'."
-            "Whenever multiple drugs or substrates are listed together (for example: 'zanamivir, oseltamivir, peramivir, and laninamivir'), you **must create one effect object per drug** even if they are in the same sentence. Do not choose only one or skip others."
-            "If fold-change or inhibition data are listed in parentheses or separated by commas or semicolons, assume they map in order to the drugs listed, and still extract a separate object for each drug name."
-        "Definitions: 'Reduced susceptibility' means the virus is less sensitive to a drug. One example of a quote that shows 'Reduced susceptibility' is 'Moreover, our drug susceptibility profiling studies revealed that E119 mutations conferred reduced susceptibility mainly to zanamivir, suggesting that selective pressure is exerted by zanamivir in the N1 subtype'"
-        "'Reduced inhibition' means how much a viral protein or enzyme is blocked by a compound in vitro. One example of a quote that shows 'Reduced inhibition' is 'the E119D mutation conferred reduced inhibition by oseltamivir (a 95-fold increase in the 50% inhibitory concentration'"
-        "Another important distinction is that 'reduced susceptibility' refers to virological evidence (virus growth or infectivity assays) while 'reduced inhibition' refers to biochemical evidence (enzyme activity assays)"
-        "Make sure to differentiate between 'reduced inhibition' and 'reduced susceptibility', both can appear in the same paper, but they describe distinct effects."
-        "Both 'reduced susceptibility' and 'reduced inhibition' can be effects found in one paper, so check to make sure you aren't missing any mutation-phenotype pairs."
-        "If the paper that is being analyzed mentions a drug like 'Zanamivir', 'Oseltamivir', 'Peramivir', or 'Laninamivir', take extra time to make sure you're not missing any mutation-drug effect pairs"
-        "If a mutation has multiple effects, create separate objects for each effect, duplicating other fields except the effect and quote. "
-        "If multiple mutations are mentioned together with a shared effect, assign the effect to all listed mutations."
-        "Markers mentioned together but described independently should be treated as separate, valid entries."
+        # Mutation Numbering Conversion Rules
+        "For HA proteins, convert all mutation numbering to H5 numbering. "
+        "For NA proteins, convert all mutation numbering to N1 numbering. "
+        "If a mutation is provided in another numbering scheme (such as H3 numbering for HA or N2 numbering for NA), "
+        "you must translate it into the corresponding H5 or N1 position before producing the final mutation string. "
+        "Use domain knowledge, alignment clues, or explicit mappings provided in the text when available. "
+        "If a mutation is listed in multiple numbering systems, always output the H5 (for HA) or N1 (for NA) version. "
+        "If the text provides a direct mapping (e.g., 'Q226L (H3 numbering, H5: Q222L)'), ALWAYS use the H5/N1 form. "
+        "If the paper uses a consistent alternative numbering scheme, infer the positional shift (e.g., H3→H5 often subtracts 4) "
+        "and apply it to all HA mutations in that paper. "
+
+        "Apply the following built-in normalization corrections if the mapping is known: "
+        + str({
+            'Q226L': 'Q222L',
+            'Q227P': 'Q223P',
+            'R292K': 'R293K',
+            'N294S': 'N295S',
+            'H274Y': 'H275Y',
+            'P186L': 'P182L',
+            'G228S': 'G224S',
+            'K193T': 'K189T',
+            'V186K': 'V182K',
+            'V186G': 'V182G',
+            'V186N': 'V182N',
+            'N224K': 'N220K'
+        })
+        + ". "
+        "These rules must always be applied before extracting effects. "
+        "Always output the corrected H5 or N1 mutation in the 'mutation' field. "
+
+        # Drug-related extraction rules
+        " When a list of drugs appears (e.g., zanamivir, oseltamivir, peramivir, laninamivir), you must extract and process every drug explicitly."
+        "  Always generate one complete effect object per drug, even when they appear in the same sentence, clause, or table row."
+
+        " If multiple drugs are listed together, treat this as a loop: zanamivir, oseltamivir, peramivir, and laninamivir”, and extract four separate effect entries."
+
+        " If fold-change or inhibition values are listed in parentheses or separated by commas, assume they map in order to the listed drugs and still output one entry per drug."
+        " Never stop after the first or second drug. Do not skip any drug in a list."
+
+        " Example requirement:"
+        "  From the sentence:"
+        "    “E119D mutant exhibited a marked increase in the IC50 against all NAIs (827-, 25-, 286-, and 702-fold for zanamivir, oseltamivir, peramivir, and laninamivir, respectively)”"
+        "  you must output FOUR entries:"
+        "      – Reduced inhibition to Zanamivir"
+        "      – Reduced inhibition to Oseltamivir"
+        "      – Reduced inhibition to Peramivir"
+        "      – Reduced inhibition to Laninamivir"
+        "  All four entries share the same mutation, subtype, quote, and citation fields."
+
+        " Whenever you see any of these drugs: zanamivir, oseltamivir, peramivir, laninamivir,  double-check that you extract every corresponding mutation-drug effect pair."
+
+        # Effect extraction rules
+        " Each output object must contain exactly one effect."
+        "  If a sentence contains multiple effects OR multiple drugs, generate multiple objects, one per effect per drug."
+        " If a mutation has multiple effects, create a separate object for each effect, duplicating all other fields (mutation, subtype, quote, citation)."
+        " If multiple mutations are listed together with one shared effect, assign that effect to ALL mutations individually."
+        " Mutations mentioned together but described independently must each be extracted as valid, separate entries."
+
+        # Definitions and distinctions
+        " “Reduced susceptibility”"
+        "  – Indicates decreased virus responsiveness in whole-virus or infectivity assays."
+        "  – Example quote:"
+        "      “Drug susceptibility profiling revealed that E119 mutations conferred reduced susceptibility mainly to zanamivir…”"
+        " “Reduced inhibition”"
+        "  – Indicates decreased inhibition of an enzyme or protein in biochemical assays."
+        "  – Example quote:"
+        "      “E119D conferred reduced inhibition by oseltamivir (95-fold increase in IC50).”"
+
+        " These terms represent different biological phenomena."
+        "  Both may appear in the same paper."
+        "  Extract both when present and do not collapse them into one."
+
+        # Summary behavior
+        " Process every drug listed."
+        " Process every effect listed."
+        " Process every mutation listed."
+        " Output one object per (mutation × drug × effect)."
+        " Duplicate all other fields (subtype, quote, citation) as needed."
+        " Never skip a drug, mutation, or effect even if they appear together in one sentence."
 
         # Fields
         "For each marker, extract exactly the following fields: "
@@ -354,20 +399,38 @@ def append_annotations(all_annotations, output):
         all_annotations.extend(output)
     return all_annotations
 
-# ---- Main processing loop ----
+# --------------------------------------------------------
+# MAIN LOOP — NOW USE PARAGRAPHS (not chunks!)
+# --------------------------------------------------------
+
 for pdf_path in pdf_folder.glob("*.pdf"):
-    text = extract_text_with_tables(pdf_path)
-    text = normalize_subscripts(text)
-    text, joint_effects = extract_joint_effects(text)
-    
+
+    print(f"\n\n=== PROCESSING: {pdf_path.name} ===\n")
+
+    # 1. Get structured paragraphs/tables via GPT
+    units = parse_pdf_into_units(pdf_path)
+
+    # 2. Normalize subscripts
+    units = [normalize_subscripts(u) for u in units]
+
+    # 3. Remove joint mutation clusters
+    cleaned = []
+    for u in units:
+        u2, _ = extract_joint_effects(u)
+        cleaned.append(u2)
+
     all_annotations = []
-    for chunk in chunk_text_by_tokens(text, max_tokens=1000, overlap_tokens=50):
-        output = safe_genotype_phenotype(chunk, client)
-        if output:
-            append_annotations(all_annotations, output)
-        time.sleep(1)
-    
+
+    # 4. Feed EACH PARAGRAPH / TABLE ROW individually into your extractor
+    for u in cleaned:
+        out = safe_genotype_phenotype(u, client)
+        if out:
+            append_annotations(all_annotations, out)
+        time.sleep(0.7)
+
+    # 5. Save
     out_file = results_folder / f"{pdf_path.stem}_results.json"
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(all_annotations, f, indent=4, ensure_ascii=False)
-    print(f"Saved results for {pdf_path.name} → {out_file}")
+
+    print(f"Saved {len(all_annotations)} annotations → {out_file}")
