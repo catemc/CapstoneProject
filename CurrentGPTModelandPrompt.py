@@ -9,6 +9,17 @@ from openai import OpenAI
 
 client = OpenAI(api_key="")
 
+class MutationObject(BaseModel):
+    protein: str
+    mutation: str
+    subtype: str
+    effect: str
+    quote: str
+    citation: str
+    numbering: str | None = None  # optional
+class MutationList(BaseModel):
+    mutations: list[MutationObject]
+
 pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
 results_folder.mkdir(parents=True, exist_ok=True)
@@ -235,54 +246,25 @@ def genotype_phenotype(term, client):
     "For each marker, identify a quote that directly supports its effect. "
     "Only create objects if all required fields are valid. Do not output empty or placeholder objects."
 )
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "mutation_extraction",
-            "schema": {
-                "type": "array",                     
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "protein": {"type": "string"},
-                        "mutation": {"type": "string"},
-                        "subtype": {"type": "string"},
-                        "effect": {"type": "string"},
-                        "quote": {"type": "string"},
-                        "citation": {"type": "string"},
-                        "numbering": {"type": "string"}
-                    },
-                    "required": [
-                        "protein",
-                        "mutation",
-                        "subtype",
-                        "effect",
-                        "quote",
-                        "citation"
-                    ]
-                }
-            }
-        }
-    }
-
     try:
-        response = client.responses.create(
+        response = client.responses.parse(
             model="gpt-4.1",
             input=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": term}
             ],
-            max_output_tokens=8000
+            max_output_tokens=8000,
+            text_format=MutationList  
         )
 
-        # Correct field for Responses API
-        content = response.output_text
-        if not content:
-            return None
+        # Parse into validated Python objects
+        parsed: MutationList = response.output_parsed
 
-        return json.loads(content)
+        # Convert the list back to a normal Python list of dicts
+        return parsed.mutations
+
     except Exception as e:
-        print(f"Error generating JSON: {e}")
+        print(f"Error generating structured response: {e}")
         return None
 
 def safe_genotype_phenotype(term, client, max_retries=5):
@@ -365,5 +347,6 @@ for pdf_file in pdf_folder.glob("*.pdf"):
 
     out_file = results_folder / f"{pdf_file.stem}_fullpage_annotations.json"
     with open(out_file, "w", encoding="utf-8") as f:
+        annotations = [m.model_dump() for m in annotations]
         json.dump(annotations, f, indent=4, ensure_ascii=False)
     print(f"Saved {len(annotations)} annotations → {out_file}")
