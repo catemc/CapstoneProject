@@ -4,6 +4,8 @@ import time
 import fitz
 import pdfplumber
 import tiktoken
+from pydantic import BaseModel
+from pydantic import RootModel
 from pathlib import Path
 from openai import OpenAI
 
