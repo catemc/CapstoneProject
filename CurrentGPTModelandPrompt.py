@@ -75,6 +75,23 @@ def genotype_phenotype(term, client):
         "If the mutation text includes additional numbering systems, parentheses, or extra notes (e.g., 'E119V (H3 numbering, H5: E117V)'), only extract the canonical mutation (e.g., 'E119V') and discard everything after the first space, parenthesis, or slash."
         "“Mutation markers can appear as V587T, 587V→T, V587T (H5 numbering), or V587T mutant. Treat all as equivalent.”"
         
+        # Strict mutation-format rules
+        "Only extract a mutation if it is a SINGLE mutation in the format LetterNumberLetter or NumberLetter."
+
+        "Never extract composite, combined, or multi-mutation strings such as:"
+        "  - E119D/H275Y"
+        "  - H275Y-I436N"
+        "  - V186K,K193T,G228S"
+        "  - 195D/627E"
+        "  - any entry containing commas, slashes, hyphens, en-dashes, or multiple numbers/letters."
+
+        "Whenever such multi-mutation strings appear, you MUST split them into individual mutations and create ONE object per mutation:"
+        "  Example: 'E119D/H275Y' → 'E119D' and 'H275Y' (two separate entries)."
+
+        "If ANY segment in the composite string does not match a valid mutation format (LetterNumberLetter or NumberLetter), ignore ONLY that segment."
+
+        "Never output the composite string itself. Only output the normalized individual mutations."
+
         # Mutation Numbering Conversion Rules
         "For HA proteins, convert all mutation numbering to H5 numbering. "
         "For NA proteins, convert all mutation numbering to N1 numbering. "
@@ -248,6 +265,36 @@ def genotype_phenotype(term, client):
     "For each marker, identify a quote that directly supports its effect. "
     "Only create objects if all required fields are valid. Do not output empty or placeholder objects."
 )
+    response_format = {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "mutation_extraction",
+            "schema": {
+                "type": "array",                      # <-- IMPORTANT: LIST, NOT SINGLE OBJECT
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "protein": {"type": "string"},
+                        "mutation": {"type": "string"},
+                        "subtype": {"type": "string"},
+                        "effect": {"type": "string"},
+                        "quote": {"type": "string"},
+                        "citation": {"type": "string"},
+                        "numbering": {"type": "string"}
+                    },
+                    "required": [
+                        "protein",
+                        "mutation",
+                        "subtype",
+                        "effect",
+                        "quote",
+                        "citation"
+                    ]
+                }
+            }
+        }
+    }
+
     try:
         response = client.responses.parse(
             model="gpt-4.1",
