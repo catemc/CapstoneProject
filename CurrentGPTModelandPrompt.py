@@ -5,8 +5,8 @@ import fitz
 import pdfplumber
 import tiktoken
 from pydantic import BaseModel
-from pydantic import RootModel
 from pathlib import Path
+from typing import List
 from openai import OpenAI
 
 client = OpenAI(api_key="")
@@ -19,13 +19,19 @@ class MutationObject(BaseModel):
     quote: str
     citation: str
     numbering: str | None = None  # optional
+    type: str | None = None
+
+# The full return is an array of these
 class MutationList(BaseModel):
     mutations: list[MutationObject]
 
+
+# Folders
 pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
 results_folder.mkdir(parents=True, exist_ok=True)
 
+# Subscript normalization
 SUBSCRIPT_MAP = str.maketrans(
     "₀₁₂₃₄₅₆₇₈₉ₐₑₒₓₕₖₗₘₙₚₛₜ",
     "0123456789aeoxhklmnpst"
@@ -34,18 +40,46 @@ SUBSCRIPT_MAP = str.maketrans(
 def normalize_subscripts(text):
     return text.translate(SUBSCRIPT_MAP)
 
-# Joint mutation removal (unused for now)
-def extract_joint_effects(text):
-    joint_patterns = [
-        r"(?:mutations?|variants?|substitutions?)\s+([A-Z]\d+[A-Z](?:\s*(?:and|,|/|\+|-)\s*[A-Z]\d+[A-Z])*)",
-        r"(?:combination|double|triple)\s+mutation[s]?\s+([A-Z]\d+[A-Z](?:[/,]\s*[A-Z]\d+[A-Z])*)"
-    ]
-    joint_effects = []
-    for pattern in joint_patterns:
-        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
-            joint_effects.append(match.group(0))
-            text = text.replace(match.group(0), "")
-    return text, joint_effects
+# GPT structured page parser
+def gpt_parse_page(text, page_num):
+    """Return: { paragraphs: [...], tables: [...] }"""
+
+    prompt = f"""
+You are reconstructing the structure of a scientific PDF page (page {page_num}).
+
+You will receive raw messy extracted text.
+
+Your job:
+
+- Identify REAL PARAGRAPHS
+- Identify REAL TABLES (structured data)
+- Clean line breaks, merge split sentences
+- DO NOT invent information
+- Return VALID JSON ONLY
+
+Schema (must follow exactly):
+
+{{
+  "page": {page_num},
+  "paragraphs": [
+    {{ "id": "P{page_num}-1", "text": "..." }},
+    {{ "id": "P{page_num}-2", "text": "..." }}
+  ],
+  "tables": [
+    {{ "id": "T{page_num}-1", "text": "full table content as text" }}
+  ]
+}}
+
+Raw text:
+\"\"\"{text}\"\"\""""
+
+    response = client.responses.create(
+        model="gpt-4.1",
+        input=prompt,
+        max_output_tokens=3500
+    )
+
+    return json.loads(response.output_text)
 
 # Clean mutation labels
 def clean_mutation_label(mutation):
@@ -53,7 +87,9 @@ def clean_mutation_label(mutation):
         return mutation
     return re.sub(r"\s*\(H[35]\)\s*", "", mutation).strip()
 
-# GPT Mutation-Phenotype Pair Extractor
+
+# GPT genotype-phenotype extractor
+
 def genotype_phenotype(term, client):
     system_prompt = (
         "You are an expert in virology and antiviral resistance. "
@@ -75,22 +111,16 @@ def genotype_phenotype(term, client):
         "If the mutation text includes additional numbering systems, parentheses, or extra notes (e.g., 'E119V (H3 numbering, H5: E117V)'), only extract the canonical mutation (e.g., 'E119V') and discard everything after the first space, parenthesis, or slash."
         "“Mutation markers can appear as V587T, 587V→T, V587T (H5 numbering), or V587T mutant. Treat all as equivalent.”"
         
-        # Strict mutation-format rules
-        "Only extract a mutation if it is a SINGLE mutation in the format LetterNumberLetter or NumberLetter."
-
-        "Never extract composite, combined, or multi-mutation strings such as:"
+        # *** NEW COMBINED-MUTATION LOGIC ***
+        "Combined or multi-mutation expressions may appear, such as:"
         "  - E119D/H275Y"
         "  - H275Y-I436N"
         "  - V186K,K193T,G228S"
         "  - 195D/627E"
-        "  - any entry containing commas, slashes, hyphens, en-dashes, or multiple numbers/letters."
-
-        "Whenever such multi-mutation strings appear, you MUST split them into individual mutations and create ONE object per mutation:"
-        "  Example: 'E119D/H275Y' → 'E119D' and 'H275Y' (two separate entries)."
-
-        "If ANY segment in the composite string does not match a valid mutation format (LetterNumberLetter or NumberLetter), ignore ONLY that segment."
-
-        "Never output the composite string itself. Only output the normalized individual mutations."
+        "When such strings appear, DO NOT split into individual mutations."
+        "Treat the entire combination as a single marker. List each mutation in the standard 'LetterNumberLetter' format, separated by commas, without including any proteins. For example, if the text contains multiple mutations like 'E190G and G228E', output them as 'E190G, G228E'."
+        "All associated effects should be listed as separate objects, but linked to the same combined marker."
+        "Do not include entries like 'Human-H6N1 HA' or 'Duck-H6N1 HA' in the <mutation> field."
 
         # Mutation Numbering Conversion Rules
         "For HA proteins, convert all mutation numbering to H5 numbering. "
@@ -104,6 +134,55 @@ def genotype_phenotype(term, client):
         "and apply it to all HA mutations in that paper. "
         "These rules must always be applied before extracting effects. "
         "Always output the corrected H5 or N1 mutation in the 'mutation' field. "
+        "Apply the following built-in normalization corrections if the mapping is known: "
+        + str({
+            'Q226L': 'Q222L',
+            'Q227P': 'Q223P',
+            'R292K': 'R293K',
+            'N294S': 'N295S',
+            'H274Y': 'H275Y',
+            'P186L': 'P182L',
+            'G228S': 'G224S',
+            'K193T': 'K189T',
+            'V186K': 'V182K',
+            'V186G': 'V182G',
+            'V186N': 'V182N',
+            'N224K': 'N220K'
+        })
+        + "Multi-option mutation patterns such as 'E119A/D/G' must be expanded into fully separate mutations unless they are explicitly part of a single combined mutant construct."
+        "When a multi-option mutation is paired with an additional mutation (e.g., 'E119A/D/G-H274Y'), expand this into separate combination mutations, one for each possibility."
+        "For example, 'E119A/D/G-H274Y' must output: 'E119A, H274Y', 'E119D, H274Y', and 'E119G, H274Y' as three separate combination mutation objects."
+        "Never output a collapsed mutation string such as 'E119A, E119D, E119G, H274Y'. Always expand into separate objects."
+
+        "A single mutation such as 'E119D' must always be treated as a single marker, not part of a combination unless explicitly written as such."
+        "Never collapse unrelated mutations appearing in the same sentence. Each mutation must remain its own marker unless explicitly given as a combined construct."
+
+        "Do not allow multiple proteins in a single object. If the text produces something like 'HA1-5, HA2-5', select the protein explicitly associated with the mutation, otherwise choose the dominant protein in the sentence."
+        "Never output more than one protein in the 'protein' field."
+
+        "Do not allow multiple subtypes in the subtype field. Only one subtype may be output for every mutation object."
+        "If the sentence contains multiple subtypes, select the subtype directly linked to the mutation or effect. If none is linked, use 'none stated'."
+        "Never output multi-subtype strings such as 'H10N8, H7N9, H9N2'."
+
+        "Subtype must never be 'none', 'None', 'null', or empty. Use only 'none stated' when a subtype is not provided."
+
+        "Collapsed mutation shorthand such as 'D151E/V' must be expanded into 'D151E' and 'D151V' as separate mutations."
+        "Likewise, 'I223R/V/T' must be expanded into 'I223R', 'I223V', and 'I223T'."
+        "Never output the collapsed form. Always expand multi-option mutations into separate objects unless they are part of a deliberately constructed combination mutant."
+
+        "If PDF parsing merges characters or words together (e.g., 'Ontheglycanarray,thisV186K...' or missing spaces), treat this as a formatting artifact."
+        "You must still extract the correct mutation string, restoring normal spacing and mutation boundaries."
+
+        "Comma-separated mutation lists such as 'V182K,K189T,G224S' must only be treated as a combination if the text explicitly describes them as a combined mutant."
+        "If the text does not explicitly describe the mutations as a single engineered multi-mutation construct, treat each mutation independently."
+        "For example, 'V182K,K189T,G224S' becomes three separate mutation markers unless the paper explicitly states this was a constructed triple mutant."
+
+        "When identifying combination mutations, the key requirement is that the mutations must be engineered or tested together as a single construct. Do not infer combinations unless stated."
+        "Use 'type': 'combination' only when the mutations were explicitly combined experimentally or described as a combined mutant."
+
+        "Mutations such as 'K220K' (no amino acid change) represent PDF or OCR extraction errors."
+        "If a mutation contains identical amino acids (e.g., 'K220K'), attempt to correct using context and known mappings. If correction is impossible, skip the mutation."
+        "Never output uncorrectable same→same mutations."
 
         # Drug-related extraction rules
         " When a list of drugs appears (e.g., zanamivir, oseltamivir, peramivir, laninamivir),"
@@ -270,7 +349,7 @@ def genotype_phenotype(term, client):
         "json_schema": {
             "name": "mutation_extraction",
             "schema": {
-                "type": "array",                      # <-- IMPORTANT: LIST, NOT SINGLE OBJECT
+                "type": "array",                      
                 "items": {
                     "type": "object",
                     "properties": {
@@ -302,7 +381,7 @@ def genotype_phenotype(term, client):
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": term}
             ],
-            max_output_tokens=8000,
+            max_output_tokens=12000,
             text_format=MutationList  
         )
 
@@ -343,10 +422,14 @@ def extract_full_page_mutations(pdf_path):
         for i, page in enumerate(pdf.pages, start=1):
             print(f"\nProcessing page {i} of {pdf_path.name}")
 
+            # -----------------------
             # Extract raw text
+            # -----------------------
             raw_text = page.extract_text() or ""
 
+            # -----------------------
             # Extract tables
+            # -----------------------
             tables = page.extract_tables()
             table_text = ""
             for t_idx, table in enumerate(tables, start=1):
@@ -356,7 +439,9 @@ def extract_full_page_mutations(pdf_path):
                     table_text += row_text + "\n"
                 table_text += "[END_TABLE]\n"
 
+            # -----------------------
             # Feed full text to GPT
+            # -----------------------
             if raw_text.strip():
                 print(" Extracting from full text...")
                 text_annotations = safe_genotype_phenotype(raw_text, client)
@@ -364,7 +449,9 @@ def extract_full_page_mutations(pdf_path):
                     all_annotations.extend(text_annotations)
                 time.sleep(0.7)
 
+            # -----------------------
             # Feed full tables to GPT
+            # -----------------------
             if table_text.strip():
                 print(" Extracting from full tables...")
                 table_annotations = safe_genotype_phenotype(table_text, client)
@@ -387,6 +474,10 @@ def append_annotations(all_annotations, output):
         all_annotations.extend(output)
     return all_annotations
 
+
+
+# Main loop
+
 pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
 results_folder.mkdir(parents=True, exist_ok=True)
@@ -394,8 +485,13 @@ results_folder.mkdir(parents=True, exist_ok=True)
 for pdf_file in pdf_folder.glob("*.pdf"):
     annotations = extract_full_page_mutations(pdf_file)
 
+    # Label each annotation
+    for ann in annotations:
+        ann.type = "combination" if "," in ann.mutation else "single"
+
+    # Save once per PDF
     out_file = results_folder / f"{pdf_file.stem}_fullpage_annotations.json"
     with open(out_file, "w", encoding="utf-8") as f:
-        annotations = [m.model_dump() for m in annotations]
-        json.dump(annotations, f, indent=4, ensure_ascii=False)
+        annotations_to_dump = [m.model_dump() for m in annotations]
+        json.dump(annotations_to_dump, f, indent=4, ensure_ascii=False)
     print(f"Saved {len(annotations)} annotations → {out_file}")
