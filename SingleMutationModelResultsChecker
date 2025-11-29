@@ -1,0 +1,355 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import json
+import re
+
+
+INVALID = {"", "none", "null", "nan", "n/a", "na"}
+
+def is_valid(x):
+    """Return True only if the entry is meaningful."""
+    if x is None:
+        return False
+    s = str(x).strip().lower()
+    return s not in INVALID
+
+def effect_to_string(x):
+    """Convert list → clean string while removing None/invalid."""
+    if isinstance(x, list):
+        cleaned = [str(i).strip() for i in x if is_valid(i)]
+        return ", ".join(cleaned)
+    return "" if not is_valid(x) else str(x)
+
+def normalize_effect(effect):
+    """Fix text inconsistencies and normalize effect wording."""
+    if not is_valid(effect):
+        return ""
+
+    text = str(effect).lower().strip()
+
+    replace_map = {
+        'zanamiriv': 'zanamivir'
+    }
+    for bad, good in replace_map.items():
+        text = re.sub(bad, good, text)
+
+    text = text.replace("highly reduced inhibition", "reduced inhibition")
+    text = re.sub(r'from reduced to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1', text)
+    text = re.sub(r'from reduced to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1', text)
+    text = re.sub(r'from normal to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1', text)
+    text = re.sub(r'from normal to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1', text)
+    text = re.sub(r'enhanced contact transmission in ([\w\s-]+)', r'contact transmission in \1', text)
+    text = re.sub(r'contributes to contact transmission in ([\w\s-]+)', r'contact transmission in \1', text)
+    text = re.sub(r'enhanced replication in ([\w\s-]+)', r'increased replication in \1', text)
+    text = re.sub(r'enhanced virulence in ([\w\s-]+)', r'increased virulence in \1', text)
+
+    return text.strip()
+
+def normalize_subtype(x):
+    if not is_valid(x):
+        return ""
+
+    s = str(x).upper().strip()
+
+    # Remove leading A/ or B/
+    s = re.sub(r'^[AB]/', '', s)
+
+    # Remove parentheses around subtype
+    s = s.replace("A(", "").replace("B(", "").replace(")", "")
+
+    # Preserve pandemic lineage
+    if "H1N1" in s and "PDM09" in s:
+        return "H1N1PDM09"
+
+    return s
+
+# Load the manual curation sheet (subset)
+
+df = pd.read_csv('C:/Users/catem/OneDrive/Desktop/CapstoneProject/Single_Mutations_Only.csv')
+
+subsetted_df = df[df['paper_id'].isin([
+    "Kwon J. et al., 2018",
+    "Wang F. et al., 2015",
+    "L'Huillier A. et al., 2015",
+    "Lloren K. et al., 2019",
+    "de Vries R. et al., 2017",
+    "Sang X. et al., 2015b",
+    "Baek Y. et al., 2015",
+    "Xiao C. et al., 2016",
+])].copy()
+
+subsetted_df = subsetted_df.rename(columns={
+    "combined_mutations": "mutation_name"
+})
+
+# Remove old prefixes
+subsetted_df["mutation_name"] = subsetted_df["mutation_name"].str.replace(
+    r"^[^:]+:", "", regex=True
+)
+
+# Normalize effect names
+subsetted_df['effect_name'] = subsetted_df['effect_name'].str.replace(
+    r'zanamiriv', 'zanamivir', case=False, regex=True
+)
+subsetted_df['effect_name_norm'] = subsetted_df['effect_name'].astype(str).apply(normalize_effect)
+
+subsetted_df['subtype_norm'] = subsetted_df['subtype'].apply(normalize_subtype)
+
+# Load JSON extraction results
+
+json_files = [
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/embj0034-1661_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/jiv288_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/292_vir001029_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/JVI.01825-18_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/ppat.1006390_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/srep15928_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/srep19474_fullpage_annotations.json',
+    'C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results/zjv287_fullpage_annotations.json'
+]
+
+all_data = []
+
+for f in json_files:
+    with open(f, "r", encoding="utf-8") as infile:
+        try:
+            data = json.load(infile)
+            
+            # If it's a dict → wrap in list
+            if isinstance(data, dict):
+                all_data.append(data)
+            
+            # If it's a list → only keep dicts
+            elif isinstance(data, list):
+                dicts_only = [x for x in data if isinstance(x, dict)]
+                if dicts_only:
+                    all_data.extend(dicts_only)
+            
+            # Skip anything else
+            else:
+                print(f"Skipping {f}: not a dict or list")
+
+        except Exception as e:
+            print(f"Error loading {f}: {e}")
+
+# Now convert
+combined1 = pd.DataFrame(all_data)
+combined = combined1[combined1['type'] == 'single']
+# Clean effect list → string
+combined["effect"] = combined["effect"].apply(effect_to_string)
+combined['subtype_norm'] = combined['subtype'].apply(normalize_subtype)
+
+# Mutation name fixes
+mutation_fixes = {
+    'Q226L': 'Q222L',
+    'Q227P': 'Q223P',
+    'R292K': 'R293K',
+    'N294S': 'N295S',
+    'H274Y': 'H275Y',
+    'P186L': 'P182L',
+    'G228S': 'G224S',
+    'K193T': 'K189T',
+    'V186K': 'V182K',
+    'V186G': 'V182G',
+    'V186N': 'V182N',
+    'N224K': 'N220K'
+}
+combined['mutation'] = combined['mutation'].replace(mutation_fixes)
+
+combined['effect_norm'] = combined['effect'].astype(str).apply(normalize_effect)
+
+
+# 4. Strict filtering of invalid mutation/effect rows
+combined_valid = combined[
+    combined['mutation'].apply(is_valid) &
+    combined['effect_norm'].apply(is_valid)
+]
+
+subsetted_valid = subsetted_df[
+    subsetted_df['mutation_name'].apply(is_valid) &
+    subsetted_df['effect_name_norm'].apply(is_valid)
+]
+
+
+# Matching logic 
+
+def row_matches(row):
+    mut = row['mutation_name']
+    eff = row['effect_name_norm']
+    sub = row['subtype_norm']
+
+    # Filter JSON results by mutation first
+    subset = combined_valid[combined_valid['mutation'] == mut]
+
+    if subset.empty:
+        return False
+
+    # Now require subtype + effect match
+    return any(
+        (
+            is_valid(e) and (
+                eff == e or eff in e
+            )
+        ) and (
+            is_valid(s) and s == sub
+        )
+        for e, s in zip(subset['effect_norm'], subset['subtype_norm'])
+    )
+
+
+matched_subset = subsetted_valid[subsetted_valid.apply(row_matches, axis=1)]
+unmatched_subset = subsetted_valid[~subsetted_valid.index.isin(matched_subset.index)]
+
+# Accurate counting
+
+matched = len(matched_subset)
+undiscovered = len(unmatched_subset)
+
+matched_pairs = set(zip(matched_subset['mutation_name'], matched_subset['effect_name_norm'], matched_subset['subtype_norm']))
+combined_pairs = set(zip(combined_valid['mutation'], combined_valid['effect_norm'], combined_valid['subtype_norm']))
+
+unmatched_in_combined = combined_pairs - matched_pairs
+no = len(unmatched_in_combined)
+
+print("Matched:", matched)
+print("Unmatched (in combined but not in subset):", no)
+print("Undiscovered (in subset but not found in combined):", undiscovered)
+
+# Build comparable mutation–phenotype–subtype triplets
+subset_pairs = set(zip(
+    subsetted_valid['mutation_name'].astype(str),
+    subsetted_valid['effect_name_norm'].astype(str),
+    subsetted_valid['subtype_norm'].astype(str)
+))
+
+combined_pairs = set(zip(
+    combined_valid['mutation'].astype(str),
+    combined_valid['effect_norm'].astype(str),
+    combined_valid['subtype_norm'].astype(str)
+))
+
+# Convert pairs into lookups for fast yes/no flags
+subset_pairs_df = pd.DataFrame(list(subset_pairs), columns=["mutation", "phenotype", "subtype"])
+combined_pairs_df = pd.DataFrame(list(combined_pairs), columns=["mutation", "phenotype", "subtype"])
+
+# Add source flags
+subset_pairs_df["found_in_flu_mutdb"] = "yes"
+combined_pairs_df["found_in_gpt"] = "yes"
+
+# Merge both sources (outer join keeps everything)
+merged = pd.merge(
+    subset_pairs_df,
+    combined_pairs_df,
+    on=["mutation", "phenotype", "subtype"],
+    how="outer"
+)
+
+# Fill missing yes/no flags
+merged["found_in_flu_mutdb"] = merged["found_in_flu_mutdb"].fillna("no")
+merged["found_in_gpt"] = merged["found_in_gpt"].fillna("no")
+
+# Matched?
+merged["matched_both"] = merged.apply(
+    lambda r: "yes" if r["found_in_flu_mutdb"] == "yes" and r["found_in_gpt"] == "yes" else "no",
+    axis=1
+)
+
+# Status label
+def compute_status(row):
+    if row["matched_both"] == "yes":
+        return "Matched"
+    if row["found_in_flu_mutdb"] == "yes" and row["found_in_gpt"] == "no":
+        return "Only in FluMutDB"
+    if row["found_in_flu_mutdb"] == "no" and row["found_in_gpt"] == "yes":
+        return "Only in GPT"
+    return "Error"
+
+merged["status"] = merged.apply(compute_status, axis=1)
+
+# Add paper review columns (will fill in section with performance evaluator data later)
+merged["found_in_paper"] = ""
+merged["paper_location"] = ""     
+merged["notes"] = ""
+
+# Reorder columns
+merged = merged[[
+    "mutation",
+    "subtype",
+    "phenotype",
+    "found_in_flu_mutdb",
+    "found_in_gpt",
+    "matched_both",
+    "status",
+    "found_in_paper",
+    "paper_location",
+    "notes"
+]]
+
+# Save final spreadsheet
+merged.to_csv(
+    "C:/Users/catem/OneDrive/Desktop/CapstoneProject/single_mutation_subtype_phenotype_status.csv",
+    index=False
+)
+
+
+# 8. Plot by subtype (Matched / Only GPT / Only FluMutDB)
+
+# Ensure each dataset has subtype_norm
+subsetted_valid['subtype_norm'] = subsetted_valid['subtype_norm'].astype(str)
+combined_valid['subtype_norm'] = combined_valid['subtype_norm'].astype(str)
+
+# Build comparable Mut–Effect–Subtype triplets
+subset_pairs = set(zip(
+    subsetted_valid['mutation_name'],
+    subsetted_valid['effect_name_norm'],
+    subsetted_valid['subtype_norm'])
+)
+
+combined_pairs = set(zip(
+    combined_valid['mutation'],
+    combined_valid['effect_norm'],
+    combined_valid['subtype_norm'])
+)
+
+# Identify categories
+matched_pairs = subset_pairs & combined_pairs
+only_flu = subset_pairs - combined_pairs
+only_gpt = combined_pairs - subset_pairs
+
+# Collect all subtypes appearing in either dataset
+all_subtypes = sorted({
+    s for (_, _, s) in subset_pairs
+}.union({
+    s for (_, _, s) in combined_pairs
+}))
+
+# Count occurrences per subtype
+matched_counts = []
+only_gpt_counts = []
+only_flu_counts = []
+
+for st in all_subtypes:
+    matched_counts.append(sum(1 for (_, _, s) in matched_pairs if s == st))
+    only_gpt_counts.append(sum(1 for (_, _, s) in only_gpt if s == st))
+    only_flu_counts.append(sum(1 for (_, _, s) in only_flu if s == st))
+
+# Plot grouped bar chart
+x = np.arange(len(all_subtypes))
+width = 0.28
+
+plt.figure(figsize=(14, 6))
+colors = ['green', 'yellow', 'red']
+
+plt.bar(x - width, matched_counts, width, label='In Both (Matched)', color=colors[0], zorder=3)
+plt.bar(x, only_gpt_counts, width, label='Only GPT (Not in FluMutDB)', color=colors[1], zorder=3)
+plt.bar(x + width, only_flu_counts, width, label='Only FluMutDB (Not in GPT)', color=colors[2], zorder=3)
+
+plt.xticks(x, all_subtypes, rotation=45)
+plt.ylabel("Counts")
+plt.title("Single FluMutDB vs GPT-extracted Mutations")
+plt.legend()
+plt.grid(axis="y", linestyle="-", alpha=0.5)
+
+plt.tight_layout()
+plt.show()
