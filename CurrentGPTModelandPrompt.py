@@ -8,8 +8,16 @@ from pydantic import BaseModel
 from pathlib import Path
 from typing import List
 from openai import OpenAI
+import OpenAIBase
 
-client = OpenAI(api_key="")
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+api_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI(api_key=api_key)
 
 class MutationObject(BaseModel):
     protein: str
