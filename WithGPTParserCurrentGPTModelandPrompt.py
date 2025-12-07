@@ -1,15 +1,15 @@
+from __future__ import annotations
 import re
 import json
 import time
-import fitz
-import pdfplumber
-import tiktoken
-from pydantic import BaseModel
+from pydantic import BaseModel, ValidationError
 from pathlib import Path
-from typing import List
 from openai import OpenAI
-import OpenAIBase
+from json import dumps
+from pandas import DataFrame
+from pathlib import Path
 from base64 import b64encode
+from typing import List, Optional
 
 from dotenv import load_dotenv
 import os
@@ -40,126 +40,8 @@ pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
 results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
 results_folder.mkdir(parents=True, exist_ok=True)
 
-# Normalization helpers
-def pdf_page_to_text(file: str) -> list[dict]:
-    """Returns PDF page text ONLY—no extraction, no analysis."""
-    with open(file, "rb") as fin:
-        base64_pdf = b64encode(fin.read()).decode("utf-8")
-
-    return [
-        {
-            "role": "system",
-            "content": "Extract and return ONLY the plain text from the provided PDF page. Do not summarize, analyze, or interpret."
-        },
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "input_file",
-                    "file_data": f"data:application/pdf;base64,{base64_pdf}",
-                    "filename": str(file),   # ✅ convert to string
-                }
-            ],
-        },
-    ]
-
-
-def pdf_page_to_table(file: str) -> list[dict]:
-    """Returns PDF page tables as markdown ONLY—no extraction, no interpretation."""
-    with open(file, "rb") as fin:
-        base64_pdf = b64encode(fin.read()).decode("utf-8")
-
-    return [
-        {
-            "role": "system",
-            "content": "Extract and return ONLY tables from the PDF page in markdown format. Do not analyze or interpret."
-        },
-        {
-            "role": "user",
-            "content": [
-                {
-                    "type": "input_file",
-                    "file_data": f"data:application/pdf;base64,{base64_pdf}",
-                    "filename": str(file)  # ✅ convert to string
-                }
-            ]
-        }
-    ]
-
-def text_or_table(content: str) -> list[dict]:
-    """Returns whether content is table-like—nothing else."""
-    return [
-        {
-            "role": "system",
-            "content": "Determine whether the provided text contains a table. Reply with 'table' or 'text'. No extraction."
-        },
-        {
-            "role": "user",
-            "content": content
-        }
-    ]
-
-SUBSCRIPT_MAP = str.maketrans(
-    "₀₁₂₃₄₅₆₇₈₉ₐₑₒₓₕₖₗₘₙₚₛₜ",
-    "0123456789aeoxhklmnpst"
-)
-
-def normalize_subscripts(text):
-    return text.translate(SUBSCRIPT_MAP)
-
-# GPT structured page parser
-def gpt_parse_page(text, page_num):
-    """Return: { paragraphs: [...], tables: [...] }"""
-
-    prompt = f"""
-You are reconstructing the structure of a scientific PDF page (page {page_num}).
-
-You will receive raw messy extracted text.
-
-Your job:
-
-- Identify REAL PARAGRAPHS
-- Identify REAL TABLES (structured data)
-- Clean line breaks, merge split sentences
-- DO NOT invent information
-- Return VALID JSON ONLY
-
-Schema (must follow exactly):
-
-{{
-  "page": {page_num},
-  "paragraphs": [
-    {{ "id": "P{page_num}-1", "text": "..." }},
-    {{ "id": "P{page_num}-2", "text": "..." }}
-  ],
-  "tables": [
-    {{ "id": "T{page_num}-1", "text": "full table content as text" }}
-  ]
-}}
-
-Raw text:
-\"\"\"{text}\"\"\""""
-
-    response = client.responses.create(
-        model="gpt-4.1",
-        input=prompt,
-        max_output_tokens=10000
-    )
-
-    return json.loads(response.output_text)
-
-# Clean mutation labels
-def clean_mutation_label(mutation):
-    if not isinstance(mutation, str):
-        return mutation
-    return re.sub(r"\s*\(H[35]\)\s*", "", mutation).strip()
-
-
-# GPT genotype-phenotype extractor
-
-def genotype_phenotype(term, client):
-    system_prompt = (
-        "You are an expert in virology and antiviral resistance. "
+# Extraction prompt
+extractionPrompt = '''"You are an expert in virology and antiviral resistance. "
         "Perform the following steps exactly as described for each mutation marker. Do not skip any fields. Only output valid, complete objects. "
         
         # Tables
@@ -245,7 +127,10 @@ def genotype_phenotype(term, client):
         "For example, 'V182K,K189T,G224S' becomes three separate mutation markers unless the paper explicitly states this was a constructed triple mutant."
 
         "When identifying combination mutations, the key requirement is that the mutations must be engineered or tested together as a single construct. Do not infer combinations unless stated."
-        "Use 'type': 'combination' only when the mutations were explicitly combined experimentally or described as a combined mutant."
+        "For each mutation, always provide the 'type' field:
+        - Use 'type': 'combination' if the mutation string is a combined mutant (e.g., E119D/H275Y, V182K,K189T,G224S).
+        - Use 'type': 'single' for all other mutations.
+        Never leave the 'type' field empty or null."
 
         "Mutations such as 'K220K' (no amino acid change) represent PDF or OCR extraction errors."
         "If a mutation contains identical amino acids (e.g., 'K220K'), attempt to correct using context and known mappings. If correction is impossible, skip the mutation."
@@ -409,145 +294,286 @@ def genotype_phenotype(term, client):
     
     #Quotes and validation
     "For each marker, identify a quote that directly supports its effect. "
-    "Only create objects if all required fields are valid. Do not output empty or placeholder objects."
-)
-    response_format = {
-        "type": "json_schema",
-        "json_schema": {
-            "name": "mutation_extraction",
-            "schema": {
-                "type": "array",                      
-                "items": {
-                    "type": "object",
-                    "properties": {
-                        "protein": {"type": "string"},
-                        "mutation": {"type": "string"},
-                        "subtype": {"type": "string"},
-                        "effect": {"type": "string"},
-                        "quote": {"type": "string"},
-                        "citation": {"type": "string"},
-                        "numbering": {"type": "string"}
-                    },
-                    "required": [
-                        "protein",
-                        "mutation",
-                        "subtype",
-                        "effect",
-                        "quote",
-                        "citation"
-                    ]
+    "Only create objects if all required fields are valid. Do not output empty or placeholder objects."'''
+
+
+# Encode PDF page to base64
+def _encode_pdf(file_path: str) -> str:
+    with open(file_path, "rb") as f:
+        return b64encode(f.read()).decode("utf-8")
+
+# GPT input builders
+def text_or_table(file_path: str) -> list[dict]:
+    """GPT determines if page contains text, tables, mutations, references."""
+    base64_pdf = _encode_pdf(file_path)
+
+    return [
+        {
+            "role": "system",
+            "content": """
+You are an expert in virology.
+
+Your task is to examine a PDF page and determine:
+
+- Is this page part of the references?
+- Does it contain any mutation patterns (E627K, 234G, etc.)?
+- Does it contain a table?
+- Do tables contain mutations?
+- Does surrounding text contain mutations?
+
+Output JSON ONLY:
+{"references": bool,
+ "mutation_information": bool,
+ "contains_table": bool,
+ "tables_contain_mutations": bool,
+ "text_contain_mutations": bool,
+ "examples": str}
+"""
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "input_file",
+                    "filename": "PDF Page",
+                    "file_data": f"data:application/pdf;base64,{base64_pdf}"
                 }
-            }
+            ]
         }
-    }
+    ]
 
-    try:
-        response = client.responses.parse(
-            model="gpt-4.1",
-            input=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": term}
-            ],
-            max_output_tokens=12000,
-            text_format=MutationList  
-        )
 
-        # Parse into validated Python objects
-        parsed: MutationList = response.output_parsed
+def qpage_to_annotations(file_path: str) -> list[dict]:
+    """Extract mutation annotations from full-page text."""
+    base64_pdf = _encode_pdf(file_path)
 
-        # Convert the list back to a normal Python list of dicts
-        return parsed.mutations
+    return [
+        {
+            "role": "system",
+            "content": f"""
+You are an expert in influenza virology.
 
-    except Exception as e:
-        print(f"Error generating structured response: {e}")
-        return None
+Extract mutation annotations strictly following the JSON schema.
 
-def safe_genotype_phenotype(term, client, max_retries=5):
-    for attempt in range(max_retries):
-        try:
-            return genotype_phenotype(term, client)  # Your existing function
-        except Exception as e:
-            if "rate_limit" in str(e).lower():
-                wait_time = (2 ** attempt) + 1
-                print(f"Rate limit hit. Waiting {wait_time}s...")
-                time.sleep(wait_time)
-            else:
-                print(f"Error: {e}")
-                return None
-    print("Max retries reached; skipping chunk.")
-    return None
+{extractionPrompt}
+"""
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "input_file",
+                    "filename": "Page",
+                    "file_data": f"data:application/pdf;base64,{base64_pdf}"
+                }
+            ]
+        }
+    ]
 
-# Full-page extraction
-def extract_full_page_mutations_gpt(pdf_path, client):
+
+def page_to_table(file_path: str) -> list[dict]:
+    """Reconstruct tables from PDF via GPT (Markdown format)."""
+    base64_pdf = _encode_pdf(file_path)
+
+    return [
+        {
+            "role": "system",
+            "content": """
+You will reconstruct any tables found on this PDF page.
+
+Return:
+- success: true/false
+- markdown: reconstructed table in Markdown
+- description: short summary
+- error: message if failed
+"""
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "input_file",
+                    "filename": "Page",
+                    "file_data": f"data:application/pdf;base64,{base64_pdf}"
+                }
+            ]
+        }
+    ]
+
+
+def qtable_to_annotations(table_md: str) -> list[dict]:
+    """Extract mutation annotations from a Markdown table."""
+    return [
+        {
+            "role": "system",
+            "content": f"""
+You are an expert in influenza virology.
+
+The following is a table. Extract all mutation annotations.
+
+{extractionPrompt}
+"""
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "input_text",
+                    "text": f"Process this table:\n{table_md}"
+                }
+            ]
+        }
+    ]
+
+
+
+# Full extraction for one PDF
+def extract_full_page_mutations(pdf_path: Path, client):
     """
-    Fully GPT-driven extraction: fetch text and tables via GPT prompts,
-    then extract mutation annotations using GPT.
-    Returns a list of MutationObject annotations.
+    Fully GPT-based extraction for a single PDF.
+    - GPT decides if text/tables/mutations exist
+    - GPT extracts text mutations
+    - GPT reconstructs and extracts table mutations
     """
+
     all_annotations = []
 
-    # Convert Path to string
-    pdf_file_str = str(pdf_path)
+    print(f"\n=== Processing PDF: {pdf_path.name} ===")
 
-    # 1️⃣ Extract raw text from PDF via GPT prompt
-    text_prompt = pdf_page_to_text(pdf_file_str)
-    response = client.responses.create(
+    # 1. Ask GPT to classify the page
+    classify_prompt = text_or_table(str(pdf_path))
+    classify_resp = client.responses.create(
         model="gpt-4.1",
-        input=text_prompt,
-        max_output_tokens=10000
+        input=classify_prompt
     )
-    page_text = response.output_text.strip()
-    if page_text:
-        annotations = safe_genotype_phenotype(page_text, client)
-        if annotations:
-            all_annotations.extend(annotations)
-        time.sleep(0.7)
 
-    # 2️⃣ Extract tables from PDF via GPT prompt
-    table_prompt = pdf_page_to_table(pdf_file_str)
-    response = client.responses.create(
-        model="gpt-4.1",
-        input=table_prompt,
-        max_output_tokens=10000
-    )
-    table_text = response.output_text.strip()
-    if table_text:
-        annotations = safe_genotype_phenotype(table_text, client)
-        if annotations:
-            all_annotations.extend(annotations)
-        time.sleep(0.7)
+    try:
+        info = json.loads(classify_resp.output[0].content[0].text)
+    except Exception:
+        print("Failed to classify page — skipping.")
+        return all_annotations
 
-    # 3️⃣ Clean mutation labels and assign type
-    for ann in all_annotations:
-        ann.mutation = clean_mutation_label(ann.mutation)
-        ann.type = "combination" if "," in ann.mutation else "single"
+    if info.get("references"):
+        print("Page is references — skipping.")
+        return all_annotations
+
+# Helper: normalize effects
+    def normalize_effect(effect: str) -> str:
+        if not effect:
+            return effect
+
+        # Only decode known unicode escapes safely
+        try:
+            # Replace literal \uXXXX sequences with actual characters
+            import re
+            effect = re.sub(
+                r'\\u([0-9a-fA-F]{4})',
+                lambda m: chr(int(m.group(1), 16)),
+                effect
+            )
+        except Exception:
+            pass
+
+        # Fix dashes and whitespace
+        effect = effect.replace("\u2013", "–")  # en-dash
+        effect = effect.replace("\u2014", "–")  # em-dash
+        effect = " ".join(effect.split())
+        return effect.strip()
+
+
+    # 2. Extract text-based mutations
+    if info.get("text_contain_mutations"):
+        print("Extracting TEXT mutations…")
+
+        prompt = qpage_to_annotations(str(pdf_path))
+        text_resp = client.responses.create(
+            model="gpt-4.1",
+            input=prompt
+        )
+
+        try:
+            text_output = text_resp.output[0].content[0].text
+            parsed_json = json.loads(text_output)
+            if isinstance(parsed_json, list):
+                parsed_json = {"mutations": parsed_json}
+
+            for entry in parsed_json["mutations"]:
+                # Normalize effect text
+                if "effect" in entry and entry["effect"]:
+                    entry["effect"] = normalize_effect(entry["effect"])
+                # Determine single vs combination mutation
+                if "mutation" in entry and entry["mutation"]:
+                    entry["type"] = "combination" if ',' in entry["mutation"] else "single"
+
+            muts = MutationList(**parsed_json)
+            all_annotations.extend([m.model_dump() for m in muts.mutations])
+        except (json.JSONDecodeError, ValidationError) as e:
+            print("Failed to parse or validate GPT output:", e)
+
+        time.sleep(2)
+
+    # 3. Extract table mutations
+    if info.get("contains_table"):
+        print("Reconstructing TABLE(S)…")
+
+        prompt = page_to_table(str(pdf_path))
+        table_resp = client.responses.create(model="gpt-4.1", input=prompt)
+
+        table_out = table_resp.output[0].content[0].text
+        table_md = table_out.strip()
+
+        if info.get("tables_contain_mutations"):
+            print("Extracting TABLE mutations…")
+
+            prompt = qtable_to_annotations(table_md)
+            table_extract_resp = client.responses.create(
+                model="gpt-4.1",
+                input=prompt
+            )
+
+            try:
+                table_output = table_extract_resp.output[0].content[0].text
+                parsed_json = json.loads(table_output)
+                if isinstance(parsed_json, list):
+                    parsed_json = {"mutations": parsed_json}
+
+                for entry in parsed_json["mutations"]:
+                    if "effect" in entry and entry["effect"]:
+                        entry["effect"] = normalize_effect(entry["effect"])
+                    if "mutation" in entry and entry["mutation"]:
+                        entry["type"] = "combination" if ',' in entry["mutation"] else "single"
+
+                muts = MutationList(**parsed_json)
+                all_annotations.extend([m.model_dump() for m in muts.mutations])
+            except (json.JSONDecodeError, ValidationError) as e:
+                print("Failed to parse or validate GPT output:", e)
+
+            time.sleep(3)
 
     return all_annotations
 
-def append_annotations(all_annotations, output):
-    """Flatten GPT output and clean mutations."""
-    if isinstance(output, dict):
-        if "mutation" in output:
-            output["mutation"] = clean_mutation_label((output["mutation"]))
-        all_annotations.append(output)
-    elif isinstance(output, list):
-        for o in output:
-            if "mutation" in o:
-                o["mutation"] = clean_mutation_label((o["mutation"]))
-        all_annotations.extend(output)
-    return all_annotations
+# Pipeline process for folder
 
-# Main loop
+def extract_all_pdfs(client):
+    """
+    Processes every PDF in the directory and writes JSON outputs.
+    """
+    for pdf in pdf_folder.glob("*.pdf"):
+        annotations = extract_full_page_mutations(pdf, client)
 
-pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
-results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
-results_folder.mkdir(parents=True, exist_ok=True)
+        out_path = results_folder / f"{pdf.stem}_mutations.json"
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(annotations, f, indent=2, ensure_ascii=False)
 
-for pdf_file in pdf_folder.glob("*.pdf"):
-    annotations = extract_full_page_mutations_gpt(pdf_file, client)
+        print(f"Saved: {out_path}")
 
-    out_file = results_folder / f"{pdf_file.stem}_fullpage_annotations.json"
-    with open(out_file, "w", encoding="utf-8") as f:
-        annotations_to_dump = [m.model_dump() for m in annotations]
-        json.dump(annotations_to_dump, f, indent=4, ensure_ascii=False)
-    print(f"Saved {len(annotations)} annotations → {out_file}")
+# Run code
+
+if __name__ == "__main__":
+    print("Starting full GPT-based PDF extraction pipeline...")
+    total = len(list(pdf_folder.glob("*.pdf")))
+    print(f"Found {total} PDFs to process.")
+
+    extract_all_pdfs(client)
+
+    print("Pipeline finished.")
