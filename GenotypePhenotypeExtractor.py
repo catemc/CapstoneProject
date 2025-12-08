@@ -54,7 +54,7 @@ class GenotypePhenotypeExtractor:
             self.conversation.extend([
                 {
                     "role": "user",
-                    "content": "I evaluated the extracted annotations and have additional instructions to add to the original prompt. The rationale for the updated instructions is below," +
+                    "content": "I evaluated the extracted annotations and have additional instructions to add to the original prompt. The rationale for the updated instructions is below,\n\n" +
                     response.rationale +
                     "\n\n" +
                     "Based on this rationale I have new instructions to append to the original system prompt. Redo the extractions along with the updated instructions below," +
