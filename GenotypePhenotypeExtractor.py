@@ -2,6 +2,43 @@ from clients.OpenAIBase import OpenAIStructuredOutputClient
 from models.models import MutationList, OptimizedSystemPrompt
 import json
 
+def is_valid(x):
+    if x is None:
+        return False
+    s = str(x).strip().lower()
+    return s not in INVALID
+
+
+def normalize_effect(effect):
+    if not is_valid(effect):
+        return ""
+
+    text = str(effect).lower().strip()
+
+    replace_map = {
+        'zanamiriv': 'zanamivir'
+    }
+    for bad, good in replace_map.items():
+        text = re.sub(bad, good, text)
+
+    # Normalize phrases
+    patterns = [
+        (r'highly reduced inhibition', 'reduced inhibition'),
+        (r'from reduced to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'from reduced to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'from normal to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'from normal to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'enhanced contact transmission in ([\w\s-]+)', r'contact transmission in \1'),
+        (r'contributes to contact transmission in ([\w\s-]+)', r'contact transmission in \1'),
+        (r'enhanced replication in ([\w\s-]+)', r'increased replication in \1'),
+        (r'enhanced virulence in ([\w\s-]+)', r'increased virulence in \1')
+    ]
+
+    for pattern, repl in patterns:
+        text = re.sub(pattern, repl, text)
+
+    return text.strip()
+
 class GenotypePhenotypeExtractor:
     SYSTEM_PROMPT_EXTRACT_MUTATIONS_PATH = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/extract_mutations_system_prompt.txt"
     SYSTEM_PROMPT_EXTRACT_MUTATIONS_EVALUATION_PATH = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/extract_mutations_evaluator_system_prompt.txt"
