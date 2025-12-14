@@ -1,7 +1,7 @@
 from openai import OpenAI
 class OpenAIBase:
 
-    def __init__(self, api_key: str, model: str="gpt-4.1"):
+    def __init__(self, api_key: str, model: str = "gpt-4.1"):
         self.client = OpenAI(api_key=api_key)
         self.model = model
 
@@ -33,3 +33,5 @@ class OpenAITextOutputClient(OpenAIBase):
     def call(self, conversation, max_output_tokens = 12000):
         response = super().create_response(conversation, max_output_tokens)
         return response.output_text.strip()
+
+        }
