@@ -26,6 +26,7 @@ class PdfToTextConverter:
 
     def __init__(self, file_path, api_key, tmp_dir="./tmp"):
         self.tmp_dir = tmp_dir
+        os.makedirs(self.tmp_dir, exist_ok=True)
         self.openai_text_client = OpenAITextOutputClient(api_key)
         self.openai_structured_output_client = OpenAIStructuredOutputClient(api_key)
         self.file_path = file_path
@@ -81,6 +82,5 @@ class PdfToTextConverter:
 
     def write_full_paper_text(self):
         self.full_paper_text_path = os.path.join(self.split_pdf_folder, "full_paper_text.txt")
-        with open(self.full_paper_text_path, "w") as f:
+        with open(self.full_paper_text_path, "w", encoding="utf-8") as f:
             f.write(self.full_paper_text)
-            f.close()
