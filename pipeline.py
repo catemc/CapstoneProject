@@ -9,6 +9,68 @@ import os
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 
+def is_valid(x):
+    if x is None:
+        return False
+    s = str(x).strip().lower()
+    return s not in INVALID
+
+
+def normalize_effect(effect):
+    if not is_valid(effect):
+        return ""
+
+    text = str(effect).lower().strip()
+
+    replace_map = {
+        'zanamiriv': 'zanamivir'
+    }
+    for bad, good in replace_map.items():
+        text = re.sub(bad, good, text)
+
+    # Normalize phrases
+    patterns = [
+        (r'highly reduced inhibition', 'reduced inhibition'),
+        (r'from reduced to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'from reduced to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'from normal to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'from normal to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
+        (r'enhanced contact transmission in ([\w\s-]+)', r'contact transmission in \1'),
+        (r'contributes to contact transmission in ([\w\s-]+)', r'contact transmission in \1'),
+        (r'enhanced replication in ([\w\s-]+)', r'increased replication in \1'),
+        (r'enhanced virulence in ([\w\s-]+)', r'increased virulence in \1')
+    ]
+
+    for pattern, repl in patterns:
+        text = re.sub(pattern, repl, text)
+
+    return text.strip()
+
+# =========================
+# Expected-annotation builder with normalization
+# =========================
+
+def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
+    import pandas as pd
+    import re
+
+    df = pd.read_csv(csv_path)
+    subset = df[df["paper_id"].str.strip().replace('"', '') == "Baek Y. et al., 2015"].copy()
+
+    expected = []
+    for _, row in subset.iterrows():
+        mutation = str(row.get("combined_mutations", "")).strip().replace('"', '')
+        effect = normalize_effect(str(row.get("effect_name", ""))).lower().strip()
+        subtype = str(row.get("subtype", "")).strip()
+
+        expected.append({
+            "mutation": mutation,
+            "effect": effect,
+            "subtype": subtype
+        })
+
+    return expected
+
 if __name__ == "__main__":
     # Folders
     pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
