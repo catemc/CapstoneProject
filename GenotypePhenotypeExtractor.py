@@ -1,6 +1,17 @@
 from clients.OpenAIBase import OpenAIStructuredOutputClient
-from models.models import MutationList, OptimizedSystemPrompt
+from models.models import MutationList, OptimizedSystemPrompt, EvaluationResult
 import json
+import configparser
+import re
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+PATHS = config["paths"]
+PROMPTS = config["prompts"]
+RUN = config["run"]
+
+INVALID = {"", "none", "null", "nan", "n/a", "na", "unknown"}
 
 def is_valid(x):
     if x is None:
@@ -40,23 +51,28 @@ def normalize_effect(effect):
     return text.strip()
 
 class GenotypePhenotypeExtractor:
-    SYSTEM_PROMPT_EXTRACT_MUTATIONS_PATH = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/extract_mutations_system_prompt.txt"
-    SYSTEM_PROMPT_EXTRACT_MUTATIONS_EVALUATION_PATH = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/extract_mutations_evaluator_system_prompt.txt"
 
-    conversation = []
-    full_text = None
-    annotations = []
-
-    def __init__(self, api_key: str, full_text: str, expected_annotations: list[dict], model: str="gpt-4.1"):
+    def __init__(
+        self,
+        api_key: str,
+        full_text: str,
+        expected_annotations: list[dict],
+        prompt_paths: dict,
+        model: str = "gpt-4.1",
+    ):
+        self.prompt_paths = prompt_paths
         self.openai_structured_output_client = OpenAIStructuredOutputClient(api_key, model)
         self.full_text = full_text
         self.expected_annotations = expected_annotations
+        self.conversation = []
+        self.annotations = []
+        self.iteration_history = []
 
         # Load system prompts
-        with open(self.SYSTEM_PROMPT_EXTRACT_MUTATIONS_PATH, encoding="utf-8") as f:
+        with open(self.prompt_paths["extract_mutations"], encoding="utf-8") as f:
             self.system_prompt_extract_mutations = f.read()
             self.current_system_prompt = self.system_prompt_extract_mutations
-        with open(self.SYSTEM_PROMPT_EXTRACT_MUTATIONS_EVALUATION_PATH, encoding="utf-8") as f:
+        with open(self.prompt_paths["evaluate_mutations"], encoding="utf-8") as f:
             self.system_prompt_extract_mutations_evaluation = f.read()
 
     def extract(self):
