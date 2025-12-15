@@ -1,0 +1,222 @@
+[
+    {
+        "protein": "NA-1",
+        "mutation": "E119A",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to zanamivir",
+        "quote": "E119A ... 52.1 ± 10.3 (57.9) [zanamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119A",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to oseltamivir",
+        "quote": "E119A ... 5.4 ± 2.9 (7.7) [oseltamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119A",
+        "subtype": "H1N1",
+        "effect": "reduced susceptibility to zanamivir",
+        "quote": "drug susceptibility profiling studies revealed that E119 mutations conferred reduced susceptibility mainly to zanamivir",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119A",
+        "subtype": "H5N1",
+        "effect": "reduced inhibition to zanamivir",
+        "quote": "E119A ... 95.9 ± 3.2 (50.5) [zanamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119A",
+        "subtype": "H5N1",
+        "effect": "reduced susceptibility to zanamivir",
+        "quote": "E119A ... conferred resistance, particularly to zanamivir",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to oseltamivir",
+        "quote": "E119D ... 16.0 ± 2.0 (22.9) [oseltamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to zanamivir",
+        "quote": "E119D ... 525.0 ± 159.8 (583.4) [zanamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to peramivir",
+        "quote": "E119D ... 31.1 ± 0.7 (103.7) [peramivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "reduced susceptibility to oseltamivir",
+        "quote": "E119D mutation was associated with reduced susceptibility to all of the NAIs tested: reduced inhibition by oseltamivir (22.9-fold ...)",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "reduced susceptibility to zanamivir",
+        "quote": "E119D mutation was associated with reduced susceptibility to all of the NAIs tested: ... highly reduced inhibition by zanamivir ...",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H1N1",
+        "effect": "reduced susceptibility to peramivir",
+        "quote": "E119D mutation was associated with reduced susceptibility to all of the NAIs tested: ... highly reduced inhibition by ... peramivir ...",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H5N1",
+        "effect": "reduced inhibition to oseltamivir",
+        "quote": "E119D ... 191.6 ± 38.1 (87.1) [oseltamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H5N1",
+        "effect": "reduced inhibition to zanamivir",
+        "quote": "E119D ... 251.1 ± 77.1 (132.2) [zanamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H5N1",
+        "effect": "reduced inhibition to peramivir",
+        "quote": "E119D ... 1,867.3 ± 192.9 (1,436.4) [peramivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H5N1",
+        "effect": "reduced susceptibility to oseltamivir",
+        "quote": "E119D mutation in the H5N1 backbone conferred a remarkable increase in resistance to all of the NAIs.",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H5N1",
+        "effect": "reduced susceptibility to zanamivir",
+        "quote": "E119D mutation in the H5N1 backbone conferred a remarkable increase in resistance to all of the NAIs.",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119D",
+        "subtype": "H5N1",
+        "effect": "reduced susceptibility to peramivir",
+        "quote": "E119D mutation in the H5N1 backbone conferred a remarkable increase in resistance to all of the NAIs.",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119G",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to zanamivir",
+        "quote": "E119G ... 101.9 ± 6.1 (113.2) [zanamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119G",
+        "subtype": "H1N1",
+        "effect": "reduced inhibition to peramivir",
+        "quote": "E119G ... 24.5 ± 4.1 (81.7) [peramivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119G",
+        "subtype": "H5N1",
+        "effect": "reduced inhibition to zanamivir",
+        "quote": "E119G ... 832.9 ± 68.8 (438.4) [zanamivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119G",
+        "subtype": "H5N1",
+        "effect": "reduced inhibition to peramivir",
+        "quote": "E119G ... 142.1 ± 14.6 (109.3) [peramivir]",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    },
+    {
+        "protein": "NA-1",
+        "mutation": "E119G",
+        "subtype": "H5N1",
+        "effect": "reduced susceptibility to zanamivir",
+        "quote": "E119G mutations ... conferred reduced to highly reduced inhibition by zanamivir (50.5-, 132.2-, and 438.4-fold IC50 increases ...)",
+        "citation": "Baek et al., 2015",
+        "numbering": "N2",
+        "type": "single"
+    }
+]
