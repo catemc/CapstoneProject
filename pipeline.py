@@ -1,6 +1,8 @@
 from pathlib import Path
 from PdfToTextConverter import PdfToTextConverter
 from GenotypePhenotypeExtractor import GenotypePhenotypeExtractor
+import configparser
+import re
 
 from dotenv import load_dotenv
 import os
@@ -8,6 +10,13 @@ import os
 # Load API key
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+PATHS = config["paths"]
+PROMPTS = config["prompts"]
+RUN = config["run"]
 
 def is_valid(x):
     if x is None:
@@ -45,10 +54,8 @@ def normalize_effect(effect):
         text = re.sub(pattern, repl, text)
 
     return text.strip()
-
-# =========================
+    
 # Expected-annotation builder with normalization
-# =========================
 
 def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
     import pandas as pd
@@ -72,38 +79,45 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
     return expected
 
 if __name__ == "__main__":
-    # Folders
-    pdf_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers")
-    results_folder = Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/Results")
+    pdf_folder = Path(PATHS["input_papers"])
+    results_folder = Path(PATHS["results"])
     results_folder.mkdir(parents=True, exist_ok=True)
 
     expected_annotations = []
     expected_annotations += build_expected_annotations_from_lloren(
-        "C:/Users/catem/OneDrive/Desktop/CapstoneProject/Single_Mutations_Only.csv"
+        PATHS["single_mutations_csv"]
     )
     expected_annotations += build_expected_annotations_from_lloren(
-        "C:/Users/catem/OneDrive/Desktop/CapstoneProject/Combined_Mutations_Only.csv"
+        PATHS["combined_mutations_csv"]
     )
 
-    # Testing with one file
-    for pdf_file in [Path("C:/Users/catem/OneDrive/Desktop/CapstoneProject/2015+papers/zjv287.pdf")]:
-        # Extract text
-        pdf_to_text_converter = PdfToTextConverter(
-            str(pdf_file),
-            api_key
-        )
-        pdf_to_text_converter.convert()
-        pdf_to_text_converter.write_full_paper_text()
+    # === RUN ONE PDF (from config.ini) ===
+    pdf_file = Path(RUN["pdf_file"])
 
-        # Extract annotations
-        with open(pdf_to_text_converter.full_paper_text_path, "r", encoding="utf-8") as f:
-            full_text = f.read()
-        genotype_phenotype_extractor = GenotypePhenotypeExtractor(
-            api_key,
-            full_text,
-            expected_annotations
-        )
-        genotype_phenotype_extractor.iteratively_extract()
-        genotype_phenotype_extractor.write_annotations_to_file(results_folder / "annotations.txt")
-        # Writing conversation to file with iteratively adding new instructions
-        genotype_phenotype_extractor.write_conversation_to_file(results_folder / "conversation.txt")
+    if not pdf_file.exists():
+        raise FileNotFoundError(f"PDF not found: {pdf_file}")
+
+    pdf_to_text_converter = PdfToTextConverter(
+        str(pdf_file),
+        api_key
+    )
+    pdf_to_text_converter.convert()
+    pdf_to_text_converter.write_full_paper_text()
+
+    with open(pdf_to_text_converter.full_paper_text_path, "r", encoding="utf-8") as f:
+        full_text = f.read()
+
+    genotype_phenotype_extractor = GenotypePhenotypeExtractor(
+        api_key,
+        full_text,
+        expected_annotations,
+        prompt_paths=PROMPTS,
+    )
+
+    genotype_phenotype_extractor.iteratively_extract()
+    genotype_phenotype_extractor.write_annotations_to_file(
+        results_folder / "annotations.json"
+    )
+    genotype_phenotype_extractor.write_conversation_to_file(
+        results_folder / "conversation.json"
+    )
