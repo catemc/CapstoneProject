@@ -15,6 +15,8 @@ A marker is an amino acid mutation in the format 'LetterNumberLetter' (e.g., E62
 Ignore any mutation that does not include both the original and changed amino acid or a position (e.g., 'del', '316').
 If the mutation text includes additional numbering systems, parentheses, or extra notes (e.g., 'E119V (H3 numbering, H5: E117V)'), only extract the canonical mutation (e.g., 'E119V') and discard everything after the first space, parenthesis, or slash.
 Mutation markers can appear as V587T, 587V→T, V587T (H5 numbering), or V587T mutant. Treat all as equivalent.
+If a mutation appears in parentheses, tables, or numbering explanations, you MUST still extract the mutation string itself ('R152K') and record the numbering separately.
+Never discard a mutation solely because it is followed by parentheses or numbering notes.
 
 # *** NEW COMBINED-MUTATION LOGIC ***
 A marker can also refer to a group of amino acids. For example, E119D/H275Y, H275Y-I436N, V186K,K193T,G228S, and 195D/627E.
@@ -110,6 +112,16 @@ Mutations mentioned together but described independently must each be extracted 
  These terms represent different biological phenomena.
   Both may appear in the same paper.
   Extract both when present — do not collapse them into one.
+
+IMPORTANT CLARIFICATION:
+If a paper explicitly reports "reduced susceptibility" for a mutation–drug pair,
+you MUST extract it even if:
+- the subtype is mentioned earlier in the paragraph but not repeated in the sentence
+- the effect is described at a group level (e.g., "these mutants showed reduced susceptibility")
+- the effect is inferred from whole-virus or infectivity assays
+
+If subtype is not restated in the same sentence, inherit the most recently stated subtype
+within the same section or table.
 
 # Summary behavior
 Process every drug listed.
