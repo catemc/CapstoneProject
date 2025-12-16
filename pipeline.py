@@ -18,6 +18,23 @@ PATHS = config["paths"]
 PROMPTS = config["prompts"]
 RUN = config["run"]
 
+INVALID = {"", "none", "null", "nan", "n/a", "na"}
+
+MUTATION_FIXES = {
+    'Q226L': 'Q222L',
+    'Q227P': 'Q223P',
+    'R292K': 'R293K',
+    'N294S': 'N295S',
+    'H274Y': 'H275Y',
+    'P186L': 'P182L',
+    'G228S': 'G224S',
+    'K193T': 'K189T',
+    'V186K': 'V182K',
+    'V186G': 'V182G',
+    'V186N': 'V182N',
+    'N224K': 'N220K'
+}
+
 def is_valid(x):
     if x is None:
         return False
@@ -25,35 +42,54 @@ def is_valid(x):
     return s not in INVALID
 
 
-def normalize_effect(effect):
+def normalize_effect(effect: str) -> str:
+    """
+    Normalize effect strings:
+    - Lowercase & strip
+    - Replace known typos
+    - Collapse redundant phrases
+    """
     if not is_valid(effect):
         return ""
 
     text = str(effect).lower().strip()
 
-    replace_map = {
-        'zanamiriv': 'zanamivir'
-    }
-    for bad, good in replace_map.items():
-        text = re.sub(bad, good, text)
+    # Known typos
+    text = text.replace("zanamiriv", "zanamivir")
 
-    # Normalize phrases
+    # Standard phrase replacements
     patterns = [
-        (r'highly reduced inhibition', 'reduced inhibition'),
-        (r'from reduced to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
-        (r'from reduced to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
-        (r'from normal to reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
-        (r'from normal to highly reduced inhibition to ([\w\s-]+)', r'reduced inhibition to \1'),
-        (r'enhanced contact transmission in ([\w\s-]+)', r'contact transmission in \1'),
-        (r'contributes to contact transmission in ([\w\s-]+)', r'contact transmission in \1'),
-        (r'enhanced replication in ([\w\s-]+)', r'increased replication in \1'),
-        (r'enhanced virulence in ([\w\s-]+)', r'increased virulence in \1')
+        (r"highly reduced inhibition", "reduced inhibition"),
+        (r"from reduced to highly reduced inhibition to ([\w\s-]+)", r"reduced inhibition to \1"),
+        (r"from reduced to reduced inhibition to ([\w\s-]+)", r"reduced inhibition to \1"),
+        (r"from normal to reduced inhibition to ([\w\s-]+)", r"reduced inhibition to \1"),
+        (r"from normal to highly reduced inhibition to ([\w\s-]+)", r"reduced inhibition to \1"),
+        (r"enhanced contact transmission in ([\w\s-]+)", r"contact transmission in \1"),
+        (r"contributes to contact transmission in ([\w\s-]+)", r"contact transmission in \1"),
+        (r"enhanced replication in ([\w\s-]+)", r"increased replication in \1"),
+        (r"enhanced virulence in ([\w\s-]+)", r"increased virulence in \1")
     ]
 
-    for pattern, repl in patterns:
-        text = re.sub(pattern, repl, text)
+    for pat, repl in patterns:
+        text = re.sub(pat, repl, text)
 
-    return text.strip()
+    return text.strip().lower()
+
+# Normalize mutations
+
+def normalize_mutation(mut_string: str) -> str:
+    if not is_valid(mut_string):
+        return ""
+
+    raw_parts = [m.strip() for m in mut_string.split(",") if m.strip()]
+
+    cleaned = []
+    for part in raw_parts:
+        part = re.sub(r"[A-Za-z0-9\-]+:", "", part).upper().strip()
+        part = MUTATION_FIXES.get(part, part)
+        cleaned.append(part)
+
+    return ", ".join(sorted(set(cleaned)))
     
 # Expected-annotation builder with normalization
 
@@ -66,8 +102,8 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
 
     expected = []
     for _, row in subset.iterrows():
-        mutation = str(row.get("combined_mutations", "")).strip().replace('"', '')
-        effect = normalize_effect(str(row.get("effect_name", ""))).lower().strip()
+        mutation = normalize_mutation(str(row.get("combined_mutations", "")).strip().replace('"', ''))
+        effect = normalize_effect(row.get("effect_name", ""))
         subtype = str(row.get("subtype", "")).strip()
 
         expected.append({
@@ -110,8 +146,7 @@ if __name__ == "__main__":
     genotype_phenotype_extractor = GenotypePhenotypeExtractor(
         api_key,
         full_text,
-        expected_annotations,
-        prompt_paths=PROMPTS,
+        expected_annotations
     )
 
     genotype_phenotype_extractor.iteratively_extract()
