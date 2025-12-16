@@ -1,8 +1,9 @@
 from clients.OpenAIBase import OpenAIStructuredOutputClient
-from models.models import MutationList, OptimizedSystemPrompt, EvaluationResult
+from models.models import MutationList, OptimizedSystemPrompt, EvaluationResult, AnnotationMatch
 import json
 import configparser
 import re
+import copy
 
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -13,12 +14,40 @@ RUN = config["run"]
 
 INVALID = {"", "none", "null", "nan", "n/a", "na", "unknown"}
 
+MUTATION_FIXES = {
+    'Q226L': 'Q222L',
+    'Q227P': 'Q223P',
+    'R292K': 'R293K',
+    'N294S': 'N295S',
+    'H274Y': 'H275Y',
+    'P186L': 'P182L',
+    'G228S': 'G224S',
+    'K193T': 'K189T',
+    'V186K': 'V182K',
+    'V186G': 'V182G',
+    'V186N': 'V182N',
+    'N224K': 'N220K'
+}
+
 def is_valid(x):
     if x is None:
         return False
     s = str(x).strip().lower()
     return s not in INVALID
 
+def normalize_mutation(mut_string: str) -> str:
+    if not is_valid(mut_string):
+        return ""
+
+    raw_parts = [m.strip() for m in mut_string.split(",") if m.strip()]
+
+    cleaned = []
+    for part in raw_parts:
+        part = re.sub(r"[A-Za-z0-9\-]+:", "", part).upper().strip()
+        part = MUTATION_FIXES.get(part, part)
+        cleaned.append(part)
+
+    return ", ".join(sorted(set(cleaned)))
 
 def normalize_effect(effect):
     if not is_valid(effect):
@@ -49,24 +78,81 @@ def normalize_effect(effect):
         text = re.sub(pattern, repl, text)
 
     return text.strip()
+    
+def normalize_subtype(subtype: str) -> str:
+    """
+    Normalize subtype strings:
+    - Uppercase
+    - Strip leading/trailing whitespace
+    - Preserve full subtype string (do NOT remove 'A/' or parentheses)
+    - Collapse pandemic H1N1 to 'H1N1PDM09'
+    """
+    if not is_valid(subtype):
+        return ""
+
+    s = str(subtype).upper().strip()
+
+    # Preserve pandemic lineage
+    if "H1N1" in s and "PDM09" in s:
+        return "H1N1PDM09"
+
+    return s
+
+def annotations_match(exp: dict, ext: dict) -> bool:
+    """
+    Return True if:
+    - normalized mutations match
+    - normalized subtypes match
+    - normalized effects match
+    """
+    return (
+        exp["mutation"] == ext["mutation"]
+        and normalize_subtype(exp["subtype"]) == normalize_subtype(ext["subtype"])
+        and exp["effect"] == ext["effect"]
+    )
+    
+def compare_expected_to_extracted(expected: list[dict], extracted: list[dict]):
+    matched = []
+    missed = []
+    unmatched_extracted = []
+
+    used_extracted_indices = set()
+
+    for exp in expected:
+        found = False
+        for i, ext in enumerate(extracted):
+            if i in used_extracted_indices:
+                continue
+            if annotations_match(exp, ext):
+                matched.append(exp)
+                used_extracted_indices.add(i)
+                found = True
+                break
+        if not found:
+            missed.append(exp)
+
+    for i, ext in enumerate(extracted):
+        if i not in used_extracted_indices:
+            unmatched_extracted.append(ext)
+
+    return matched, missed, unmatched_extracted
 
 class GenotypePhenotypeExtractor:
 
-    def __init__(
-        self,
-        api_key: str,
-        full_text: str,
-        expected_annotations: list[dict],
-        prompt_paths: dict,
-        model: str = "gpt-4.1",
-    ):
-        self.prompt_paths = prompt_paths
+    def __init__(self, api_key: str, full_text: str, expected_annotations: list[dict], model: str="gpt-4.1"):
         self.openai_structured_output_client = OpenAIStructuredOutputClient(api_key, model)
         self.full_text = full_text
         self.expected_annotations = expected_annotations
+
         self.conversation = []
         self.annotations = []
         self.iteration_history = []
+        self.conversation_history = []
+
+        self.prompt_paths = {
+            "extract_mutations": PROMPTS["extract_prompt"],
+            "evaluate_mutations": PROMPTS["evaluate_prompt"]
+        }
 
         # Load system prompts
         with open(self.prompt_paths["extract_mutations"], encoding="utf-8") as f:
@@ -88,20 +174,23 @@ class GenotypePhenotypeExtractor:
         self.annotations = response.mutations
 
     def evaluate(self):
+        extracted_dicts = [m.model_dump() for m in self.annotations]
+
+        matched, missed, unmatched_extracted = compare_expected_to_extracted(
+            self.expected_annotations,
+            extracted_dicts
+        )
         evaluation_payload = {
             "paper": "Baek Y. et al., 2015",
             "current_system_prompt": self.current_system_prompt,
-            "input_text": self.full_text,
-            "expected_annotations": self.expected_annotations,
-            "extracted_annotations": [m.model_dump() for m in self.annotations],
+            "missed_expected_annotations": missed,
+            "unmatched_extracted_annotations": unmatched_extracted,
             "instructions": (
-                "Compare extracted_annotations against expected_annotations. "
-                "Match using mutation identity, subtype equivalence, and phenotype meaning. "
-                "Return:\n"
-                "1) matched annotations\n"
-                "2) missed annotations (expected but not extracted)\n"
-                "3) hallucinated annotations (extracted but unsupported)\n"
-                "Explain what was missed and why."
+                "The annotations above were not amtched. \n\n"
+                "1) Explain the reason why the model likely missed the expected annotations. \n"
+                "2) Explain why the unmatched extracted annotations may be hallucinations or misinterpretations \n"
+                "3) Propose additions or clarifications to the extraction system prompt. \n"
+                "4) Set converged=true ONLY if no prompt changes are needed."
             )
         }
 
@@ -114,16 +203,25 @@ class GenotypePhenotypeExtractor:
         )
 
         # Append instructions from evaluator if not converged
-        if not response.converged:
+        if not response.converged and response.system_prompt:
             self.current_system_prompt += (
                 "\n\n# Additional Extraction Instructions\n"
                 + response.system_prompt
             )
-            # Reset conversation cleanly
             self.conversation = [
                 {"role": "system", "content": self.current_system_prompt},
                 {"role": "user", "content": self.full_text}
             ]
+        
+        response.matched_annotations = [
+            AnnotationMatch(**m) for m in matched
+        ]
+        response.missed_annotations = [
+            AnnotationMatch(**m) for m in missed
+        ]
+        response.hallucinated_annotations = [
+            AnnotationMatch(**m) for m in unmatched_extracted
+        ]
 
         return response
 
@@ -136,14 +234,10 @@ class GenotypePhenotypeExtractor:
             self.extract()
 
             for m in self.annotations:
-                # Strip protein prefixes consistently if needed
-                m.mutation = re.sub(r"^[A-Za-z0-9\-]+:", "", m.mutation).strip()
-
-                # Normalize effect
-                m.effect = normalize_effect(m.effect).lower().strip()
-
-                # Determine type
-                m.type = "combination" if '+' in m.mutation else "single"
+                m.mutation = normalize_mutation(m.mutation)
+                m.effect = normalize_effect(m.effect)
+                m.subtype = normalize_subtype(m.subtype)
+                m.type = "combination" if "," in m.mutation else "single"
 
             # Print raw extracted objects
             print(f"\n--- Raw Extraction (Iteration {step+1}) ---")
@@ -151,8 +245,15 @@ class GenotypePhenotypeExtractor:
                 print(m.model_dump())
             print("--- End of Extraction ---\n")
 
+            self.conversation_history.append({
+                "iteration": step + 1,
+                "system_prompt": self.current_system_prompt,
+                "conversation": copy.deepcopy(self.conversation)
+            })
+
             # Run evaluation
             evaluation_response = self.evaluate()
+            self.conversation_history[-1]["evaluation"] = evaluation_response.model_dump()
             matched = evaluation_response.matched_annotations
             missed = evaluation_response.missed_annotations
             hallucinated = evaluation_response.hallucinated_annotations
@@ -177,7 +278,7 @@ class GenotypePhenotypeExtractor:
 
     def write_conversation_to_file(self, out_path):
         with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(self.conversation, f, indent=2, ensure_ascii=False)
+            json.dump(self.conversation_history, f, indent=2, ensure_ascii=False)
 
     def write_annotations_to_file(self, out_path):
         with open(out_path, "w", encoding="utf-8") as f:
