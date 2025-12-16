@@ -9,7 +9,8 @@ class OpenAIBase:
         response = self.client.responses.create(
             model=self.model,
             input=inputs,
-            max_output_tokens=max_output_tokens
+            max_output_tokens=max_output_tokens,
+            temperature=0
         )
         return response
 
@@ -18,7 +19,8 @@ class OpenAIBase:
             model=self.model,
             input=inputs,
             max_output_tokens=max_output_tokens,
-            text_format=text_format
+            text_format=text_format,
+            temperature=0
         )
         return response
     
@@ -33,5 +35,3 @@ class OpenAITextOutputClient(OpenAIBase):
     def call(self, conversation, max_output_tokens = 12000):
         response = super().create_response(conversation, max_output_tokens)
         return response.output_text.strip()
-
-        }
