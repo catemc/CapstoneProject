@@ -146,7 +146,7 @@ def load_conversation_context(path: str) -> str:
         return f.read()
 conversation_context = load_conversation_context(RESULTS["conversation"])
 
-class GenotypePhenotypeExtractor:
+class GenotypePhenotypeExtractorforConversation:
 
     def __init__(self, api_key: str, full_text: str, expected_annotations: list[dict], model: str="gpt-4.1", conversation_context: str | None = None):
         self.openai_structured_output_client = OpenAIStructuredOutputClient(api_key, model)
