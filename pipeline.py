@@ -98,7 +98,11 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
     import re
 
     df = pd.read_csv(csv_path)
-    subset = df[df["paper_id"].str.strip().replace('"', '') == "Baek Y. et al., 2015"].copy()
+    subset = df[df["paper_id"].str.strip().replace('"', '').isin([
+        "Baek Y. et al., 2015",
+        "Lloren K. et al., 2019",
+        "Kwon J. et al., 2018"
+    ])].copy()
 
     expected = []
     for _, row in subset.iterrows():
@@ -116,6 +120,7 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
 
 if __name__ == "__main__":
     pdf_folder = Path(PATHS["input_papers"])
+    pdf_files = list(pdf_folder.glob("*.pdf"))
     results_folder = Path(PATHS["results"])
     results_folder.mkdir(parents=True, exist_ok=True)
 
@@ -127,32 +132,31 @@ if __name__ == "__main__":
         PATHS["combined_mutations_csv"]
     )
 
-    # === RUN ONE PDF (from config.ini) ===
-    pdf_file = Path(RUN["pdf_file"])
+    # === RUN ALL PDFs IN INPUT FOLDER ===
+    for pdf_file in pdf_files:
+        if not pdf_file.exists():
+            raise FileNotFoundError(f"PDF not found: {pdf_file}")
 
-    if not pdf_file.exists():
-        raise FileNotFoundError(f"PDF not found: {pdf_file}")
+        pdf_to_text_converter = PdfToTextConverter(
+            str(pdf_file),
+            api_key
+        )
+        pdf_to_text_converter.convert()
+        pdf_to_text_converter.write_full_paper_text()
 
-    pdf_to_text_converter = PdfToTextConverter(
-        str(pdf_file),
-        api_key
-    )
-    pdf_to_text_converter.convert()
-    pdf_to_text_converter.write_full_paper_text()
+        with open(pdf_to_text_converter.full_paper_text_path, "r", encoding="utf-8") as f:
+            full_text = f.read()
 
-    with open(pdf_to_text_converter.full_paper_text_path, "r", encoding="utf-8") as f:
-        full_text = f.read()
+        genotype_phenotype_extractor = GenotypePhenotypeExtractor(
+            api_key,
+            full_text,
+            expected_annotations
+        )
 
-    genotype_phenotype_extractor = GenotypePhenotypeExtractor(
-        api_key,
-        full_text,
-        expected_annotations
-    )
-
-    genotype_phenotype_extractor.iteratively_extract()
-    genotype_phenotype_extractor.write_annotations_to_file(
-        results_folder / "annotations.json"
-    )
-    genotype_phenotype_extractor.write_conversation_to_file(
-        results_folder / "conversation.json"
-    )
+        genotype_phenotype_extractor.iteratively_extract()
+        genotype_phenotype_extractor.write_annotations_to_file(
+            results_folder / f"{pdf_file.stem}_annotations.json"
+        )
+        genotype_phenotype_extractor.write_conversation_to_file(
+            results_folder / f"{pdf_file.stem}_conversation.json"
+        )
