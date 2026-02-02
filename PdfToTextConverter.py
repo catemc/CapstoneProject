@@ -70,6 +70,7 @@ class PdfToTextConverter:
                 ContainsTable
             )
 
+            table_text = None
             if contains_table_response.has_table:
                 # Extract tables from PDF via GPT prompt
                 table_text = self.openai_text_client.call([
@@ -78,7 +79,18 @@ class PdfToTextConverter:
                 ])
                 full_text.append(table_text)
 
-        self.full_paper_text = "\n".join(full_text)
+            # Store page content
+            self.pages.append({
+                "page": page_idx,
+                "text": page_text.strip(),
+                "tables": table_text.strip() if table_text else ""
+            })
+
+        # get full table
+        self.full_paper_text = "\n".join(
+            p["text"] + ("\n" + p["tables"] if p["tables"] else "")
+            for p in self.pages
+        )
 
     def write_full_paper_text(self):
         self.full_paper_text_path = os.path.join(self.split_pdf_folder, "full_paper_text.txt")
