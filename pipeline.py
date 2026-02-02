@@ -149,14 +149,12 @@ if __name__ == "__main__":
 
         genotype_phenotype_extractor = GenotypePhenotypeExtractor(
             api_key,
-            full_text,
-            expected_annotations
+            full_text=None,
+            expected_annotations=expected_annotations
         )
 
+        genotype_phenotype_extractor.pages = pdf_to_text_converter.pages
         genotype_phenotype_extractor.iteratively_extract()
         genotype_phenotype_extractor.write_annotations_to_file(
             results_folder / f"{pdf_file.stem}_annotations.json"
-        )
-        genotype_phenotype_extractor.write_conversation_to_file(
-            results_folder / f"{pdf_file.stem}_conversation.json"
         )
