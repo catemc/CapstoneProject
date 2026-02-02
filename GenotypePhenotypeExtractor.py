@@ -12,7 +12,19 @@ PATHS = config["paths"]
 PROMPTS = config["prompts"]
 RUN = config["run"]
 
-INVALID = {"", "none", "null", "nan", "n/a", "na", "unknown"}
+INVALID = {
+    "",
+    "none",
+    "none stated",
+    "not stated",
+    "not specified",
+    "unknown",
+    "unspecified",
+    "null",
+    "nan",
+    "n/a",
+    "na"
+}
 
 MUTATION_FIXES = {
     'Q226L': 'Q222L',
@@ -98,45 +110,6 @@ def normalize_subtype(subtype: str) -> str:
 
     return s
 
-def annotations_match(exp: dict, ext: dict) -> bool:
-    """
-    Return True if:
-    - normalized mutations match
-    - normalized subtypes match
-    - normalized effects match
-    """
-    return (
-        exp["mutation"] == ext["mutation"]
-        and normalize_subtype(exp["subtype"]) == normalize_subtype(ext["subtype"])
-        and exp["effect"] == ext["effect"]
-    )
-    
-def compare_expected_to_extracted(expected: list[dict], extracted: list[dict]):
-    matched = []
-    missed = []
-    unmatched_extracted = []
-
-    used_extracted_indices = set()
-
-    for exp in expected:
-        found = False
-        for i, ext in enumerate(extracted):
-            if i in used_extracted_indices:
-                continue
-            if annotations_match(exp, ext):
-                matched.append(exp)
-                used_extracted_indices.add(i)
-                found = True
-                break
-        if not found:
-            missed.append(exp)
-
-    for i, ext in enumerate(extracted):
-        if i not in used_extracted_indices:
-            unmatched_extracted.append(ext)
-
-    return matched, missed, unmatched_extracted
-
 class GenotypePhenotypeExtractor:
 
     def __init__(self, api_key: str, full_text: str, expected_annotations: list[dict], model: str="gpt-4.1"):
@@ -149,132 +122,76 @@ class GenotypePhenotypeExtractor:
         self.iteration_history = []
         self.conversation_history = []
 
-        self.prompt_paths = {
-            "extract_mutations": PROMPTS["extract_prompt"],
-            "evaluate_mutations": PROMPTS["evaluate_prompt"]
-        }
-
         # Load system prompts
         with open(self.prompt_paths["extract_mutations"], encoding="utf-8") as f:
             self.system_prompt_extract_mutations = f.read()
             self.current_system_prompt = self.system_prompt_extract_mutations
-        with open(self.prompt_paths["evaluate_mutations"], encoding="utf-8") as f:
-            self.system_prompt_extract_mutations_evaluation = f.read()
 
-    def extract(self):
-        if len(self.conversation) == 0:
-            self.conversation = [
-                {"role": "system", "content": self.current_system_prompt},
-                {"role": "user", "content": self.full_text}
-            ]
+    def extract_from_page(self, page_text: str):
+        conversation = [
+            {"role": "system", "content": self.current_system_prompt},
+            {"role": "user", "content": page_text}
+        ]
+
         response = self.openai_structured_output_client.call(
-            self.conversation,
+            conversation,
             MutationList
         )
-        self.annotations = response.mutations
-
-    def evaluate(self):
-        extracted_dicts = [m.model_dump() for m in self.annotations]
-
-        matched, missed, unmatched_extracted = compare_expected_to_extracted(
-            self.expected_annotations,
-            extracted_dicts
-        )
-        evaluation_payload = {
-            "paper": "Baek Y. et al., 2015",
-            "current_system_prompt": self.current_system_prompt,
-            "missed_expected_annotations": missed,
-            "unmatched_extracted_annotations": unmatched_extracted,
-            "instructions": (
-                "The annotations above were not amtched. \n\n"
-                "1) Explain the reason why the model likely missed the expected annotations. \n"
-                "2) Explain why the unmatched extracted annotations may be hallucinations or misinterpretations \n"
-                "3) Propose additions or clarifications to the extraction system prompt. \n"
-                "4) Set converged=true ONLY if no prompt changes are needed."
-            )
-        }
-
-        response = self.openai_structured_output_client.call(
-            [
-                {"role": "system", "content": self.system_prompt_extract_mutations_evaluation},
-                {"role": "user", "content": json.dumps(evaluation_payload, indent=2)}
-            ],
-            EvaluationResult
-        )
-
-        # Append instructions from evaluator if not converged
-        if not response.converged and response.system_prompt:
-            self.current_system_prompt += (
-                "\n\n# Additional Extraction Instructions\n"
-                + response.system_prompt
-            )
-            self.conversation = [
-                {"role": "system", "content": self.current_system_prompt},
-                {"role": "user", "content": self.full_text}
-            ]
+        return response.mutations
         
-        response.matched_annotations = [
-            AnnotationMatch(**m) for m in matched
-        ]
-        response.missed_annotations = [
-            AnnotationMatch(**m) for m in missed
-        ]
-        response.hallucinated_annotations = [
-            AnnotationMatch(**m) for m in unmatched_extracted
-        ]
+    def extract(self):
+        self.annotations = []
 
-        return response
+        for page in self.pages:
+            # 1️. Extract from narrative text
+            if page["text"].strip():
+                muts = self.extract_from_page(page["text"])
+                self.annotations.extend(muts)
 
-    def iteratively_extract(self, max_steps: int = 10):
-        previous_matches = 0
-        self.iteration_history = []
+            # 2️. Extract from tables (separately!)
+            if page["tables"]:
+                muts = self.extract_from_page(page["tables"])
+                self.annotations.extend(muts)
 
-        for step in range(max_steps):
-            # Extract annotations
-            self.extract()
+    def deduplicate_annotations(self, annotations: list[MutationObject]) -> list[MutationObject]:
+        seen = {}
+        for m in annotations:
+            key = (m.mutation, m.effect, m.subtype)
+            if key not in seen:
+                seen[key] = m
+        return list(seen.values())
+    
+    def filter_invalid_annotations(self, annotations: list[MutationObject]) -> list[MutationObject]:
+        cleaned = []
+        for m in annotations:
+            if (
+                is_valid(m.mutation) and
+                is_valid(m.effect) and
+                is_valid(m.subtype)
+            ):
+                cleaned.append(m)
+        return cleaned
 
-            for m in self.annotations:
-                m.mutation = normalize_mutation(m.mutation)
-                m.effect = normalize_effect(m.effect)
-                m.subtype = normalize_subtype(m.subtype)
-                m.type = "combination" if "," in m.mutation else "single"
+    def iteratively_extract(self):
+        self.extract()
 
-            # Print raw extracted objects
-            print(f"\n--- Raw Extraction (Iteration {step+1}) ---")
-            for m in self.annotations:
-                print(m.model_dump())
-            print("--- End of Extraction ---\n")
+        # Normalize
+        for m in self.annotations:
+            m.mutation = normalize_mutation(m.mutation)
+            m.effect = normalize_effect(m.effect)
+            m.subtype = normalize_subtype(m.subtype)
+            m.type = "combination" if "," in m.mutation else "single"
 
-            self.conversation_history.append({
-                "iteration": step + 1,
-                "system_prompt": self.current_system_prompt,
-                "conversation": copy.deepcopy(self.conversation)
-            })
+        # 🧹 REMOVE EMPTY / INVALID ANNOTATIONS
+        self.annotations = self.filter_invalid_annotations(self.annotations)
 
-            # Run evaluation
-            evaluation_response = self.evaluate()
-            self.conversation_history[-1]["evaluation"] = evaluation_response.model_dump()
-            matched = evaluation_response.matched_annotations
-            missed = evaluation_response.missed_annotations
-            hallucinated = evaluation_response.hallucinated_annotations
+        # 🧬 DEDUPE (mutation + effect + subtype)
+        self.annotations = self.deduplicate_annotations(self.annotations)
 
-            matched_count = len(matched)
-            improvement = matched_count - previous_matches
-            print(f"Iteration {step+1}: matched={matched_count}, improvement={improvement}")
-
-            self.iteration_history.append({
-                "iteration": step + 1,
-                "matched_count": matched_count,
-                "improvement": improvement,
-                "matched_annotations": matched,
-                "missed_annotations": missed,
-                "hallucinated_annotations": hallucinated
-            })
-
-            previous_matches = matched_count
-            if evaluation_response.converged:
-                print("Converged!")
-                break
+        print("\n--- Final Extracted Annotations ---")
+        for m in self.annotations:
+            print(m.model_dump())
+        print("--- End of Extraction ---\n")
 
     def write_conversation_to_file(self, out_path):
         with open(out_path, "w", encoding="utf-8") as f:
