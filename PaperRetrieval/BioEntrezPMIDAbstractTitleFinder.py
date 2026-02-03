@@ -1,24 +1,32 @@
+from clients.OpenAIBase import OpenAIStructuredOutputClient
 from Bio import Entrez
 from time import sleep
 from openai import OpenAI
 from pydantic import BaseModel
 import json
 import os
+import configparser
 
-# =========================
-# CONFIG
-# =========================
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+PATHS = config["paths"]
+OPENAI_API_KEY = config["openai"]["api_key"]
+OPENAI_MODEL = config["openai"]["model"]
+
+client = OpenAIStructuredOutputClient(
+    api_key=OPENAI_API_KEY,
+    model=OPENAI_MODEL
+)
 
 Entrez.email = "cmcmahon@scripps.edu"
 Entrez.tool = "InfluenzaMutationFetcher"
 
-api_key = ""
-
 gpt_batch_size = 20
 pubmed_batch_size = 200
 
-yes_out_path = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/TitleEvaluator_Yes.txt"
-no_out_path = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/TitleEvaluator_No.txt"
+yes_out_path = PATHS["yes_paper_retrieval_results"]
+no_out_path = PATHS["no_paper_retrieval_results"]
 
 # ---------------------------
 # GPT Structured Output
@@ -27,26 +35,14 @@ class RelevanceDecision(BaseModel):
     relevant: bool
     reason: str
 
-client = OpenAI(api_key=api_key)
-
 def screen_relevance_batch(papers: list[dict]) -> list[RelevanceDecision]:
-    """
-    Batch-screen multiple papers at once.
-    papers: [{"title": ..., "abstract": ...}, ...]
-    Returns: list of RelevanceDecision objects
-    """
-    # Build numbered paper entries
     paper_entries = "\n\n".join(
         f"{i+1}) Title:\n{p['title']}\nAbstract:\n{p['abstract']}"
         for i, p in enumerate(papers)
     )
 
-    # GPT prompt instructions: return a JSON array
-    response = client.responses.create(
-        model="gpt-4.1-mini",
-        temperature=0,
-        max_output_tokens=300 * len(papers),
-        input=[
+    return client.call(
+        conversation=[
             {
                 "role": "system",
                 "content": (
@@ -57,13 +53,10 @@ def screen_relevance_batch(papers: list[dict]) -> list[RelevanceDecision]:
                 )
             },
             {"role": "user", "content": paper_entries}
-        ]
+        ],
+        text_format=list[RelevanceDecision],
+        max_output_tokens=300 * len(papers)
     )
-
-    # Parse GPT JSON
-    output_text = response.output_text.strip()
-    decisions_raw = json.loads(output_text)
-    return [RelevanceDecision(**d) for d in decisions_raw]
 
 # ---------------------------
 # PUBMED QUERY
@@ -178,3 +171,4 @@ with open(yes_out_path, "w", encoding="utf-8") as yes_out, \
         sleep(0.2)
 
 print("✅ Relevance screening complete for all papers.")
+
