@@ -6,4 +6,6 @@ venv/
 env/
 .env
 
+config.ini
+
 **/.DS_Store
