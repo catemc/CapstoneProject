@@ -1,9 +1,73 @@
 from Bio import Entrez
 from time import sleep
+from openai import OpenAI
+from pydantic import BaseModel
+import json
+import os
+
+# =========================
+# CONFIG
+# =========================
 
 Entrez.email = "cmcmahon@scripps.edu"
 Entrez.tool = "InfluenzaMutationFetcher"
 
+api_key = ""
+
+gpt_batch_size = 20
+pubmed_batch_size = 200
+
+yes_out_path = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/TitleEvaluator_Yes.txt"
+no_out_path = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/TitleEvaluator_No.txt"
+
+# ---------------------------
+# GPT Structured Output
+# ---------------------------
+class RelevanceDecision(BaseModel):
+    relevant: bool
+    reason: str
+
+client = OpenAI(api_key=api_key)
+
+def screen_relevance_batch(papers: list[dict]) -> list[RelevanceDecision]:
+    """
+    Batch-screen multiple papers at once.
+    papers: [{"title": ..., "abstract": ...}, ...]
+    Returns: list of RelevanceDecision objects
+    """
+    # Build numbered paper entries
+    paper_entries = "\n\n".join(
+        f"{i+1}) Title:\n{p['title']}\nAbstract:\n{p['abstract']}"
+        for i, p in enumerate(papers)
+    )
+
+    # GPT prompt instructions: return a JSON array
+    response = client.responses.create(
+        model="gpt-4.1-mini",
+        temperature=0,
+        max_output_tokens=300 * len(papers),
+        input=[
+            {
+                "role": "system",
+                "content": (
+                    "You are a biomedical literature screening assistant. "
+                    "Decide whether each paper likely contains explicit links between viral genotypes and phenotypes. "
+                    "Return a single JSON array, one object per paper, with keys "
+                    "'relevant' (bool) and 'reason' (string)."
+                )
+            },
+            {"role": "user", "content": paper_entries}
+        ]
+    )
+
+    # Parse GPT JSON
+    output_text = response.output_text.strip()
+    decisions_raw = json.loads(output_text)
+    return [RelevanceDecision(**d) for d in decisions_raw]
+
+# ---------------------------
+# PUBMED QUERY
+# ---------------------------
 mesh_query = """
 (
     "Influenza A Virus"[Mesh] OR
@@ -52,52 +116,65 @@ search_handle = Entrez.esearch(
     db="pubmed",
     term=mesh_query,
     usehistory="y",
-    retmax=0  # IMPORTANT: don't pull IDs yet
+    retmax=0
 )
 search_results = Entrez.read(search_handle)
-
 count = int(search_results["Count"])
 webenv = search_results["WebEnv"]
 query_key = search_results["QueryKey"]
 
 print(f"Total records found: {count}")
 
-from time import sleep
+# ---------------------------
+# FETCH + BATCH SCREEN
+# ---------------------------
+with open(yes_out_path, "w", encoding="utf-8") as yes_out, \
+     open(no_out_path, "w", encoding="utf-8") as no_out:
 
-file_path = "C:/Users/catem/OneDrive/Desktop/CapstoneProject/PMIDs_with_Abstracts.txt"
-
-batch_size = 200
-
-with open(file_path, "w", encoding="utf-8") as out:
-    for start in range(0, count, batch_size):
+    for start in range(0, count, pubmed_batch_size):
         fetch_handle = Entrez.efetch(
             db="pubmed",
             rettype="abstract",
             retmode="xml",
             retstart=start,
-            retmax=batch_size,
+            retmax=pubmed_batch_size,
             webenv=webenv,
             query_key=query_key
         )
-
         records = Entrez.read(fetch_handle)
 
+        papers = []
+        pmids = []
         for article in records["PubmedArticle"]:
             citation = article["MedlineCitation"]
             article_data = citation["Article"]
 
-            pmid = citation["PMID"]
-            title = article_data.get("ArticleTitle", "No title")
-
-            abstract = "No abstract available"
+            pmid = str(citation["PMID"])
+            title = article_data.get("ArticleTitle", "")
+            abstract = ""
             if "Abstract" in article_data:
-                abstract = " ".join(
-                    str(t) for t in article_data["Abstract"]["AbstractText"]
-                )
+                abstract = " ".join(str(t) for t in article_data["Abstract"]["AbstractText"])
 
-            out.write(f"PMID: {pmid}\n")
-            out.write(f"Title: {title}\n")
-            out.write(f"Abstract: {abstract}\n")
-            out.write("-" * 80 + "\n\n")
+            if title and abstract:
+                papers.append({"title": title, "abstract": abstract})
+                pmids.append(pmid)
 
-        sleep(0.4)  
+        # GPT sub-batching
+        for i in range(0, len(papers), gpt_batch_size):
+            sub_batch = papers[i:i + gpt_batch_size]
+            sub_pmids = pmids[i:i + gpt_batch_size]
+
+            decisions = screen_relevance_batch(sub_batch)
+
+            for pmid, paper, decision in zip(sub_pmids, sub_batch, decisions):
+                out_file = yes_out if decision.relevant else no_out
+                out_file.write(f"PMID: {pmid}\n")
+                out_file.write(f"Title: {paper['title']}\n")
+                out_file.write(f"Abstract: {paper['abstract']}\n")
+                out_file.write(f"Relevant: {decision.relevant}\n")
+                out_file.write(f"Reason: {decision.reason}\n")
+                out_file.write("-" * 80 + "\n\n")
+
+        sleep(0.2)
+
+print("✅ Relevance screening complete for all papers.")
