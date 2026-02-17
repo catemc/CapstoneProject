@@ -11,6 +11,9 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 PATHS = config["paths"]
+retrieval_prompt_path = PATHS["retrieval_prompt"]
+with open(retrieval_prompt_path, "r", encoding="utf-8") as f:
+    retrieval_system_prompt = f.read()
 OPENAI_API_KEY = config["openai"]["api_key"]
 OPENAI_MODEL = config["openai"]["model"]
 
@@ -28,9 +31,8 @@ pubmed_batch_size = 200
 yes_out_path = PATHS["yes_paper_retrieval_results"]
 no_out_path = PATHS["no_paper_retrieval_results"]
 
-# ---------------------------
 # GPT Structured Output
-# ---------------------------
+
 class RelevanceDecision(BaseModel):
     relevant: bool
     reason: str
@@ -45,12 +47,7 @@ def screen_relevance_batch(papers: list[dict]) -> list[RelevanceDecision]:
         conversation=[
             {
                 "role": "system",
-                "content": (
-                    "You are a biomedical literature screening assistant. "
-                    "Decide whether each paper likely contains explicit links between viral genotypes and phenotypes. "
-                    "Return a single JSON array, one object per paper, with keys "
-                    "'relevant' (bool) and 'reason' (string)."
-                )
+                "content": retrieval_system_prompt  # <-- use prompt from config
             },
             {"role": "user", "content": paper_entries}
         ],
@@ -58,9 +55,8 @@ def screen_relevance_batch(papers: list[dict]) -> list[RelevanceDecision]:
         max_output_tokens=300 * len(papers)
     )
 
-# ---------------------------
 # PUBMED QUERY
-# ---------------------------
+
 mesh_query = """
 MEDLINE[SB]
 AND
@@ -174,5 +170,6 @@ with open(yes_out_path, "w", encoding="utf-8") as yes_out, \
         sleep(0.2)
 
 print("✅ Relevance screening complete for all papers.")
+
 
 
