@@ -70,6 +70,27 @@ MEDLINE[SB] AND free full text[Filter] AND (
     "Mutagenesis"[Mesh] OR
     "Hemagglutinins"[Mesh] OR
     "Tropism"[Mesh]
+) NOT (
+    "Adult"[Mesh] OR
+    "Cross Reactions"[Mesh] OR
+    "Young Adult"[Mesh] OR
+    "Child, Preschool"[Mesh] OR
+    "Aged"[Mesh] OR
+    "Antigenic Variation"[Mesh] OR
+    "Infant"[Mesh] OR
+    "Cross Protection"[Mesh] OR
+    "Vaccines, Synthetic"[Mesh] OR
+    "Animals, Wild"[Mesh] OR
+    "CD8-Positive T-Lymphocytes"[Mesh] OR
+    "Genetic Vectors"[Mesh] OR
+    "Vaccines, Inactivated"[Mesh] OR
+    "Recombinant Fusion Proteins"[Mesh] OR
+    "Molecular Dynamics Simulation"[Mesh] OR
+    "Cell Membrane"[Mesh] OR
+    "Epitopes, T-Lymphocyte"[Mesh] OR
+    "Aged, 80 and over"[Mesh] OR 
+    "Immunologic Memory"[Mesh] OR 
+    "Epitope Mapping"[Mesh] 
 )
 """
 
@@ -139,6 +160,7 @@ with open(yes_out_path, "w", encoding="utf-8") as yes_out, \
         sleep(0.2)
 
 print("✅ Relevance screening complete for all papers.")
+
 
 
 
