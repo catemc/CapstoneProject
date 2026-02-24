@@ -9,7 +9,6 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 PATHS = config["paths"]
-PROMPTS = config["prompts"]
 RUN = config["run"]
 
 INVALID = {
