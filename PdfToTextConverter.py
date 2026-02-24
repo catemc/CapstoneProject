@@ -32,6 +32,8 @@ class PdfToTextConverter:
         self.file_path = file_path
         self.split_pdf_folder = tempfile.mkdtemp(dir=self.tmp_dir)
 
+        self.pages = []
+
     def split_pdf(self):
         reader = PdfReader(self.file_path)
         path_to_pages = []
