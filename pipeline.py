@@ -149,7 +149,8 @@ if __name__ == "__main__":
         genotype_phenotype_extractor = GenotypePhenotypeExtractor(
             api_key,
             full_text=None,
-            expected_annotations=expected_annotations
+            expected_annotations=expected_annotations,
+            prompt_paths=PATHS
         )
 
         genotype_phenotype_extractor.pages = pdf_to_text_converter.pages
