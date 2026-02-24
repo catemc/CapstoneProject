@@ -111,7 +111,7 @@ def normalize_subtype(subtype: str) -> str:
 
 class GenotypePhenotypeExtractor:
 
-    def __init__(self, api_key: str, full_text: str, expected_annotations: list[dict], model: str="gpt-4.1"):
+    def __init__(self, api_key, full_text, expected_annotations, prompt_paths, model="gpt-4.1"):
         self.openai_structured_output_client = OpenAIStructuredOutputClient(api_key, model)
         self.full_text = full_text
         self.expected_annotations = expected_annotations
@@ -123,9 +123,9 @@ class GenotypePhenotypeExtractor:
         self.conversation_history = []
 
         # Load system prompts
-        with open(self.prompt_paths["extract_mutations"], encoding="utf-8") as f:
-            self.system_prompt_extract_mutations = f.read()
-            self.current_system_prompt = self.system_prompt_extract_mutations
+        with open(self.prompt_paths["extract_prompt"], encoding="utf-8") as f:
+            self.system_prompt_extract_prompt = f.read()
+            self.current_system_prompt = self.system_prompt_extract_prompt
 
     def extract_from_page(self, page_text: str):
         conversation = [
