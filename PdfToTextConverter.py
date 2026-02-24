@@ -52,7 +52,7 @@ class PdfToTextConverter:
         path_to_pdf_pages = self.split_pdf()
 
         full_text = []
-        for path_to_pdf_page in path_to_pdf_pages:
+        for page_idx, path_to_pdf_page in enumerate(path_to_pdf_pages):
             print(path_to_pdf_page)
             # Extract raw text from PDF page via GPT prompt
             base64_pdf_page_user_prompt = get_base64_pdf_user_prompt(path_to_pdf_page)
