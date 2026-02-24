@@ -1,5 +1,5 @@
 from clients.OpenAIBase import OpenAIStructuredOutputClient
-from models.models import MutationList, OptimizedSystemPrompt, EvaluationResult, AnnotationMatch
+from models.models import MutationList, MutationObject, OptimizedSystemPrompt, EvaluationResult, AnnotationMatch
 import json
 import configparser
 import re
