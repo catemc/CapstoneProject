@@ -115,6 +115,7 @@ class GenotypePhenotypeExtractor:
         self.openai_structured_output_client = OpenAIStructuredOutputClient(api_key, model)
         self.full_text = full_text
         self.expected_annotations = expected_annotations
+        self.prompt_paths = prompt_paths
 
         self.conversation = []
         self.annotations = []
