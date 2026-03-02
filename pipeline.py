@@ -3,7 +3,7 @@ from PdfToTextConverter import PdfToTextConverter
 from GenotypePhenotypeExtractor import GenotypePhenotypeExtractor
 import configparser
 import re
-
+import sys
 from dotenv import load_dotenv
 import os
 
@@ -117,9 +117,10 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
 
     return expected
 
-if __name__ == "__main__":
+def main():
     pdf_folder = Path(PATHS["input_papers"])
     pdf_files = list(pdf_folder.glob("*.pdf"))
+    
     results_folder = Path(PATHS["results"])
     results_folder.mkdir(parents=True, exist_ok=True)
 
@@ -131,6 +132,8 @@ if __name__ == "__main__":
         PATHS["combined_mutations_csv"]
     )
 
+
+    #pdf_files = ["./data/input_papers/zjv287.pdf"]
     # === RUN ALL PDFs IN INPUT FOLDER ===
     for pdf_file in pdf_files:
         if not pdf_file.exists():
@@ -140,6 +143,7 @@ if __name__ == "__main__":
             str(pdf_file),
             api_key
         )
+
         pdf_to_text_converter.convert()
         pdf_to_text_converter.write_full_paper_text()
 
@@ -158,3 +162,6 @@ if __name__ == "__main__":
         genotype_phenotype_extractor.write_annotations_to_file(
             results_folder / f"{pdf_file.stem}_annotations.json"
         )
+
+if __name__ == "__main__":
+    main()
