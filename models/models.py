@@ -7,8 +7,9 @@ class MutationObject(BaseModel):
     effect: str
     quote: str
     citation: str
-    numbering: str | None = None  # optional
+    numbering: str | None = None
     type: str | None = None
+    page: int | None = None 
 
 class MutationList(BaseModel):
     mutations: list[MutationObject]
