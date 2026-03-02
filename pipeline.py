@@ -6,6 +6,7 @@ import re
 import sys
 from dotenv import load_dotenv
 import os
+from line_profiler import LineProfiler
 
 # Load API key
 load_dotenv()
@@ -133,22 +134,20 @@ def main():
     )
 
 
-    #pdf_files = ["./data/input_papers/zjv287.pdf"]
+    pdf_files = [Path("./data/input_papers/zjv287.pdf")]
     # === RUN ALL PDFs IN INPUT FOLDER ===
     for pdf_file in pdf_files:
         if not pdf_file.exists():
             raise FileNotFoundError(f"PDF not found: {pdf_file}")
-
+ 
         pdf_to_text_converter = PdfToTextConverter(
             str(pdf_file),
             api_key
         )
-
         pdf_to_text_converter.convert()
         pdf_to_text_converter.write_full_paper_text()
-
-        with open(pdf_to_text_converter.full_paper_text_path, "r", encoding="utf-8") as f:
-            full_text = f.read()
+        pdf_to_text_converter.write_to_dict_file("converter_state.json")
+        sys.exit(0)
 
         genotype_phenotype_extractor = GenotypePhenotypeExtractor(
             api_key,

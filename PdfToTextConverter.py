@@ -1,4 +1,7 @@
 import os
+import sys
+import json as real_json
+from pandas.io import json
 from PyPDF2 import PdfReader, PdfWriter
 import tempfile
 from clients.OpenAIBase import OpenAITextOutputClient, OpenAIStructuredOutputClient
@@ -18,7 +21,7 @@ def get_base64_pdf_user_prompt(file: str):
 class PdfToTextConverter:
 
     SYSTEM_PROMPT_EXTRACT_TEXT = "Extract and return ONLY the plain text from the provided PDF. Do not summarize, analyze, or interpret."
-    SYSTEM_PROMPT_CHECK_TABLE = "Does the provided PDF page contain a table?"
+    #SYSTEM_PROMPT_CHECK_TABLE = "Does the provided PDF page contain a table?"
     SYSTEM_PROMPT_EXTRACT_TABLE = "Extract and return ONLY tables from the PDF page in markdown format. Do not analyze or interpret."
 
     full_paper_text = ""
@@ -33,6 +36,25 @@ class PdfToTextConverter:
         self.split_pdf_folder = tempfile.mkdtemp(dir=self.tmp_dir)
 
         self.pages = []
+
+    def load_from_dict_file(self, file_path: str):
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        for key, value in data.items():
+            setattr(self, key, value)
+
+    def write_to_dict_file(self, file_path):
+        data = {
+            "tmp_dir": self.tmp_dir,
+            "file_path": self.file_path,
+            "split_pdf_folder": self.split_pdf_folder,
+            "pages": self.pages,
+            "full_paper_text": self.full_paper_text,
+            "full_paper_text_path": self.full_paper_text_path
+        }
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            real_json.dump(data, f, indent=2)
 
     def split_pdf(self):
         reader = PdfReader(self.file_path)
@@ -56,6 +78,20 @@ class PdfToTextConverter:
             print(path_to_pdf_page)
             # Extract raw text from PDF page via GPT prompt
             base64_pdf_page_user_prompt = get_base64_pdf_user_prompt(path_to_pdf_page)
+            self.CLASSIFIER_SYSTEM_PROMPT = """Classify the content of the provided PDF page into one of the following categories:
+            'references', 'text', 'table', 'mixed - text and table', 'mixed - text and references', 'mixed - table and references'. 
+            Figures are different from tables.
+            Figures have a caption underneath that starts with "Fig" or "Figure". 
+            Figures do not contain rows and columns of only text information.
+            Classify figures as 'text'. Return only the category label without any additional text or explanation."""
+            classification = self.openai_text_client.call([
+                    {"role": "system", "content": self.CLASSIFIER_SYSTEM_PROMPT},
+                    {"role": "user", "content": [base64_pdf_page_user_prompt]}
+                ])
+            print(page_idx+1, classification)
+            if classification == "references":
+                print("Skipping references page.")
+                continue
 
             page_text = self.openai_text_client.call([
                     {"role": "system", "content": self.SYSTEM_PROMPT_EXTRACT_TEXT},
@@ -65,15 +101,17 @@ class PdfToTextConverter:
             full_text.append(page_text)
 
             # Check if page has table
+            """
             contains_table_response = self.openai_structured_output_client.call([
                     {"role": "system", "content": self.SYSTEM_PROMPT_CHECK_TABLE},
                     {"role": "user", "content": [base64_pdf_page_user_prompt]}
                 ],
                 ContainsTable
             )
-
+            """
             table_text = None
-            if contains_table_response.has_table:
+            #if contains_table_response.has_table:
+            if "table" in classification:
                 # Extract tables from PDF via GPT prompt
                 table_text = self.openai_text_client.call([
                     {"role": "system", "content": self.SYSTEM_PROMPT_EXTRACT_TABLE},
@@ -83,7 +121,8 @@ class PdfToTextConverter:
 
             # Store page content
             self.pages.append({
-                "page": page_idx,
+                "page": page_idx+1,
+                "classification": classification,
                 "text": page_text.strip(),
                 "tables": table_text.strip() if table_text else ""
             })
@@ -94,7 +133,10 @@ class PdfToTextConverter:
             for p in self.pages
         )
 
-    def write_full_paper_text(self):
-        self.full_paper_text_path = os.path.join(self.split_pdf_folder, "full_paper_text.txt")
+    def write_full_paper_text(self, output_path=None):
+        if output_path is None:
+            self.full_paper_text_path = os.path.join(self.split_pdf_folder, "full_paper_text.txt")
+        else:
+            self.full_paper_text_path = output_path
         with open(self.full_paper_text_path, "w", encoding="utf-8") as f:
             f.write(self.full_paper_text)
