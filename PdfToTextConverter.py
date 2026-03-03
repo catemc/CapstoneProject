@@ -39,7 +39,7 @@ class PdfToTextConverter:
 
     def load_from_dict_file(self, file_path: str):
         with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            data = real_json.load(f)
         for key, value in data.items():
             setattr(self, key, value)
 

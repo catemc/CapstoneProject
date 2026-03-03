@@ -144,10 +144,12 @@ def main():
             str(pdf_file),
             api_key
         )
+        
         pdf_to_text_converter.convert()
         pdf_to_text_converter.write_full_paper_text()
         pdf_to_text_converter.write_to_dict_file("converter_state.json")
-        sys.exit(0)
+        #sys.exit(0)
+        pdf_to_text_converter.load_from_dict_file("converter_state.json")
 
         genotype_phenotype_extractor = GenotypePhenotypeExtractor(
             api_key,
