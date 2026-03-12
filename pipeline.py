@@ -3,9 +3,10 @@ from PdfToTextConverter import PdfToTextConverter
 from GenotypePhenotypeExtractor import GenotypePhenotypeExtractor
 import configparser
 import re
-
+import sys
 from dotenv import load_dotenv
 import os
+from line_profiler import LineProfiler
 
 # Load API key
 load_dotenv()
@@ -117,9 +118,10 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
 
     return expected
 
-if __name__ == "__main__":
+def main():
     pdf_folder = Path(PATHS["input_papers"])
     pdf_files = list(pdf_folder.glob("*.pdf"))
+    
     results_folder = Path(PATHS["results"])
     results_folder.mkdir(parents=True, exist_ok=True)
 
@@ -131,20 +133,23 @@ if __name__ == "__main__":
         PATHS["combined_mutations_csv"]
     )
 
+
+    pdf_files = [Path("./data/input_papers/zjv287.pdf")]
     # === RUN ALL PDFs IN INPUT FOLDER ===
     for pdf_file in pdf_files:
         if not pdf_file.exists():
             raise FileNotFoundError(f"PDF not found: {pdf_file}")
-
+ 
         pdf_to_text_converter = PdfToTextConverter(
             str(pdf_file),
             api_key
         )
+        
         pdf_to_text_converter.convert()
         pdf_to_text_converter.write_full_paper_text()
-
-        with open(pdf_to_text_converter.full_paper_text_path, "r", encoding="utf-8") as f:
-            full_text = f.read()
+        pdf_to_text_converter.write_to_dict_file("converter_state.json")
+        #sys.exit(0)
+        pdf_to_text_converter.load_from_dict_file("converter_state.json")
 
         genotype_phenotype_extractor = GenotypePhenotypeExtractor(
             api_key,
@@ -158,3 +163,6 @@ if __name__ == "__main__":
         genotype_phenotype_extractor.write_annotations_to_file(
             results_folder / f"{pdf_file.stem}_annotations.json"
         )
+
+if __name__ == "__main__":
+    main()
