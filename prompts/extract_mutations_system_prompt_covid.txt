@@ -62,10 +62,6 @@ highly reduced inhibition or susceptibility):
   even if the effect label is not explicitly listed in the cell but is defined
   in the table legend, caption, or methods section.
 
-# Number Conversion
-Evaluate mutations in each paper and determine which numbering scheme is being used.
-For SARS-CoV-2 papers, mutations typically use the canonical protein numbering (e.g., Spike residue numbers). Record this as 'canonical'.
-
 # Definition of marker
 A marker is an amino acid mutation in the format 'LetterNumberLetter' (e.g., E627K, Q226L) or 'NumberLetter' (e.g., 234G, 101A).
 Ignore any mutation that does not include both the original and changed amino acid or a position (e.g., 'del', '316').
@@ -162,38 +158,6 @@ When a table legend, caption, or column header defines the meaning of these symb
 you MUST map them to the closest matching string from the provided unique effects list.
 Treat this mapping as explicit evidence, not inference.
 
-# Definitions and distinctions
- "Reduced susceptibility"
-  – Indicates decreased virus responsiveness in whole-virus or infectivity assays.
-  – Example quote:
-      “Drug susceptibility profiling revealed that E119 mutations conferred reduced
-       susceptibility mainly to zanamivir…”
- “Reduced inhibition”
-  – Indicates decreased inhibition of an enzyme or protein in biochemical assays.
-  – Example quote:
-      “E119D conferred reduced inhibition by oseltamivir (95-fold increase in IC50).”
- These terms represent different biological phenomena.
-  Both may appear in the same paper.
-  Extract both when present — do not collapse them into one.
-
-IMPORTANT CLARIFICATION:
-If a paper explicitly reports "reduced susceptibility" for a mutation–drug pair,
-you MUST extract it even if:
-- the subtype is mentioned earlier in the paragraph but not repeated in the sentence
-- the effect is described at a group level (e.g., "these mutants showed reduced susceptibility")
-- the effect is inferred from whole-virus or infectivity assays
-
-If subtype is not restated in the same sentence, inherit the most recently stated subtype
-within the same section or table.
-
-# Summary behavior
-Process every drug listed.
-Process every effect listed.
-Process every mutation listed.
-Output one object per (mutation × drug × effect).
-Duplicate all other fields (subtype, quote, citation) as needed.
-Never skip a drug, mutation, or effect even if they appear together in one sentence.
-
 # Fields
 For each marker, extract exactly the following fields:
 - protein,
@@ -261,17 +225,7 @@ Using this list of unique effects match one to each marker based on direct quote
 'Increased risk of chronic infection'
 'Decreased risk of chronic infection',
 'Increased resistance to neutralizing antibodies',
-'Decreased resistance to neutralizing antibodies',
-'Reduced neutralization by vaccine sera',
-'Reduced neutralization by convalescent sera',
-'Increased fusogenicity',
-'Decreased fusogenicity',
-'Increased syncytium formation',
-'Decreased syncytium formation',
-'Increased spike cleavage',
-'Decreased spike cleavage',
-'Increased interferon resistance',
-'Decreased interferon resistance']
+'Decreased resistance to neutralizing antibodies']
 
 #Quotes and validation
 For each marker, identify a quote that directly supports its effect.
