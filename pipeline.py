@@ -182,7 +182,7 @@ def main():
         print(f"\nDetected pathogen: {pathogen}\n")
         
         # Choose correct extraction prompt
-        if pathogen == "covid":
+        if pathogen == "sars cov 2":
             PATHS["extract_prompt"] = PATHS["extract_prompt_covid"]
         else:
             PATHS["extract_prompt"] = PATHS["extract_prompt_influenza"]
