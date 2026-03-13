@@ -1,6 +1,8 @@
 from pathlib import Path
 from PdfToTextConverter import PdfToTextConverter
 from GenotypePhenotypeExtractor import GenotypePhenotypeExtractor
+from clients.OpenAIBase import OpenAIStructuredOutputClient
+from models.models import PathogenClassification
 import configparser
 import re
 import sys
@@ -118,6 +120,26 @@ def build_expected_annotations_from_lloren(csv_path: str) -> list[dict]:
 
     return expected
 
+def detect_pathogen(api_key, text, prompt_path, model="gpt-4.1"):
+    client = OpenAIStructuredOutputClient(api_key, model)
+
+    with open(prompt_path, encoding="utf-8") as f:
+        system_prompt = f.read()
+
+    conversation = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": text[:6000]}
+    ]
+
+    response = client.call(conversation, PathogenClassification)
+
+    pathogen = response.pathogen.strip().lower()
+
+    if "covid" in pathogen or "sars" in pathogen:
+        return "sars cov 2"
+
+    return "influenza a"
+    
 def main():
     pdf_folder = Path(PATHS["input_papers"])
     pdf_files = list(pdf_folder.glob("*.pdf"))
@@ -151,6 +173,20 @@ def main():
         #sys.exit(0)
         pdf_to_text_converter.load_from_dict_file("converter_state.json")
 
+        pathogen = detect_pathogen(
+            api_key,
+            pdf_to_text_converter.full_paper_text,
+            PATHS["detect_pathogen_prompt"]
+        )
+        
+        print(f"\nDetected pathogen: {pathogen}\n")
+        
+        # Choose correct extraction prompt
+        if pathogen == "covid":
+            PATHS["extract_prompt"] = PATHS["extract_prompt_covid"]
+        else:
+            PATHS["extract_prompt"] = PATHS["extract_prompt_influenza"]
+        
         genotype_phenotype_extractor = GenotypePhenotypeExtractor(
             api_key,
             full_text=None,
