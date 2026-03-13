@@ -1,5 +1,5 @@
 from clients.OpenAIBase import OpenAIStructuredOutputClient
-from models.models import MutationList, MutationObject, OptimizedSystemPrompt, EvaluationResult, AnnotationMatch
+from models.models import MutationList, MutationList2, MutationObject, COVIDMutationObject, OptimizedSystemPrompt, EvaluationResult, AnnotationMatch
 import json
 import configparser
 import re
@@ -133,9 +133,14 @@ class GenotypePhenotypeExtractor:
             {"role": "user", "content": page_text}
         ]
 
+        if "covid" in self.current_system_prompt.lower():
+            schema = MutationList2
+        else:
+            schema = MutationList
+        
         response = self.openai_structured_output_client.call(
             conversation,
-            MutationList
+            schema
         )
         return response.mutations
         
