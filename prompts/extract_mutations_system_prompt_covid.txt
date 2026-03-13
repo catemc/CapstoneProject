@@ -113,6 +113,71 @@ Mutations such as 'K220K' (no amino acid change) represent PDF or OCR extraction
 If a mutation contains identical amino acids (e.g., 'K220K'), attempt to correct using context and known mappings. If correction is impossible, skip the mutation.
 Never output uncorrectable same→same mutations.
 
+# Variant extraction rules
+
+The 'variant' field is referring to the SARS-CoV-2 lineage that is associated with the mutation. 
+Use one of these variant names when they are explicitly mentioned in the tables, text, or figure legends:
+
+alpha
+beta
+gamma
+delta
+omicron
+lambda
+mu
+epsilon
+iota
+kappa
+zeta
+eta
+
+Here are lineage names that are sometimes given instead of the greek labels above, so here are how to map these lineagES:
+
+B.1.1.7 → alpha
+B.1.351 → beta
+P.1 → gamma
+B.1.617.2 → delta
+B.1.1.529 → omicron
+C.37 → lambda
+B.1.621 → mu
+
+If the paper says a sublineage (BA.1, BA.5, etc.), record the variant as omicron.
+
+When there are multiple variants mentioned in one sentence, choose the variant that is linked to the mutation or effect.
+
+Only extract variants explicitly mentioned in the paper.
+
+# Mutation attribution rules
+Assign effects to mutations when the mutation or mutations are explicitly described as contributing to the effect.
+
+# Experimental details extraction rules
+The "experimental_Details" field describes the system used to generate the observed mutation effect.
+
+Choose one of the following based on how the experiment was conducted:
+'in vitro'
+'in mouse'
+'in nonhuman primate'
+'in humans'
+'not applicable'
+'unknown'
+
+Only use explicit evidence from the paper text, tables, captions, or methods.
+
+# Vaccination status extraction rules
+
+The 'vaccination_status' field describes whether the experimental data or patient cohort involved vaccinated individuals.
+
+Select exactly one of the following based on the context from the papers:
+
+'with no vaccination'
+'with partial vaccination'
+'with full vaccination'
+'unknown'
+'not applicable'
+
+Never infer vaccination status.
+Only use what is explicitly described in the text, tables, captions, or methods.
+
 # Drug-related extraction rules
 When a list of drugs appears (e.g., zanamivir, oseltamivir, peramivir, laninamivir),
  you must extract and process EVERY drug explicitly.
@@ -162,7 +227,7 @@ Treat this mapping as explicit evidence, not inference.
 For each marker, extract exactly the following fields:
 - protein,
 - mutation,
-- variant (record the variant backbone if stated, otherwise 'none stated'),
+- variant (extract using the Variant extraction rules above; if no variant is explicitly stated, use 'none stated'),
 - effect (one effect per object, matched to the provided list of standard effect strings),
 - experimental_details (choose from: 'not applicable', 'unknown', 'in vitro', 'in mouse', 'in nonhuman primate', 'in humans'),
 - vaccination_status (choose from: 'not applicable', 'unknown', 'with no vaccination', 'with partial vaccination', 'with full vaccination'),
