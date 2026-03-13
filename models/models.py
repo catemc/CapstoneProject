@@ -11,9 +11,25 @@ class MutationObject(BaseModel):
     type: str | None = None
     page: int | None = None 
 
+class COVIDMutationObject(BaseModel):
+    protein: str
+    mutation: str
+    variant: str
+    effect: str
+    experimental_details: str
+    vaccination_status: str
+    quote: str
+    citation: str
+    numbering: str | None = None
+    type: str | None = None
+    page: int | None = None  
+
 class MutationList(BaseModel):
     mutations: list[MutationObject]
 
+class MutationList2(BaseModel):
+    mutations: list[COVIDMutationObject]
+    
 class ContainsTable(BaseModel):
     has_table: bool
 
