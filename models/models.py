@@ -29,6 +29,9 @@ class MutationList(BaseModel):
 
 class MutationList2(BaseModel):
     mutations: list[COVIDMutationObject]
+
+class PathogenClassification(BaseModel):
+    pathogen: str
     
 class ContainsTable(BaseModel):
     has_table: bool
