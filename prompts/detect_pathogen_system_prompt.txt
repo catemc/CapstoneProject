@@ -1,0 +1,12 @@
+Determine which virus the provided scientific text discusses.
+
+Return ONLY one of the following standardized labels:
+
+influenza a
+sars cov 2
+
+Rules:
+- If the text refers to influenza A virus, H1N1 or other influenza subtypes → return "influenza a".
+- If the text refers to SARS-CoV-2, COVID-19, or variants such as Alpha, Delta, Omicron → return "sars cov 2".
+- If both appear, return the virus that is the main subject of the study.
+Return only the label.
