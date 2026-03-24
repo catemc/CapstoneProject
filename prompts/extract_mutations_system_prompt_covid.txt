@@ -248,10 +248,17 @@ If a mutation effect is not subtype-specific, do not create multiple objects for
 
 Use this list of proteins to validate mutation proteins. Only create an object if the protein matches one in this list.
     "Spike", "Nucleocapsid", "Membrane", "Envelope",
-    "ORF1a", "ORF1b",
     "NSP1", "NSP2", "NSP3", "NSP4", "NSP5", "NSP6", "NSP7", "NSP8", "NSP9", "NSP10",
     "NSP11", "NSP12", "NSP13", "NSP14", "NSP15", "NSP16",
-    "ORF3a", "ORF6", "ORF7a", "ORF7b", "ORF8", "ORF9b", "ORF9c", "ORF10"
+
+## Abbreviation handling
+Common abbreviations MUST be interpreted as follows when explicitly supported by context:
+
+- S → Spike
+- N → Nucleocapsid
+- M → Membrane
+- E → Envelope
+
 For each marker, identify the a quote that states the effect of the mutation.
 Use only the minimal portion of the text that directly supports the effect, not the full paragraph or citation.
 Using this list of unique effects match one to each marker based on direct quotes from the text:
