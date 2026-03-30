@@ -9,7 +9,6 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 PATHS = config["paths"]
-RUN = config["run"]
 
 INVALID = {
     "",
@@ -157,6 +156,10 @@ class GenotypePhenotypeExtractor:
             if page["tables"]:
                 muts = self.extract_from_page(page["tables"])
                 self.annotations.extend(muts)
+            print("\n--- Extraction from Page ---")
+            print(page["page"])
+            for mut in muts:
+                print(mut.mutation, mut.subtype, mut.protein)
 
     def deduplicate_annotations(self, annotations: list[MutationObject]) -> list[MutationObject]:
         seen = {}
