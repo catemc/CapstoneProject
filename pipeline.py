@@ -18,7 +18,6 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 PATHS = config["paths"]
-RUN = config["run"]
 
 INVALID = {"", "none", "null", "nan", "n/a", "na"}
 
@@ -156,12 +155,12 @@ def main():
     )
 
 
-    pdf_files = [Path("./data/input_papers/zjv287.pdf")]
     # === RUN ALL PDFs IN INPUT FOLDER ===
     for pdf_file in pdf_files:
         if not pdf_file.exists():
             raise FileNotFoundError(f"PDF not found: {pdf_file}")
- 
+        print(pdf_file)
+        
         pdf_to_text_converter = PdfToTextConverter(
             str(pdf_file),
             api_key
@@ -170,7 +169,6 @@ def main():
         pdf_to_text_converter.convert()
         pdf_to_text_converter.write_full_paper_text()
         pdf_to_text_converter.write_to_dict_file("converter_state.json")
-        #sys.exit(0)
         pdf_to_text_converter.load_from_dict_file("converter_state.json")
 
         pathogen = detect_pathogen(
