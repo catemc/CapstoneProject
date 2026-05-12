@@ -1,0 +1,67 @@
+[
+    {
+        "protein": "Spike",
+        "mutation": "N501Y",
+        "variant": "alpha",
+        "effect": "increased transmissibility",
+        "experimental_details": "in mouse",
+        "vaccination_status": "unknown",
+        "quote": "Among spike mutations, N501Y is one of the six important residues responsible for the interaction of RBD with ACE2, so this is a major worry and has been related to enlarged infectivity and virulence in mouse models[74,75].",
+        "citation": "Mohammadi et al., 2021",
+        "numbering": null,
+        "type": "single",
+        "page": 5
+    },
+    {
+        "protein": "Spike",
+        "mutation": "N501Y",
+        "variant": "beta",
+        "effect": "increased transmissibility",
+        "experimental_details": "in mouse",
+        "vaccination_status": "unknown",
+        "quote": "Three particular spike protein mutations in this variant are N501Y, E484K, and K417N. These three mutations were also detected in another new variant in Brazil (named 501Y.V3)[77].",
+        "citation": "Mohammadi et al., 2021",
+        "numbering": null,
+        "type": "single",
+        "page": 5
+    },
+    {
+        "protein": "Spike",
+        "mutation": "E484K",
+        "variant": "alpha",
+        "effect": "increased resistance to neutralizing antibodies",
+        "experimental_details": "unknown",
+        "vaccination_status": "unknown",
+        "quote": "In addition, the E484K mutation in spike protein is an important mutation in the English variant and linked with the escape from the neutralizing antibodies against SARS-CoV-2[76].",
+        "citation": "Mohammadi et al., 2021",
+        "numbering": null,
+        "type": "single",
+        "page": 5
+    },
+    {
+        "protein": "Spike",
+        "mutation": "E484K",
+        "variant": "beta",
+        "effect": "increased resistance to neutralizing antibodies",
+        "experimental_details": "unknown",
+        "vaccination_status": "unknown",
+        "quote": "Three particular spike protein mutations in this variant are N501Y, E484K, and K417N.",
+        "citation": "Mohammadi et al., 2021",
+        "numbering": null,
+        "type": "single",
+        "page": 5
+    },
+    {
+        "protein": "Spike",
+        "mutation": "K417N",
+        "variant": "beta",
+        "effect": "increased resistance to neutralizing antibodies",
+        "experimental_details": "unknown",
+        "vaccination_status": "unknown",
+        "quote": "Three particular spike protein mutations in this variant are N501Y, E484K, and K417N.",
+        "citation": "Mohammadi et al., 2021",
+        "numbering": null,
+        "type": "single",
+        "page": 5
+    }
+]

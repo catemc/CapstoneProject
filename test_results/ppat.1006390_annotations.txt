@@ -1,0 +1,200 @@
+[
+    {
+        "protein": "HA1-7",
+        "mutation": "Q222L",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "The majority of human H7N9 isolates contained a hemagglutinin (HA) mutation (Q226L) that has previously been associated with a switch in receptor specificity from avian-type (NeuAcα2-3Gal) to human-type (NeuAcα2-6Gal), as documented for the avian progenitors of the 1957 (H2N2) and 1968 (H3N2) human influenza pandemic viruses.",
+        "citation": "de Vries et al., 2017",
+        "numbering": "H7",
+        "type": "single",
+        "page": 1
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G186V, G224S, Q222L",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "Remarkably, three amino acid mutations conferred a switch in specificity for human-type receptors that resembled the specificity of the 2009 human H1 pandemic virus, and promoted binding to human trachea epithelial cells.",
+        "citation": "de Vries et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 1
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T, Q222L",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "need three amino acid mutations to change specificity to human-type receptors.",
+        "citation": "de Vries et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 2
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "V182K",
+        "subtype": "H5N1",
+        "effect": "increased virus binding to α2-6",
+        "quote": "a V186K mutation was found to confer binding to human trachea tissue sections.",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "single",
+        "page": 3
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G186V",
+        "subtype": "H7",
+        "effect": "increased virus binding to α2-6",
+        "quote": "The G186V mutation was also noted as a potential adaptation of avian H7 to human-type receptors",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "single",
+        "page": 3
+    },
+    {
+        "protein": "HA1-2",
+        "mutation": "N186",
+        "subtype": "H2",
+        "effect": "increased virus binding to α2-6",
+        "quote": "in the H2 HA, N186 has been documented to form a hydrogen bond network that enables human-type receptor binding",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H2",
+        "type": "single",
+        "page": 3
+    },
+    {
+        "protein": "HA1-5",
+        "mutation": "N220K",
+        "subtype": "H5N1",
+        "effect": "transmitted via aerosol among ferrets",
+        "quote": "The N224K mutation was identified as a critical residue for aerosol transmission of an H5N1 virus",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H5",
+        "type": "single",
+        "page": 3
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T, V182K",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "the mutant H7 with V186K K193T G228S (light gray)",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 3
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "Glycan binding analyses of Sh2 H7N9 HA wild type and several mutants that confer human-type receptor binding: G228S...",
+        "citation": "PLOS Pathogens, 2017",
+        "numbering": "H7",
+        "type": "single",
+        "page": 4
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "Glycan binding analyses of Sh2 H7N9 HA wild type and several mutants that confer human-type receptor binding: ...K193T G228S...",
+        "citation": "PLOS Pathogens, 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 4
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T, V182G",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "Glycan binding analyses of Sh2 H7N9 HA wild type and several mutants that confer human-type receptor binding: ...V186G K193T G228S...",
+        "citation": "PLOS Pathogens, 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 4
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T",
+        "subtype": "H7N9",
+        "effect": "dual receptor specificity",
+        "quote": "We then introduced K193T in the G228S background. This Sh2 mutant bound almost equally well to avian-type and human-type receptors in both assays.",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 5
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T, V182K",
+        "subtype": "H7N9",
+        "effect": "dual receptor specificity",
+        "quote": "The V186K-K193T-G228S mutant also showed dual receptor binding on chicken and human trachea sections.",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 5
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, V182N",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "On analysis of the V186N and N224K mutations, we found that V186N in just the G228S background led to specific binding to human-type receptors in both the ELISA-like assay with sialoside polymers (Fig 3A) and the glycan array (Fig 3B).",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 5
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, N220K, V182N",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "With the addition of N224K in the V186N-G228S background, we observed a significant increase in binding.",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 5
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T, V182K",
+        "subtype": "H7N9",
+        "effect": "decreased ha stability",
+        "quote": "Sh2 exhibited a broad thermal denaturation profile with a melting temperature (Tm) of 55˚C, while the human-type receptor specificity mutant (Sh2 V186K-K193T-G228S) had a slightly lower stability with a Tm of 53˚C (Fig 5). ... the lower stability of the mutant would suggest it is less likely to transmit than the wild type.",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H7",
+        "type": "combination",
+        "page": 6
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "G224S, K189T, V182K",
+        "subtype": "H7N9",
+        "effect": "enhanced binding affinity to mammalian cells",
+        "quote": "The HA1 domain triple mutant (G228S, V186K, K193T) was made by site-directed mutagenesis.",
+        "citation": "Xiong et al., 2017",
+        "numbering": "H3",
+        "type": "combination",
+        "page": 11
+    },
+    {
+        "protein": "HA1-7",
+        "mutation": "N220K",
+        "subtype": "H7N9",
+        "effect": "increased virus binding to α2-6",
+        "quote": "S1 Fig. Receptor binding of SH2 N224K mutants.",
+        "citation": "de Vries et al., 2017",
+        "numbering": "H7",
+        "type": "single",
+        "page": 13
+    }
+]

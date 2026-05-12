@@ -1,0 +1,101 @@
+[
+    {
+        "protein": "HA1-6",
+        "mutation": "E190V",
+        "subtype": "H6N1",
+        "effect": "increased virus binding to α2-6",
+        "quote": "Mutagenesis work revealed that E190V and G228S substitutions are important to acquire the human receptor-binding capacity",
+        "citation": "Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 1
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "G224S",
+        "subtype": "H6N1",
+        "effect": "increased virus binding to α2-6",
+        "quote": "Mutagenesis work revealed that E190V and G228S substitutions are important to acquire the human receptor-binding capacity",
+        "citation": "Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 1
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "P182L",
+        "subtype": "H6N1",
+        "effect": "decreased virus binding to α2-3",
+        "quote": "the P186L substitution could reduce the binding to avian receptor",
+        "citation": "Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 1
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "P182L",
+        "subtype": "H6N1",
+        "effect": "increased virus binding to α2-6",
+        "quote": "further, P186L substitution is responsible for the receptor-binding preference change",
+        "citation": "Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 2
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "increased virus binding to α2-6",
+        "quote": "the human-H6N1 HA displays significantly reduced binding affinity to the avian receptor (298 lM) and a comparable binding affinity to the human receptor (268 lM), and the binding preference for the human receptor was still evident",
+        "citation": "Fei Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 3
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "Q222L",
+        "subtype": "H6N1",
+        "effect": "decreased virus binding to α2-3",
+        "quote": "the human-H6N1 HA displays significantly reduced binding affinity to the avian receptor (298 lM) and a comparable binding affinity to the human receptor (268 lM), and the binding preference for the human receptor was still evident",
+        "citation": "Fei Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 3
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "E190G, G228E",
+        "subtype": "H6N1",
+        "effect": "increased virus binding to α2-3",
+        "quote": "The chicken-H6N1-190E-228G HA mutant shows preferential binding to the a2,3-linked sialylglycan receptor but undetectable binding to the a2,6-linked sialylglycan receptor, which mimics the duck-H6N1 HA.",
+        "citation": "Fei Wang et al., 2015",
+        "numbering": "H6",
+        "type": "combination",
+        "page": 5
+    },
+    {
+        "protein": "HA1-6",
+        "mutation": "L186P",
+        "subtype": "H6N1",
+        "effect": "decreased virus binding to α2-3",
+        "quote": "The chicken-H6N1-186L HA mutant shows significantly reduced binding to the a2,3-linked sialylglycan receptor and weak binding to the a2,6-linked sialylglycan receptor, which mimics human-H6N1 HA.",
+        "citation": "Fei Wang et al., 2015",
+        "numbering": "H6",
+        "type": "single",
+        "page": 5
+    },
+    {
+        "protein": "PB2",
+        "mutation": "E627K",
+        "subtype": "H6N1",
+        "effect": "increased replication in mammalian cells",
+        "quote": "the Taiwan hH6N1 virus has not acquired the mammalian-adapted E627K substitution in its PB2, which is also important for efficient infection and transmission in humans",
+        "citation": "Wang et al., 2015",
+        "numbering": null,
+        "type": "single",
+        "page": 8
+    }
+]
